@@ -23,7 +23,7 @@ export default async function Footer({ locale }: FooterProps) {
         <div className="flex flex-wrap items-center gap-4">
           <Link href="#accueil" className="flex items-center gap-2 text-foreground">
             <Image
-              src="/Logo_vertical.png"
+              src="/logo_vertical.png"
               alt="Logo Ibrahim Dayende"
               width={140}
               height={40}
