@@ -1,0 +1,264 @@
+﻿{
+  "metadata": {
+    "title": "Ibrahim Dayende OUGDA - Full-stack Dev & Growth Media Buyer",
+    "description": "Je crée des produits web et mobile modernes, j'automatise avec l'IA, et j'aide des marques à grandir avec Meta & Google Ads."
+  },
+  "common": {
+    "roleLabel": "Role"
+  },
+  "navbar": {
+    "ariaLabel": "Navigation principale",
+    "cta": "Me contacter",
+    "links": {
+      "home": "Accueil",
+      "services": "Services",
+      "projects": "Projets",
+      "about": "A propos",
+      "contact": "Contact"
+    }
+  },
+  "hero": {
+    "title": {
+      "name": "Ibrahim Dayende OUGDA",
+      "role": "Full-stack Dev & Growth Media Buyer"
+    },
+    "description": "J'aide les startups, entrepreneurs et marques à créer des produits web et mobile performants, automatiser leurs processus avec l'IA, et générer des résultats mesurables via Meta & Google Ads.",
+    "cta": {
+      "primary": "Discuter de votre projet",
+      "secondary": "Voir mes projets"
+    },
+    "badges": {
+      "stack": "Stack",
+      "languages": "Langages",
+      "growthAi": "Growth & IA",
+      "items": {
+        "next": "Next.js",
+        "react": "React",
+        "laravel": "Laravel",
+        "flutter": "Flutter",
+        "node": "Node.js",
+        "javascript": "JavaScript",
+        "typescript": "TypeScript",
+        "php": "PHP",
+        "dart": "Dart",
+        "python": "Python",
+        "aiAutomation": "IA & Automatisation",
+        "metaAds": "Meta Ads",
+        "googleAds": "Google Ads",
+        "community": "Community Management"
+      }
+    }
+  },
+  "stats": {
+    "ariaLabel": "Preuves",
+    "projectsDelivered": "Projets livrés",
+    "adsCampaigns": "Campagnes Ads",
+    "communities": "Communautés animées",
+    "aiAutomations": "Automatisations IA"
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "Des services pensés pour faire grandir votre produit",
+    "description": "Un mix entre développement, acquisition et automatisation pour lancer plus vite, convertir mieux et gagner du temps.",
+    "items": {
+      "web": {
+        "title": "Dev Web sur-mesure",
+        "description": "Sites et applications rapides, scalables et orientés conversion, conçus pour transformer vos visiteurs en utilisateurs ou clients."
+      },
+      "mobile": {
+        "title": "Mobile Flutter",
+        "description": "Applications mobiles performantes et maintenables, connectées à vos API et prêtes pour une montée en charge."
+      },
+      "ads": {
+        "title": "Ads & acquisition",
+        "description": "Campagnes Meta & Google Ads orientées ROI, avec tracking clair, tests continus et décisions basées sur les données."
+      },
+      "ai": {
+        "title": "IA & automatisation",
+        "description": "Automatisations intelligentes pour réduire les tâches répétitives, connecter vos outils et gagner du temps au quotidien."
+      }
+    },
+    "microProof": "Approche pragmatique | Communication claire | Livraison itérative",
+    "cta": "Discuter de votre besoin"
+  },
+  "projects": {
+    "eyebrow": "Projets",
+    "title": "Des projets concrets, des impacts mesurables",
+    "description": "Des solutions conçues pour résoudre des problèmes réels, avec un focus sur la performance et la croissance.",
+    "ctaPrompt": "Un projet similaire en tête ?",
+    "ctaLabel": "Discuter de votre projet",
+    "ctaGithub": "Voir tous mes projets",
+    "filtersLabel": "Filtres projets",
+    "filters": {
+      "all": "Tous",
+      "web": "Web",
+      "mobile": "Mobile",
+      "ads": "Ads",
+      "ia": "IA"
+    },
+    "badges": {
+      "featured": "Projet phare",
+      "client": "Projet client",
+      "wip": "EN COURS"
+    },
+    "cta": {
+      "viewProject": "Voir le projet",
+      "requestDemo": "Demander une démo",
+      "viewCode": "Voir le code"
+    },
+    "categories": {
+      "web": "Web",
+      "mobile": "Mobile",
+      "ads": "Ads",
+      "ia": "IA"
+    },
+    "items": {
+      "meta-ads-conversations": {
+        "title": "Campagnes Meta Ads - Génération de conversations & engagement",
+        "description": "Gestion et optimisation de campagnes Facebook & Instagram orientées conversations WhatsApp & Messenger et engagement. Budgets quotidiens et globaux, suivi CPC, coût par conversation, couverture, impressions et optimisations continues.",
+        "impact": "Impact: +3 600 000 impressions, 577 000+ Personnes touchées -> visibilité accrue; 5 000+ conversations WhatsApp & Messenger -> engagement fort; coût par conversation jusqu'à 0,18 $ -> ROI optimisé.",
+        "role": "Media Buyer & Campaign Manager"
+      },
+      "kawari-finance-app": {
+        "title": "Kawari Finance App",
+        "description": "Application de gestion financière pour suivre les dépenses, revenus et visualiser le budget avec une IA financière.",
+        "impact": "Impact: visualisation budgetaire -> décisions plus claires; recommandations IA -> meilleure discipline financière.",
+        "role": "End-to-end (solo)"
+      },
+      "sud-stratvision": {
+        "title": "SUD-StratVision - Logiciel de Pilotage Stratégique",
+        "description": "Logiciel de pilotage stratégique centralisant objectifs, performances, congés, formations et missions via un tableau de bord interactif.",
+        "impact": "Impact: centralisation des objectifs -> décisions plus rapides; suivi RH -> gestion optimisée.",
+        "role": "Full-stack & integration"
+      },
+      "clinic-appointment-scheduler": {
+        "title": "Clinic Appointment Scheduler",
+        "description": "Application mobile pour la prise, la gestion et le suivi des rendez-vous médicaux côté patients, médecins et administrateurs.",
+        "impact": "Impact: digitalisation des rendez-vous -> parcours patient fluidifié; suivi en temps réel -> coordination clinique renforcée.",
+        "role": "Mobile & API integration"
+      },
+      "offline-gpt": {
+        "title": "Offline GPT",
+        "description": "Projet de recherche visant à exécuter un assistant de type GPT en environnement local, sans connexion Internet.",
+        "impact": "Impact: solutions IA hors ligne -> accessibilité accrue en contexte de faible connectivité.",
+        "role": "End-to-end (solo)",
+        "microcopy": "Projet en cours - contributions et retours bienvenus.",
+        "ctaSecondary": "Discuter du projet",
+        "codeLabel": "Voir le code"
+      },
+      "make-social-automation": {
+        "title": "Automatisation de publication Social Media (Facebook & Instagram)",
+        "description": "Automatisation complète de publication via Make, depuis Google Sheets vers Facebook Pages et Instagram Business, avec mise à jour de statut.",
+        "impact": "Impact: gain de temps massif -> opérations rapides; réduction des erreurs -> qualité stable; publication multi-plateformes -> workflow scalable.",
+        "role": "Automation Specialist & Developer"
+      },
+      "telegram-youtube-summarizer": {
+        "title": "Bot Telegram IA - Résumé automatique de vidéos YouTube",
+        "description": "Bot Telegram détectant les liens YouTube, récupérant la transcription, nettoyant le texte, générant un résumé IA et renvoyant une réponse claire.",
+        "impact": "Impact: résumés automatisés -> gain de temps; veille accélérée -> apprentissage efficace; architecture modulaire -> évolution facile.",
+        "role": "IA Developer & Automation Engineer"
+      },
+      "bfa-administration-assistant": {
+        "title": "BFA Administration Assistant",
+        "description": "Assistant administratif numérique facilitant la gestion des tâches et données administratives dans un contexte institutionnel local.",
+        "impact": "Impact: réduction des tâches manuelles -> gain de temps agents; processus formalisés -> service plus fiable.",
+        "role": "End-to-end (solo)"
+      },
+      "sud-develop-website": {
+        "title": "SUD Develop Website",
+        "description": "Site web corporate multilingue présentant les divisions, produits, actualités et services avec un module de demande de devis.",
+        "impact": "Impact: visibilité digitale renforcée -> demandes qualifiées; offre clarifiée -> conversion améliorée.",
+        "role": "Full-stack & integration"
+      },
+      "anam-meteo-eval": {
+        "title": "ANAM Meteo Eval",
+        "description": "Projet d'analyse et d'évaluation des données météo pour mesurer leur qualité, fiabilité et cohérence.",
+        "impact": "Impact: évaluation continue -> qualité des données améliorée; indicateurs fiables -> décisions climatiques plus solides.",
+        "role": "End-to-end (solo)"
+      },
+      "cv-studio": {
+        "title": "CV Studio",
+        "description": "Application web permettant de créer et personnaliser des CV modernes via une interface interactive.",
+        "impact": "Impact: valorisation des profils -> employabilité renforcée; création guidée -> expérience utilisateur fluide.",
+        "role": "End-to-end (solo)"
+      },
+      "gestion-bibliotheque": {
+        "title": "Gestion de Bibliotheque",
+        "description": "Système de gestion de bibliothèque permettant le suivi des livres, emprunts et utilisateurs via une interface sécurisée.",
+        "impact": "Impact: suivi des emprunts -> réduction des pertes; opérations automatisées -> gain de temps.",
+        "role": "End-to-end (solo)"
+      },
+      "bytemarket": {
+        "title": "ByteMarket",
+        "description": "Site e-commerce développé en HTML/CSS/JS vanilla, avec une navigation produits claire et une expérience d'achat fluide.",
+        "impact": "Impact: parcours d'achat simplifié -> conversion accrue; catalogue clair -> navigation rapide.",
+        "role": "End-to-end (solo)"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "A propos",
+    "title": "Un profil hybride pour livrer vite, propre et avec méthode",
+    "description": "Je combine développement, marketing et automatisation pour transformer vos idées en produits concrets. J'interviens avec une approche pragmatique et structurée, orientée résultats, communication claire et exécution rapide - du cadrage au déploiement.",
+    "location": "Basé en Afrique de l'Ouest, je travaille avec des équipes locales et internationales sur des projets à impact réel.",
+    "cta": {
+      "primary": "Discuter de votre projet",
+      "secondary": "Telecharger le CV"
+    },
+    "skills": {
+      "title": "Compétences clés",
+      "items": {
+        "architecture": "Architecture scalable Next.js & Laravel",
+        "flutter": "Applications Flutter maintenables",
+        "backend": "Backends Node.js & APIs robustes",
+        "tracking": "Tracking, analytics & pixels publicitaires",
+        "ads": "Meta & Google Ads orientés ROI",
+        "automation": "Automatisation IA (Make, Zapier, APIs)"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Parlons de votre prochain projet",
+    "subtitle": "Décrivez vos besoins et je reviens vers vous sous 48h avec une proposition claire.",
+    "noCommitment": "Premier échange sans engagement.",
+    "form": {
+      "nameLabel": "Nom complet",
+      "emailLabel": "Email",
+      "messageLabel": "Message",
+      "placeholders": {
+        "name": "Votre nom",
+        "email": "vous@email.com",
+        "message": "Objectif du projet, délai souhaité, budget approximatif (optionnel)..."
+      },
+      "errors": {
+        "name": "Le nom est requis.",
+        "email": "Email invalide.",
+        "message": "Message trop court (min. 10 caractères).",
+        "submit": "Une erreur est survenue. Réessayez."
+      },
+      "submit": "Démarrer la discussion",
+      "success": "Merci ! Je reviens vers vous sous 48h."
+    },
+    "quick": {
+      "title": "Contact direct",
+      "whatsapp": "WhatsApp",
+      "whatsappHint": "Idéal pour un premier échange rapide",
+      "linkedin": "LinkedIn",
+      "email": "Email",
+      "github": "GitHub",
+      "availability": "Disponibilités limitées - réponse garantie sous 48h."
+    }
+  },
+  "footer": {
+    "links": {
+      "home": "Accueil",
+      "services": "Services",
+      "projects": "Projets",
+      "contact": "Contact"
+    },
+    "copyright": "&copy; {year} Ibrahim Dayende. Tous droits réservés."
+  }
+}
+
+
