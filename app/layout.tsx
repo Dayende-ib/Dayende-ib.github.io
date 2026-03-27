@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { headers } from "next/headers";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -17,11 +16,8 @@ export default async function RootLayout({
 }: {
   children: ReactNode;
 }) {
-  const headerList = await headers();
-  const locale = headerList.get("x-next-intl-locale") ?? defaultLocale;
-
   return (
-    <html lang={locale} className={inter.variable}>
+    <html lang={defaultLocale} className={inter.variable}>
       <body>
         {children}
         <Analytics />

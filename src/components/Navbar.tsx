@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
@@ -52,7 +53,9 @@ export default async function Navbar({ locale }: NavbarProps) {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <LanguageSwitcher />
+          <Suspense fallback={null}>
+            <LanguageSwitcher />
+          </Suspense>
           <div className="hidden sm:flex">
             <Button asChild size="sm">
               <Link href="#contact">{t("cta")}</Link>
