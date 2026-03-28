@@ -68,9 +68,6 @@ export default async function Services({ locale }: ServicesProps) {
                         {t(`items.${service.key}.benefit`)}
                       </p>
                     </div>
-                    <p className="text-xs text-muted-foreground">
-                      {t(`items.${service.key}.proof`)}
-                    </p>
                   </CardContent>
                 </Card>
               );

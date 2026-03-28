@@ -140,22 +140,16 @@ export default async function Hero({ locale }: HeroProps) {
                 <h2 className="text-2xl font-semibold text-white">
                   {t("spotlight.title")}
                 </h2>
-                <p className="text-sm leading-6 text-muted-foreground">
-                  {t("spotlight.description")}
-                </p>
               </div>
 
               <div className="grid gap-3">
                 {spotlightKeys.map((item) => (
                   <div
                     key={item}
-                    className="rounded-2xl border border-border/70 bg-background/40 p-4"
+                    className="rounded-2xl border border-border/70 bg-background/40 p-4 hover:bg-background/50 transition-colors"
                   >
                     <p className="text-sm font-medium text-white">
                       {t(`spotlight.items.${item}.title`)}
-                    </p>
-                    <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                      {t(`spotlight.items.${item}.description`)}
                     </p>
                   </div>
                 ))}

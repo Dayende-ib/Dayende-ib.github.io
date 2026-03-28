@@ -7,7 +7,6 @@ import SectionHeading from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
 
 const valueKeys = ["product", "execution", "growth"] as const;
-const infoKeys = ["location", "collaboration", "response"] as const;
 
 type AboutProps = {
   locale: string;
@@ -27,22 +26,31 @@ export default async function About({ locale }: AboutProps) {
           />
 
           <div className="grid gap-4 md:grid-cols-3">
-            {valueKeys.map((key) => (
-              <div
-                key={key}
-                className="section-panel rounded-[24px] p-5"
-              >
-                <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-200/80">
-                  {t(`values.${key}.eyebrow`)}
-                </p>
-                <p className="mt-3 text-lg font-medium text-white">
-                  {t(`values.${key}.title`)}
-                </p>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  {t(`values.${key}.description`)}
-                </p>
-              </div>
-            ))}
+            {valueKeys.map((key, itemIndex) => {
+              const colorMap = [
+                "border-cyan-400/25 bg-cyan-500/10 text-cyan-100",
+                "border-emerald-400/25 bg-emerald-500/10 text-emerald-100",
+                "border-violet-400/25 bg-violet-500/10 text-violet-100"
+              ];
+              const colorClass = colorMap[itemIndex] || colorMap[0];
+              
+              return (
+                <div
+                  key={key}
+                  className={`section-panel rounded-[24px] p-5 border transition-transform duration-300 hover:-translate-y-1 ${colorClass}`}
+                >
+                  <p className="text-[11px] uppercase tracking-[0.28em] opacity-90">
+                    {t(`values.${key}.eyebrow`)}
+                  </p>
+                  <p className="mt-3 text-lg font-medium text-white">
+                    {t(`values.${key}.title`)}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 opacity-80">
+                    {t(`values.${key}.description`)}
+                  </p>
+                </div>
+              );
+            })}
           </div>
 
           <div className="section-panel card-glow rounded-[28px] p-6">
@@ -98,23 +106,6 @@ export default async function About({ locale }: AboutProps) {
             </p>
           </div>
 
-          <div className="section-panel rounded-[28px] p-6">
-            <p className="text-xs uppercase tracking-[0.3em] text-cyan-200/80">
-              {t("details.eyebrow")}
-            </p>
-            <div className="mt-4 space-y-4">
-              {infoKeys.map((key) => (
-                <div key={key} className="rounded-2xl border border-border/70 bg-background/35 p-4">
-                  <p className="text-sm font-medium text-white">
-                    {t(`details.items.${key}.title`)}
-                  </p>
-                  <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                    {t(`details.items.${key}.description`)}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
         </aside>
       </Container>
     </section>
