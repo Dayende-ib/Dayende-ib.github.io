@@ -46,9 +46,9 @@ const spotlightKeys = ["build", "scale", "ship"] as const;
 
 const typewriterRoles = [
   "Full-Stack Developer",
-  "Mobile Engineer",
-  "AI Automation Expert",
-  "Media Buyer"
+  "Software Engineer",
+  "Media Buyer",
+  "AI Automation Expert"
 ];
 
 type HeroProps = {
