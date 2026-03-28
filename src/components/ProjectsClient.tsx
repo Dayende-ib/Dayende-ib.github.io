@@ -171,6 +171,19 @@ export default function ProjectsClient({
             <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
               {orderedProjects.length > 0 ? `${currentIndex + 1}/${orderedProjects.length}` : "0/0"}
             </p>
+            {/* Animated progress bar */}
+            {orderedProjects.length > 1 ? (
+              <div className="flex flex-1 items-center gap-2 max-w-xs">
+                <div className="relative h-1 flex-1 overflow-hidden rounded-full bg-white/10">
+                  <div
+                    className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-cyan-400 to-sky-400 transition-all duration-500 ease-out"
+                    style={{
+                      width: `${((currentIndex + 1) / orderedProjects.length) * 100}%`
+                    }}
+                  />
+                </div>
+              </div>
+            ) : null}
             <div className="flex items-center gap-2">
               {orderedProjects.map((project, index) => (
                 <button
@@ -179,8 +192,8 @@ export default function ProjectsClient({
                   onClick={() => setCurrentIndex(index)}
                   aria-label={`Go to project ${index + 1}`}
                   className={cn(
-                    "h-2 rounded-full transition-all",
-                    index === currentIndex ? "w-8 bg-cyan-200" : "w-2 bg-white/25 hover:bg-white/45"
+                    "h-1.5 rounded-full transition-all duration-300",
+                    index === currentIndex ? "w-6 bg-cyan-300" : "w-1.5 bg-white/20 hover:bg-white/40"
                   )}
                 />
               ))}
@@ -324,11 +337,16 @@ export default function ProjectsClient({
               <span className="normal-case text-white/90">{role}</span>
             </p>
             <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
+              {project.tags.slice(0, 4).map((tag) => (
                 <Badge key={tag} variant="secondary" className="bg-white/5 text-slate-200">
                   {tag}
                 </Badge>
               ))}
+              {project.tags.length > 4 ? (
+                <Badge variant="secondary" className="bg-white/5 text-slate-400">
+                  +{project.tags.length - 4}
+                </Badge>
+              ) : null}
             </div>
             {microcopy ? (
               <p className="text-xs leading-5 text-muted-foreground">{microcopy}</p>

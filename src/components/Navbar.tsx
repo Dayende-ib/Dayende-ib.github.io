@@ -75,23 +75,28 @@ export default async function Navbar({ locale }: NavbarProps) {
             </div>
           </div>
 
+          {/* Mobile nav — scrollable with fade indicator */}
           <div className="border-t border-border/60 bg-background/30 md:hidden">
-            <div className="flex items-center gap-2 overflow-x-auto px-4 py-3">
-              {navLinks.map((link) => (
+            <div className="relative">
+              <div className="flex items-center gap-2 overflow-x-auto scrollbar-none px-4 py-3">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="whitespace-nowrap rounded-full border border-border/70 bg-background/50 px-3 py-2 text-xs text-muted-foreground transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
                 <Link
-                  key={link.href}
-                  href={link.href}
-                  className="whitespace-nowrap rounded-full border border-border/70 bg-background/50 px-3 py-2 text-xs text-muted-foreground transition-colors hover:text-white"
+                  href="#contact"
+                  className="ml-auto whitespace-nowrap rounded-full bg-primary px-3 py-2 text-xs font-medium text-primary-foreground"
                 >
-                  {link.label}
+                  {t("cta")}
                 </Link>
-              ))}
-              <Link
-                href="#contact"
-                className="ml-auto whitespace-nowrap rounded-full bg-primary px-3 py-2 text-xs font-medium text-primary-foreground"
-              >
-                {t("cta")}
-              </Link>
+              </div>
+              {/* Fade indicator: signals nav is horizontally scrollable */}
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-12 nav-mobile-fade" />
             </div>
           </div>
         </div>

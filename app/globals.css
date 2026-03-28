@@ -24,6 +24,8 @@
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 210 40% 98%;
   --radius: 1rem;
+  /* Secondary violet accent */
+  --violet: 262 83% 68%;
 }
 
 @layer base {
@@ -45,11 +47,22 @@
   }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  33%       { transform: translateY(-18px) scale(1.04); }
+  66%       { transform: translateY(10px) scale(0.97); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50%       { transform: translateY(-24px) translateX(12px); }
+}
+
 @layer utilities {
   .bg-grid {
     background-image:
-      linear-gradient(to right, rgba(125, 140, 170, 0.08) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(125, 140, 170, 0.08) 1px, transparent 1px);
+      linear-gradient(to right, rgba(125, 140, 170, 0.11) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(125, 140, 170, 0.11) 1px, transparent 1px);
     background-size: 52px 52px;
   }
 
@@ -64,6 +77,19 @@
       0 22px 60px rgba(3, 8, 18, 0.36);
   }
 
+  .card-hover-glow {
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .card-hover-glow:hover {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 0 0 1px rgba(34, 211, 238, 0.3),
+      0 0 28px rgba(34, 211, 238, 0.12),
+      0 22px 60px rgba(3, 8, 18, 0.4);
+    transform: translateY(-3px) scale(1.01);
+  }
+
   .section-panel {
     @apply rounded-[28px] border border-border/70 bg-card/70 backdrop-blur;
   }
@@ -75,6 +101,23 @@
 
   .scrollbar-none::-webkit-scrollbar {
     display: none;
+  }
+
+  .animate-float {
+    animation: float 7s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 11s ease-in-out infinite;
+  }
+
+  .nav-mobile-fade {
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      transparent 70%,
+      hsl(var(--background)) 100%
+    );
   }
 }
 
