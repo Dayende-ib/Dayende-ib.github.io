@@ -27,11 +27,21 @@ export async function generateMetadata({
   const t = await getTranslations({ locale: resolvedLocale, namespace: "metadata" });
   const title = t("title");
   const description = t("description");
+  const siteUrl = "https://ibrahimdayende.me";
+  const localizedUrl = `${siteUrl}/${resolvedLocale}`;
+  const ogLocale = resolvedLocale === "fr" ? "fr_FR" : "en_US";
 
   return {
     title,
     description,
-    metadataBase: new URL("https://ibrahimdayende.me"),
+    alternates: {
+      canonical: `/${resolvedLocale}`,
+      languages: {
+        fr: "/fr",
+        en: "/en",
+        "x-default": "/"
+      }
+    },
     icons: {
       icon: [
         { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
@@ -45,7 +55,9 @@ export async function generateMetadata({
       title,
       description,
       type: "website",
-      url: `/${resolvedLocale}`
+      url: localizedUrl,
+      locale: ogLocale,
+      siteName: "Ibrahim Dayende OUGDA"
     },
     twitter: {
       card: "summary_large_image",

@@ -43,6 +43,9 @@ export default function LanguageSwitcher() {
           <Link
             key={nextLocale}
             href={hrefWithQuery}
+            onClick={() => {
+              localStorage.setItem("preferred-locale", nextLocale);
+            }}
             className={cn(
               "rounded-full px-3 py-1.5 transition-colors",
               isActive

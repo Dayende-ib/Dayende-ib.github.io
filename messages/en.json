@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Ibrahim Dayende OUGDA - Full-stack Dev & Growth Media Buyer",
+    "title": "Ibrahim Dayende OUGDA - Full-Stack Web & Mobile Developer",
     "description": "I build modern web and mobile products, automate with AI, and help brands grow with Meta & Google Ads."
   },
   "common": {
@@ -18,10 +18,10 @@
     }
   },
   "hero": {
-    "eyebrow": "Development, acquisition, and AI automation",
+    "eyebrow": "Web and mobile development",
     "title": {
       "name": "Ibrahim Dayende OUGDA",
-      "role": "Full-stack Dev & Growth Media Buyer"
+      "role": "Full-Stack Web & Mobile Developer"
     },
     "description": "I help startups, founders, and brands launch solid web and mobile products, automate operations with AI, and drive measurable acquisition results.",
     "cta": {
@@ -310,7 +310,7 @@
       "description": "I prefer a simple operating model: clarify the need, make priorities visible, deliver something concrete, then improve from reality."
     },
     "profile": {
-      "title": "Full-stack, mobile, and automation builder",
+      "title": "Full-Stack Web & Mobile Developer",
       "description": "I work on web products, mobile apps, AI automations, and acquisition topics when keeping a coherent view between tech and performance matters."
     },
     "achievement": {
