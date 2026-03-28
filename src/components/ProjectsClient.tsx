@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, type ReactNode, type RefObject } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { LazyMotion, domAnimation, m, useReducedMotion } from "framer-motion";
@@ -26,11 +26,6 @@ interface ProjectsClientProps {
 
 type MessageValue = string | Record<string, unknown> | undefined;
 type Messages = Record<string, MessageValue>;
-type RailState = {
-  canScrollLeft: boolean;
-  canScrollRight: boolean;
-  progress: number;
-};
 
 const getMessageValue = (messages: Messages, path: string) => {
   return path.split(".").reduce<MessageValue>((current, key) => {
@@ -41,90 +36,59 @@ const getMessageValue = (messages: Messages, path: string) => {
   }, messages);
 };
 
-const initialRailState: RailState = {
-  canScrollLeft: false,
-  canScrollRight: false,
-  progress: 0
-};
-
 export default function ProjectsClient({
   projects,
   filters
 }: ProjectsClientProps) {
   const [activeFilter, setActiveFilter] = useState<ProjectFilterKey>("all");
+  const [currentIndex, setCurrentIndex] = useState(0);
   const shouldReduceMotion = useReducedMotion();
   const t = useTranslations("projects");
   const common = useTranslations("common");
   const messages = useMessages() as Messages;
 
-  const featuredRailRef = useRef<HTMLDivElement | null>(null);
-  const otherRailRef = useRef<HTMLDivElement | null>(null);
-  const [featuredRailState, setFeaturedRailState] = useState<RailState>(initialRailState);
-  const [otherRailState, setOtherRailState] = useState<RailState>(initialRailState);
-
-  const filteredProjects = useMemo(() => {
+  const orderedProjects = useMemo(() => {
     if (activeFilter === "all") {
-      return projects;
+      return [...projects].sort(
+        (a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured))
+      );
     }
-    return projects.filter((project) => project.category === activeFilter);
+
+    return projects
+      .filter((project) => project.category === activeFilter)
+      .sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)));
   }, [activeFilter, projects]);
 
-  const featuredIds = useMemo(
-    () =>
-      new Set(projects.filter((project) => project.featured).map((project) => project.id)),
-    [projects]
-  );
-
-  const featuredProjects = useMemo(
-    () => filteredProjects.filter((project) => featuredIds.has(project.id)),
-    [featuredIds, filteredProjects]
-  );
-
-  const otherProjects = useMemo(
-    () => filteredProjects.filter((project) => !featuredIds.has(project.id)),
-    [featuredIds, filteredProjects]
-  );
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [activeFilter]);
 
   useEffect(() => {
-    const updateRailState = (
-      element: HTMLDivElement | null,
-      setter: (value: RailState) => void
-    ) => {
-      if (!element) {
-        setter(initialRailState);
-        return;
-      }
+    if (currentIndex >= orderedProjects.length) {
+      setCurrentIndex(0);
+    }
+  }, [currentIndex, orderedProjects.length]);
 
-      const { scrollLeft, scrollWidth, clientWidth } = element;
-      const maxScroll = Math.max(scrollWidth - clientWidth, 0);
-      setter({
-        canScrollLeft: scrollLeft > 4,
-        canScrollRight: scrollLeft + clientWidth < scrollWidth - 4,
-        progress: maxScroll > 0 ? Math.min(Math.max(scrollLeft / maxScroll, 0), 1) : 0
-      });
-    };
+  const currentProject = orderedProjects[currentIndex] ?? null;
+  const canNavigate = orderedProjects.length > 1;
 
-    const featuredRail = featuredRailRef.current;
-    const otherRail = otherRailRef.current;
+  const goToPrevious = () => {
+    if (!canNavigate) {
+      return;
+    }
 
-    const updateFeatured = () => updateRailState(featuredRail, setFeaturedRailState);
-    const updateOther = () => updateRailState(otherRail, setOtherRailState);
+    setCurrentIndex((prev) =>
+      prev === 0 ? orderedProjects.length - 1 : prev - 1
+    );
+  };
 
-    updateFeatured();
-    updateOther();
+  const goToNext = () => {
+    if (!canNavigate) {
+      return;
+    }
 
-    featuredRail?.addEventListener("scroll", updateFeatured, { passive: true });
-    otherRail?.addEventListener("scroll", updateOther, { passive: true });
-    window.addEventListener("resize", updateFeatured);
-    window.addEventListener("resize", updateOther);
-
-    return () => {
-      featuredRail?.removeEventListener("scroll", updateFeatured);
-      otherRail?.removeEventListener("scroll", updateOther);
-      window.removeEventListener("resize", updateFeatured);
-      window.removeEventListener("resize", updateOther);
-    };
-  }, [featuredProjects.length, otherProjects.length]);
+    setCurrentIndex((prev) => (prev + 1) % orderedProjects.length);
+  };
 
   return (
     <LazyMotion features={domAnimation}>
@@ -151,60 +115,83 @@ export default function ProjectsClient({
           })}
         </div>
 
-        {featuredProjects.length > 0 ? (
-          <div className="space-y-4">
+        <div className="space-y-4">
+          <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-cyan-200/80">
-                {t("featuredEyebrow")}
+                {t("allProjectsEyebrow")}
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
-                {t("featuredDescription")}
+                {t("allProjectsDescription")}
               </p>
             </div>
-            <ProjectRail
-              railRef={featuredRailRef}
-              railState={featuredRailState}
-              hint={t("scrollHint")}
-            >
-              {featuredProjects.map((project, index) =>
-                renderProjectCard(project, index, true)
-              )}
-            </ProjectRail>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={goToPrevious}
+                disabled={!canNavigate}
+                aria-label="Previous project"
+                className={cn(
+                  "flex h-9 w-9 items-center justify-center rounded-full border border-border/70 bg-background/50 text-white transition-colors",
+                  canNavigate
+                    ? "hover:border-cyan-400/40 hover:bg-cyan-500/10"
+                    : "cursor-not-allowed opacity-35"
+                )}
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+              <button
+                type="button"
+                onClick={goToNext}
+                disabled={!canNavigate}
+                aria-label="Next project"
+                className={cn(
+                  "flex h-9 w-9 items-center justify-center rounded-full border border-border/70 bg-background/50 text-white transition-colors",
+                  canNavigate
+                    ? "hover:border-cyan-400/40 hover:bg-cyan-500/10"
+                    : "cursor-not-allowed opacity-35"
+                )}
+              >
+                <ChevronRight className="h-4 w-4" />
+              </button>
+            </div>
           </div>
-        ) : null}
 
-        <div className="space-y-4">
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              {t("allProjectsEyebrow")}
-            </p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              {t("allProjectsDescription")}
-            </p>
+          <div className="rounded-2xl border border-border/70 bg-background/20 p-2 sm:p-3">
+            {currentProject ? renderProjectCard(currentProject) : null}
           </div>
-          <ProjectRail
-            railRef={otherRailRef}
-            railState={otherRailState}
-            hint={t("scrollHint")}
-          >
-            {otherProjects.map((project, index) =>
-              renderProjectCard(project, index, false)
-            )}
-          </ProjectRail>
+
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
+              {orderedProjects.length > 0 ? `${currentIndex + 1}/${orderedProjects.length}` : "0/0"}
+            </p>
+            <div className="flex items-center gap-2">
+              {orderedProjects.map((project, index) => (
+                <button
+                  key={project.id}
+                  type="button"
+                  onClick={() => setCurrentIndex(index)}
+                  aria-label={`Go to project ${index + 1}`}
+                  className={cn(
+                    "h-2 rounded-full transition-all",
+                    index === currentIndex ? "w-8 bg-cyan-200" : "w-2 bg-white/25 hover:bg-white/45"
+                  )}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </LazyMotion>
   );
 
-  function renderProjectCard(project: Project, index: number, featured: boolean) {
+  function renderProjectCard(project: Project) {
     const motionProps = shouldReduceMotion
       ? {}
       : {
-          initial: { opacity: 0, y: 20 },
-          whileInView: { opacity: 1, y: 0 },
-          transition: { duration: 0.35, delay: index * 0.05 },
-          viewport: { once: true, margin: "-80px" },
-          whileHover: { y: -6, scale: 1.01 }
+          initial: { opacity: 0, x: 24 },
+          animate: { opacity: 1, x: 0 },
+          transition: { duration: 0.35 }
         };
 
     const getProjectField = (field: string, fallback?: string) => {
@@ -246,6 +233,7 @@ export default function ProjectsClient({
       project.category === "ia" ||
       (project.clientProject && project.featured);
     const shouldShowSecondaryCta = hasSecondaryCta && canShowSecondaryCta;
+    const isHackathonWinner = project.id === "anam-meteo-eval";
     const primaryIsExternal = primaryAction?.href.startsWith("http") ?? false;
     const secondaryIsExternal =
       project.ctaSecondary?.href.startsWith("http") ?? false;
@@ -254,20 +242,15 @@ export default function ProjectsClient({
       <m.article
         key={project.id}
         {...motionProps}
-        className={cn(
-          "snap-start shrink-0",
-          featured
-            ? "w-[88vw] sm:w-[32rem] lg:w-[24rem]"
-            : "w-[88vw] sm:w-[28rem] lg:w-[24rem]"
-        )}
+        className="w-full"
       >
         <Card
           className={cn(
-            "group h-full overflow-hidden rounded-[26px] border-border/70 bg-card/80 card-glow",
-            featured && "ring-1 ring-cyan-400/25"
+            "group overflow-hidden rounded-[26px] border-border/70 bg-card/80 card-glow",
+            project.featured && "ring-1 ring-cyan-400/25"
           )}
         >
-          <div className={cn("relative overflow-hidden", featured ? "h-56" : "h-48")}>
+          <div className="relative h-56 overflow-hidden sm:h-64">
             <Image
               src={project.image}
               alt={title}
@@ -276,7 +259,7 @@ export default function ProjectsClient({
               className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
               placeholder="blur"
               blurDataURL={project.blurDataURL}
-              sizes="(max-width: 768px) 88vw, 420px"
+              sizes="(max-width: 1024px) 100vw, 1000px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/35 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 p-4">
@@ -296,6 +279,11 @@ export default function ProjectsClient({
                     {t("badges.wip")}
                   </Badge>
                 ) : null}
+                {isHackathonWinner ? (
+                  <Badge className="w-fit border-amber-400/40 bg-amber-500/20 text-amber-100">
+                    {t("badges.hackathonWinner")}
+                  </Badge>
+                ) : null}
               </div>
               <Badge
                 className={cn(
@@ -310,10 +298,10 @@ export default function ProjectsClient({
               </Badge>
             </div>
           </div>
-          <CardHeader className="space-y-3">
+          <CardHeader className="space-y-3 lg:space-y-4">
             <div className="space-y-2">
               <CardTitle className="text-xl text-white">{title}</CardTitle>
-              <CardDescription className="line-clamp-3 leading-6">
+              <CardDescription className="leading-6">
                 {description}
               </CardDescription>
             </div>
@@ -324,13 +312,13 @@ export default function ProjectsClient({
               <p className="mt-2 text-sm leading-6 text-white/90">{impact}</p>
             </div>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4 lg:space-y-5">
             <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
               {common("roleLabel")}:{" "}
               <span className="normal-case text-white/90">{role}</span>
             </p>
             <div className="flex flex-wrap gap-2">
-              {project.tags.slice(0, featured ? 5 : 4).map((tag) => (
+              {project.tags.map((tag) => (
                 <Badge key={tag} variant="secondary" className="bg-white/5 text-slate-200">
                   {tag}
                 </Badge>
@@ -368,105 +356,4 @@ export default function ProjectsClient({
       </m.article>
     );
   }
-}
-
-type ProjectRailProps = {
-  children: ReactNode;
-  hint: string;
-  railRef: RefObject<HTMLDivElement | null>;
-  railState: RailState;
-};
-
-function ProjectRail({ children, hint, railRef, railState }: ProjectRailProps) {
-  const scrollByAmount = (direction: "left" | "right") => {
-    const element = railRef.current;
-    if (!element) {
-      return;
-    }
-
-    const amount = Math.max(element.clientWidth * 0.82, 280);
-    element.scrollBy({
-      left: direction === "left" ? -amount : amount,
-      behavior: "smooth"
-    });
-  };
-
-  const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
-    const element = railRef.current;
-    if (!element) {
-      return;
-    }
-
-    // Keep vertical wheel for page scrolling; only handle horizontal intent here.
-    if (Math.abs(event.deltaX) <= Math.abs(event.deltaY)) {
-      return;
-    }
-
-    event.preventDefault();
-    element.scrollBy({
-      left: event.deltaX,
-      behavior: "auto"
-    });
-  };
-
-  return (
-    <div className="relative overflow-hidden">
-      <div className="mb-3 flex items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => scrollByAmount("left")}
-            disabled={!railState.canScrollLeft}
-            aria-label="Scroll left"
-            className={cn(
-              "flex h-9 w-9 items-center justify-center rounded-full border border-border/70 bg-background/50 text-white transition-colors",
-              railState.canScrollLeft
-                ? "hover:border-cyan-400/40 hover:bg-cyan-500/10"
-                : "cursor-not-allowed opacity-35"
-            )}
-          >
-            <ChevronLeft className="h-4 w-4" />
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollByAmount("right")}
-            disabled={!railState.canScrollRight}
-            aria-label="Scroll right"
-            className={cn(
-              "flex h-9 w-9 items-center justify-center rounded-full border border-border/70 bg-background/50 text-white transition-colors",
-              railState.canScrollRight
-                ? "hover:border-cyan-400/40 hover:bg-cyan-500/10"
-                : "cursor-not-allowed opacity-35"
-            )}
-          >
-            <ChevronRight className="h-4 w-4" />
-          </button>
-        </div>
-        <div className="flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-500/10 px-3 py-1.5 text-[11px] uppercase tracking-[0.24em] text-cyan-100">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-300/60" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-200" />
-          </span>
-          {hint}
-        </div>
-      </div>
-
-      <div
-        ref={railRef}
-        onWheel={handleWheel}
-        className="scrollbar-none flex snap-x snap-mandatory gap-6 overflow-x-auto overscroll-x-contain px-1 pb-4 pt-1 [scrollbar-width:none]"
-      >
-        {children}
-      </div>
-
-      <div className="mt-3 flex items-center justify-center">
-        <div className="h-1.5 w-36 rounded-full bg-white/10">
-          <span
-            className="block h-full w-[34%] rounded-full bg-cyan-200 transition-transform duration-300"
-            style={{ transform: `translateX(${railState.progress * 194}%)` }}
-          />
-        </div>
-      </div>
-    </div>
-  );
 }

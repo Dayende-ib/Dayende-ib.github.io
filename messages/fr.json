@@ -181,7 +181,8 @@
     "badges": {
       "featured": "Projet phare",
       "client": "Projet client",
-      "wip": "EN COURS"
+      "wip": "EN COURS",
+      "hackathonWinner": "Vainqueur Hackathon IA 2025"
     },
     "cta": {
       "viewProject": "Voir le projet",

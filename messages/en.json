@@ -181,7 +181,8 @@
     "badges": {
       "featured": "Featured",
       "client": "Client project",
-      "wip": "IN PROGRESS"
+      "wip": "IN PROGRESS",
+      "hackathonWinner": "2025 AI Hackathon Winner"
     },
     "cta": {
       "viewProject": "View project",
