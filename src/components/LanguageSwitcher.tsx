@@ -31,27 +31,27 @@ export default function LanguageSwitcher() {
 
   return (
     <div
-      className="flex items-center gap-2 text-[11px] uppercase tracking-[0.35em] text-muted-foreground"
+      className="flex items-center rounded-full border border-border/70 bg-background/35 p-1 text-[11px] uppercase tracking-[0.24em]"
       aria-label="Language switcher"
     >
-      {locales.map((nextLocale, index) => {
+      {locales.map((nextLocale) => {
         const href = buildLocalePath(pathname, nextLocale);
         const hrefWithQuery = query ? `${href}?${query}` : href;
         const isActive = locale === nextLocale;
 
         return (
-          <span key={nextLocale} className="flex items-center gap-2">
-            <Link
-              href={hrefWithQuery}
-              className={cn(
-                "transition-colors",
-                isActive ? "text-white" : "hover:text-white"
-              )}
-            >
-              {nextLocale.toUpperCase()}
-            </Link>
-            {index === 0 ? <span className="text-muted-foreground/50">|</span> : null}
-          </span>
+          <Link
+            key={nextLocale}
+            href={hrefWithQuery}
+            className={cn(
+              "rounded-full px-3 py-1.5 transition-colors",
+              isActive
+                ? "bg-white/10 text-white"
+                : "text-muted-foreground hover:text-white"
+            )}
+          >
+            {nextLocale.toUpperCase()}
+          </Link>
         );
       })}
     </div>

@@ -1,10 +1,10 @@
-﻿{
+{
   "metadata": {
     "title": "Ibrahim Dayende OUGDA - Full-stack Dev & Growth Media Buyer",
     "description": "Je crée des produits web et mobile modernes, j'automatise avec l'IA, et j'aide des marques à grandir avec Meta & Google Ads."
   },
   "common": {
-    "roleLabel": "Role"
+    "roleLabel": "Rôle"
   },
   "navbar": {
     "ariaLabel": "Navigation principale",
@@ -18,67 +18,143 @@
     }
   },
   "hero": {
+    "eyebrow": "Produits digitaux, acquisition et automatisation",
     "title": {
       "name": "Ibrahim Dayende OUGDA",
       "role": "Full-stack Dev & Growth Media Buyer"
     },
-    "description": "J'aide les startups, entrepreneurs et marques à créer des produits web et mobile performants, automatiser leurs processus avec l'IA, et générer des résultats mesurables via Meta & Google Ads.",
+    "description": "J'aide les startups, entrepreneurs et marques à lancer des produits web et mobile solides, automatiser leurs opérations avec l'IA, et obtenir des résultats mesurables en acquisition.",
     "cta": {
       "primary": "Discuter de votre projet",
-      "secondary": "Voir mes projets"
+      "secondary": "Voir les études de cas"
+    },
+    "proofs": {
+      "projectsDelivered": {
+        "value": "9+",
+        "label": "projets livrés",
+        "detail": "Produits web, mobile et outils métier mis en production."
+      },
+      "adsCampaigns": {
+        "value": "30+",
+        "label": "campagnes pilotées",
+        "detail": "Meta & Google Ads suivis avec logique ROI et optimisation continue."
+      },
+      "aiAutomations": {
+        "value": "5+",
+        "label": "automatisations IA",
+        "detail": "Workflows reliés à vos outils pour gagner du temps réel."
+      }
+    },
+    "spotlight": {
+      "eyebrow": "Mode de collaboration",
+      "title": "Une exécution carrée, pas une simple vitrine.",
+      "description": "Je structure les projets pour réduire les zones floues et livrer quelque chose d'utilisable rapidement.",
+      "items": {
+        "build": {
+          "title": "Construire",
+          "description": "Sites, apps et interfaces métiers conçus pour un vrai usage."
+        },
+        "scale": {
+          "title": "Accélérer",
+          "description": "Acquisition, tracking et automatisations pour faire avancer le business."
+        },
+        "ship": {
+          "title": "Livrer proprement",
+          "description": "Cadrage clair, itérations rapides et communication directe."
+        }
+      }
+    },
+    "availability": {
+      "title": "Disponible pour missions ciblées",
+      "description": "Réponse sous 24 à 48h avec un retour concret sur la faisabilité, le périmètre et la meilleure prochaine étape."
     },
     "badges": {
       "stack": "Stack",
-      "languages": "Langages",
-      "growthAi": "Growth & IA",
+      "delivery": "Ce que je livre",
       "items": {
         "next": "Next.js",
         "react": "React",
         "laravel": "Laravel",
         "flutter": "Flutter",
-        "node": "Node.js",
-        "javascript": "JavaScript",
-        "typescript": "TypeScript",
-        "php": "PHP",
-        "dart": "Dart",
-        "python": "Python",
+        "webApps": "Apps web",
+        "mobileApps": "Apps mobile",
         "aiAutomation": "IA & Automatisation",
-        "metaAds": "Meta Ads",
-        "googleAds": "Google Ads",
-        "community": "Community Management"
+        "googleAds": "Acquisition & Ads"
       }
     }
   },
   "stats": {
     "ariaLabel": "Preuves",
+    "eyebrow": "Preuves rapides",
+    "intro": "Quelques repères pour comprendre mon terrain de jeu et le type de missions que je prends.",
+    "confidence": "Focus sur l'exécution, la lisibilité et les résultats.",
     "projectsDelivered": "Projets livrés",
+    "projectsDeliveredValue": "9+",
+    "projectsDeliveredDetail": "Produits déployés ou utilisés en contexte réel.",
     "adsCampaigns": "Campagnes Ads",
+    "adsCampaignsValue": "30+",
+    "adsCampaignsDetail": "Campagnes suivies avec reporting et optimisation continue.",
     "communities": "Communautés animées",
-    "aiAutomations": "Automatisations IA"
+    "communitiesValue": "10+",
+    "communitiesDetail": "Présence digitale et animation de communautés de marque.",
+    "aiAutomations": "Automatisations IA",
+    "aiAutomationsValue": "5+",
+    "aiAutomationsDetail": "Workflows automatisés connectés à des outils métier."
   },
   "services": {
     "eyebrow": "Services",
-    "title": "Des services pensés pour faire grandir votre produit",
-    "description": "Un mix entre développement, acquisition et automatisation pour lancer plus vite, convertir mieux et gagner du temps.",
+    "title": "Ce que je peux concevoir, lancer et améliorer avec vous",
+    "description": "Je combine produit, exécution technique et acquisition pour faire avancer un projet sans multiplier les intermédiaires.",
+    "benefitEyebrow": "Ce que cela change",
     "items": {
       "web": {
-        "title": "Dev Web sur-mesure",
-        "description": "Sites et applications rapides, scalables et orientés conversion, conçus pour transformer vos visiteurs en utilisateurs ou clients."
+        "title": "Produits web clairs et robustes",
+        "description": "Sites, dashboards et applications conçus pour être rapides, maintenables et réellement utiles à votre activité.",
+        "benefit": "Vous obtenez une base propre pour lancer, tester ou faire évoluer un produit sans repartir de zéro.",
+        "proof": "Stack typique: Next.js, Laravel, Node.js, intégration API.",
+        "tag": "Produit"
       },
       "mobile": {
-        "title": "Mobile Flutter",
-        "description": "Applications mobiles performantes et maintenables, connectées à vos API et prêtes pour une montée en charge."
+        "title": "Applications mobile prêtes pour le terrain",
+        "description": "Applications Flutter connectées à vos APIs, pensées pour un usage réel, des parcours fluides et une maintenance simple.",
+        "benefit": "Vous réduisez les frictions côté utilisateur tout en gardant une base technique cohérente pour la suite.",
+        "proof": "Approche: UX mobile simple, API fiable, logique métier lisible.",
+        "tag": "Mobile"
       },
       "ads": {
-        "title": "Ads & acquisition",
-        "description": "Campagnes Meta & Google Ads orientées ROI, avec tracking clair, tests continus et décisions basées sur les données."
+        "title": "Acquisition pilotée par les données",
+        "description": "Campagnes Meta et Google Ads construites pour générer de vrais signaux business et pas seulement des métriques flatteuses.",
+        "benefit": "Vous investissez avec une lecture plus claire du ROI, des tests continus et un meilleur cadre de décision.",
+        "proof": "Tracking, structure de campagnes, itérations créatives et optimisation continue.",
+        "tag": "Growth"
       },
       "ai": {
-        "title": "IA & automatisation",
-        "description": "Automatisations intelligentes pour réduire les tâches répétitives, connecter vos outils et gagner du temps au quotidien."
+        "title": "Automatisations IA utiles au quotidien",
+        "description": "Automations qui relient vos outils, réduisent les tâches répétitives et accélèrent les opérations sans surcomplexifier le système.",
+        "benefit": "Vous gagnez du temps opérationnel là où il y a le plus de répétition, d'attente ou de perte d'information.",
+        "proof": "Make, n8n, APIs, bots, workflows métier et intégrations sur mesure.",
+        "tag": "Automation"
       }
     },
-    "microProof": "Approche pragmatique | Communication claire | Livraison itérative",
+    "panel": {
+      "eyebrow": "Façon de travailler",
+      "title": "Un interlocuteur technique qui garde la vue business",
+      "description": "L'idée n'est pas seulement de produire des écrans ou du code. L'objectif est d'avancer vite avec un cadre clair, des priorités utiles et une livraison exploitable.",
+      "items": {
+        "scoping": {
+          "title": "Cadrage utile",
+          "description": "On clarifie le besoin, les contraintes et le niveau d'ambition avant de construire."
+        },
+        "delivery": {
+          "title": "Livraison itérative",
+          "description": "Vous voyez vite quelque chose de concret, puis on affine à partir du réel."
+        },
+        "support": {
+          "title": "Décisions lisibles",
+          "description": "Je privilégie des choix techniques défendables et compréhensibles côté business."
+        }
+      }
+    },
     "cta": "Discuter de votre besoin"
   },
   "projects": {
@@ -89,6 +165,12 @@
     "ctaLabel": "Discuter de votre projet",
     "ctaGithub": "Voir tous mes projets",
     "filtersLabel": "Filtres projets",
+    "featuredEyebrow": "Projets phares",
+    "featuredDescription": "Les cas les plus représentatifs de mon approche: clarté produit, impact concret et exécution propre.",
+    "allProjectsEyebrow": "Autres projets",
+    "allProjectsDescription": "Une sélection complémentaire pour montrer l'étendue des contextes, stacks et problématiques.",
+    "impactEyebrow": "Résultat / impact",
+    "scrollHint": "Faites défiler",
     "filters": {
       "all": "Tous",
       "web": "Web",
@@ -116,17 +198,17 @@
       "meta-ads-conversations": {
         "title": "Campagnes Meta Ads - Génération de conversations & engagement",
         "description": "Gestion et optimisation de campagnes Facebook & Instagram orientées conversations WhatsApp & Messenger et engagement. Budgets quotidiens et globaux, suivi CPC, coût par conversation, couverture, impressions et optimisations continues.",
-        "impact": "Impact: +3 600 000 impressions, 577 000+ Personnes touchées -> visibilité accrue; 5 000+ conversations WhatsApp & Messenger -> engagement fort; coût par conversation jusqu'à 0,18 $ -> ROI optimisé.",
+        "impact": "Impact: +3 600 000 impressions, 577 000+ personnes touchées -> visibilité accrue; 5 000+ conversations WhatsApp & Messenger -> engagement fort; coût par conversation jusqu'à 0,18 $ -> ROI optimisé.",
         "role": "Media Buyer & Campaign Manager"
       },
       "kawari-finance-app": {
         "title": "Kawari Finance App",
         "description": "Application de gestion financière pour suivre les dépenses, revenus et visualiser le budget avec une IA financière.",
-        "impact": "Impact: visualisation budgetaire -> décisions plus claires; recommandations IA -> meilleure discipline financière.",
+        "impact": "Impact: visualisation budgétaire -> décisions plus claires; recommandations IA -> meilleure discipline financière.",
         "role": "End-to-end (solo)"
       },
       "sud-stratvision": {
-        "title": "SUD-StratVision - Logiciel de Pilotage Stratégique",
+        "title": "SUD-StratVision - Logiciel de pilotage stratégique",
         "description": "Logiciel de pilotage stratégique centralisant objectifs, performances, congés, formations et missions via un tableau de bord interactif.",
         "impact": "Impact: centralisation des objectifs -> décisions plus rapides; suivi RH -> gestion optimisée.",
         "role": "Full-stack & integration"
@@ -197,23 +279,59 @@
     }
   },
   "about": {
-    "eyebrow": "A propos",
-    "title": "Un profil hybride pour livrer vite, propre et avec méthode",
-    "description": "Je combine développement, marketing et automatisation pour transformer vos idées en produits concrets. J'interviens avec une approche pragmatique et structurée, orientée résultats, communication claire et exécution rapide - du cadrage au déploiement.",
-    "location": "Basé en Afrique de l'Ouest, je travaille avec des équipes locales et internationales sur des projets à impact réel.",
+    "eyebrow": "Pourquoi travailler avec moi",
+    "title": "Un profil hybride pour transformer une idée en livrable utile",
+    "description": "Je combine logique produit, exécution technique et sens business pour faire avancer un projet sans perdre du temps dans le flou.",
     "cta": {
       "primary": "Discuter de votre projet",
-      "secondary": "Telecharger le CV"
+      "secondary": "Télécharger le CV"
     },
-    "skills": {
-      "title": "Compétences clés",
+    "values": {
+      "product": {
+        "eyebrow": "Vision produit",
+        "title": "Prioriser ce qui compte vraiment",
+        "description": "Je cherche d'abord ce qui doit exister pour créer de la valeur, pas ce qui impressionne visuellement en premier."
+      },
+      "execution": {
+        "eyebrow": "Exécution",
+        "title": "Livrer vite sans casser la suite",
+        "description": "L'objectif est d'aller vite avec une base propre, lisible et suffisamment solide pour évoluer."
+      },
+      "growth": {
+        "eyebrow": "Impact business",
+        "title": "Relier le technique au résultat",
+        "description": "Je garde un lien direct entre ce qu'on construit, ce qu'on mesure et ce que cela change pour l'activité."
+      }
+    },
+    "approach": {
+      "eyebrow": "Ma manière de collaborer",
+      "title": "Communication directe, décisions claires, itérations courtes",
+      "description": "Je préfère un cadre simple: besoin clarifié, priorités visibles, livraison concrète, puis amélioration continue à partir du réel."
+    },
+    "profile": {
+      "title": "Développeur full-stack, mobile et automation",
+      "description": "J'interviens sur des produits web, mobile, automatisations IA et sujets acquisition quand il faut garder une vision cohérente entre technique et performance."
+    },
+    "achievement": {
+      "eyebrow": "Distinction",
+      "title": "Vainqueur du Hackathon IA 2025 (MTDPCE)",
+      "description": "Projet ANAM Météo récompensé lors du Hackathon IA 2025 organisé par le Ministère de la Transition Digitale, des Postes et des Communications Électroniques (MTDPCE), puis livré à l'Agence Nationale de la Météo."
+    },
+    "details": {
+      "eyebrow": "Repères utiles",
       "items": {
-        "architecture": "Architecture scalable Next.js & Laravel",
-        "flutter": "Applications Flutter maintenables",
-        "backend": "Backends Node.js & APIs robustes",
-        "tracking": "Tracking, analytics & pixels publicitaires",
-        "ads": "Meta & Google Ads orientés ROI",
-        "automation": "Automatisation IA (Make, Zapier, APIs)"
+        "location": {
+          "title": "Base géographique",
+          "description": "Basé en Afrique de l'Ouest, avec expérience de collaboration sur des projets locaux et internationaux."
+        },
+        "collaboration": {
+          "title": "Type de collaboration",
+          "description": "Freelance, missions ciblées, accompagnement produit ou renfort sur une partie critique du projet."
+        },
+        "response": {
+          "title": "Réactivité",
+          "description": "Retour sous 24 à 48h avec un avis concret sur le cadrage, la faisabilité et les options réalistes."
+        }
       }
     }
   },
@@ -223,9 +341,15 @@
     "subtitle": "Décrivez vos besoins et je reviens vers vous sous 48h avec une proposition claire.",
     "noCommitment": "Premier échange sans engagement.",
     "form": {
+      "eyebrow": "Brief rapide",
       "nameLabel": "Nom complet",
       "emailLabel": "Email",
       "messageLabel": "Message",
+      "types": {
+        "web": "Site ou app web",
+        "mobile": "Application mobile",
+        "automation": "Automation IA"
+      },
       "placeholders": {
         "name": "Votre nom",
         "email": "vous@email.com",
@@ -237,16 +361,21 @@
         "message": "Message trop court (min. 10 caractères).",
         "submit": "Une erreur est survenue. Réessayez."
       },
-      "submit": "Démarrer la discussion",
+      "submit": "Recevoir une proposition",
+      "responseTime": "Réponse sous 24 à 48h.",
       "success": "Merci ! Je reviens vers vous sous 48h."
     },
     "quick": {
-      "title": "Contact direct",
+      "eyebrow": "Canal recommandé",
+      "title": "Choisissez le canal le plus rapide",
+      "description": "Si le besoin est déjà clair, WhatsApp reste le moyen le plus efficace pour lancer l'échange.",
+      "primaryLabel": "Premier échange rapide",
       "whatsapp": "WhatsApp",
       "whatsappHint": "Idéal pour un premier échange rapide",
       "linkedin": "LinkedIn",
       "email": "Email",
       "github": "GitHub",
+      "availabilityLabel": "Disponibilité",
       "availability": "Disponibilités limitées - réponse garantie sous 48h."
     }
   },
@@ -257,8 +386,7 @@
       "projects": "Projets",
       "contact": "Contact"
     },
-    "copyright": "&copy; {year} Ibrahim Dayende. Tous droits réservés."
+    "copyright": "© {year} Ibrahim Dayende. Tous droits réservés."
   }
 }
-
 

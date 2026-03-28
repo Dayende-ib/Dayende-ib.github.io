@@ -16,6 +16,8 @@ type FormState = {
 
 type FormErrors = Record<keyof FormState, string>;
 
+const inquiryTypes = ["web", "mobile", "automation"] as const;
+
 const initialState: FormState = {
   name: "",
   email: "",
@@ -101,9 +103,24 @@ export default function ContactForm() {
   return (
     <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
       <form
-        className="space-y-5 rounded-2xl border border-border/60 bg-card/70 p-6"
+        className="section-panel card-glow space-y-5 rounded-[28px] p-6"
         onSubmit={handleSubmit}
       >
+        <div className="space-y-3">
+          <p className="text-xs uppercase tracking-[0.3em] text-cyan-200/80">
+            {t("form.eyebrow")}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {inquiryTypes.map((type) => (
+              <span
+                key={type}
+                className="rounded-full border border-border/70 bg-background/40 px-3 py-1.5 text-xs text-white/85"
+              >
+                {t(`form.types.${type}`)}
+              </span>
+            ))}
+          </div>
+        </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-2">
             <label className="text-sm text-muted-foreground" htmlFor="name">
@@ -165,9 +182,14 @@ export default function ContactForm() {
           ) : null}
         </div>
         <div className="flex flex-wrap items-center gap-3">
-          <Button type="submit" disabled={status === "sending" || status === "success"}>
+          <Button
+            type="submit"
+            disabled={status === "sending" || status === "success"}
+            className="rounded-full"
+          >
             {t("form.submit")}
           </Button>
+          <p className="text-xs text-muted-foreground">{t("form.responseTime")}</p>
           {status === "success" ? (
             <p className="text-sm text-emerald-300" aria-live="polite">
               {t("form.success")}
@@ -180,32 +202,43 @@ export default function ContactForm() {
           ) : null}
         </div>
       </form>
-      <div className="space-y-4 rounded-2xl border border-border/60 bg-muted/30 p-6">
-        <p className="text-sm text-muted-foreground">{t("quick.title")}</p>
+      <div className="section-panel space-y-5 rounded-[28px] p-6">
+        <div className="space-y-2">
+          <p className="text-xs uppercase tracking-[0.3em] text-cyan-200/80">
+            {t("quick.eyebrow")}
+          </p>
+          <p className="text-lg font-medium text-white">{t("quick.title")}</p>
+          <p className="text-sm leading-6 text-muted-foreground">
+            {t("quick.description")}
+          </p>
+        </div>
         <div className="flex flex-col gap-3">
-          <div className="grid gap-3 sm:grid-cols-2">
-            <div className="space-y-2">
-              <Button
-                asChild
-                variant="secondary"
-                className="border border-emerald-400/40 bg-emerald-500/20 text-emerald-100 hover:bg-emerald-500/30"
+          <div className="rounded-2xl border border-emerald-400/30 bg-emerald-500/10 p-4">
+            <p className="text-sm font-medium text-emerald-100">
+              {t("quick.primaryLabel")}
+            </p>
+            <p className="mt-1 text-xs leading-5 text-emerald-100/80">
+              {t("quick.whatsappHint")}
+            </p>
+            <Button
+              asChild
+              variant="secondary"
+              className="mt-3 w-full rounded-full border border-emerald-400/40 bg-emerald-500/20 text-emerald-100 hover:bg-emerald-500/30"
+            >
+              <a
+                href="https://wa.me/0022657760302"
+                target="_blank"
+                rel="noreferrer"
               >
-                <a
-                  href="https://wa.me/0022657760302"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {t("quick.whatsapp")}
-                </a>
-              </Button>
-              <p className="text-xs text-muted-foreground">
-                {t("quick.whatsappHint")}
-              </p>
-            </div>
+                {t("quick.whatsapp")}
+              </a>
+            </Button>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
             <Button
               asChild
               variant="outline"
-              className="border-blue-400/50 bg-blue-500/20 text-white hover:bg-blue-500/30 hover:text-white"
+              className="rounded-full border-blue-400/50 bg-blue-500/20 text-white hover:bg-blue-500/30 hover:text-white"
             >
               <a
                 href="https://linkedin.com/in/ibrahimdayende"
@@ -219,11 +252,11 @@ export default function ContactForm() {
           <Button
             asChild
             variant="outline"
-            className="border-rose-400/50 bg-rose-500/20 text-white hover:bg-rose-500/30 hover:text-white"
+            className="rounded-full border-rose-400/50 bg-rose-500/20 text-white hover:bg-rose-500/30 hover:text-white"
           >
             <a href="mailto:dayendeib@gmail.com">{t("quick.email")}</a>
           </Button>
-          <Button asChild variant="outline">
+          <Button asChild variant="outline" className="rounded-full">
             <a
               href="https://github.com/dayende-ib"
               target="_blank"
@@ -233,7 +266,12 @@ export default function ContactForm() {
             </a>
           </Button>
         </div>
-        <p className="text-xs text-muted-foreground">{t("quick.availability")}</p>
+        <div className="rounded-2xl border border-border/70 bg-background/35 p-4">
+          <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">
+            {t("quick.availabilityLabel")}
+          </p>
+          <p className="mt-2 text-sm text-white/90">{t("quick.availability")}</p>
+        </div>
       </div>
     </div>
   );

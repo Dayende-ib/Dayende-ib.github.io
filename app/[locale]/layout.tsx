@@ -15,6 +15,8 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
+export const dynamicParams = false;
+
 export async function generateMetadata({
   params
 }: LocaleLayoutProps): Promise<Metadata> {
@@ -29,7 +31,7 @@ export async function generateMetadata({
   return {
     title,
     description,
-    metadataBase: new URL("https://ibrahim-dayende.dev"),
+    metadataBase: new URL("https://ibrahimdayende.me"),
     icons: {
       icon: [
         { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },

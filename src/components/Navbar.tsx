@@ -22,60 +22,80 @@ export default async function Navbar({ locale }: NavbarProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/70 backdrop-blur">
-      <Container className="flex items-center justify-between py-3">
-        <Link
-          href="#accueil"
-          className="flex items-center gap-2 text-sm font-semibold"
-        >
-          <Image
-            src="/logo.png"
-            alt="Logo Ibrahim Dayende"
-            width={28}
-            height={28}
-            className="h-7 w-7"
-            priority
-          />
-          Ibrahim Dayende
-        </Link>
-        <nav
-          aria-label={t("ariaLabel")}
-          className="hidden items-center gap-6 text-sm text-muted-foreground md:flex"
-        >
-          {navLinks.map((link) => (
+    <header className="sticky top-0 z-50 w-full pt-4">
+      <Container className="px-4 sm:px-6 lg:px-8">
+        <div className="section-panel card-glow overflow-hidden rounded-[24px]">
+          <div className="flex items-center justify-between gap-4 px-4 py-3 sm:px-5">
             <Link
-              key={link.href}
-              href={link.href}
-              className="transition-colors hover:text-white"
+              href="#accueil"
+              className="flex min-w-0 items-center gap-3 text-sm font-semibold text-white"
             >
-              {link.label}
+              <Image
+                src="/logo.png"
+                alt="Logo Ibrahim Dayende"
+                width={34}
+                height={34}
+                className="h-8 w-8 rounded-xl"
+                priority
+              />
+              <div className="min-w-0">
+                <p className="truncate text-sm font-semibold text-white">
+                  Ibrahim Dayende
+                </p>
+                <p className="hidden text-xs text-muted-foreground sm:block">
+                  Full-stack | Mobile | Automation
+                </p>
+              </div>
             </Link>
-          ))}
-        </nav>
-        <div className="flex items-center gap-3">
-          <Suspense fallback={null}>
-            <LanguageSwitcher />
-          </Suspense>
-          <div className="hidden sm:flex">
-            <Button asChild size="sm">
-              <Link href="#contact">{t("cta")}</Link>
-            </Button>
+
+            <nav
+              aria-label={t("ariaLabel")}
+              className="hidden items-center rounded-full border border-border/70 bg-background/35 p-1 md:flex"
+            >
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-full px-4 py-2 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+
+            <div className="flex items-center gap-3">
+              <Suspense fallback={null}>
+                <LanguageSwitcher />
+              </Suspense>
+              <div className="hidden sm:flex">
+                <Button asChild size="sm" className="rounded-full">
+                  <Link href="#contact">{t("cta")}</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-border/60 bg-background/30 md:hidden">
+            <div className="flex items-center gap-2 overflow-x-auto px-4 py-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="whitespace-nowrap rounded-full border border-border/70 bg-background/50 px-3 py-2 text-xs text-muted-foreground transition-colors hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                href="#contact"
+                className="ml-auto whitespace-nowrap rounded-full bg-primary px-3 py-2 text-xs font-medium text-primary-foreground"
+              >
+                {t("cta")}
+              </Link>
+            </div>
           </div>
         </div>
       </Container>
-      <div className="border-t border-border/40 bg-background/80 md:hidden">
-        <Container className="flex items-center gap-4 overflow-x-auto py-2 text-xs text-muted-foreground">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="whitespace-nowrap transition-colors hover:text-white"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </Container>
-      </div>
     </header>
   );
 }
