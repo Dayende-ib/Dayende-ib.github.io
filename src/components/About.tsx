@@ -62,15 +62,6 @@ export default async function About({ locale }: AboutProps) {
                 <Button asChild className="rounded-full">
                   <Link href="#contact">{t("cta.primary")}</Link>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full">
-                  <a
-                    href="/cv/ibrahim-dayende-cv.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {t("cta.secondary")}
-                  </a>
-                </Button>
               </div>
             </div>
           </div>

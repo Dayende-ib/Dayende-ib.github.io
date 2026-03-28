@@ -42,6 +42,7 @@ export default function ProjectsClient({
 }: ProjectsClientProps) {
   const [activeFilter, setActiveFilter] = useState<ProjectFilterKey>("all");
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
   const shouldReduceMotion = useReducedMotion();
   const t = useTranslations("projects");
   const common = useTranslations("common");
@@ -59,6 +60,9 @@ export default function ProjectsClient({
       .sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)));
   }, [activeFilter, projects]);
 
+  const canNavigate = orderedProjects.length > 1;
+  const currentProject = orderedProjects[currentIndex] ?? null;
+
   useEffect(() => {
     setCurrentIndex(0);
   }, [activeFilter]);
@@ -69,8 +73,15 @@ export default function ProjectsClient({
     }
   }, [currentIndex, orderedProjects.length]);
 
-  const currentProject = orderedProjects[currentIndex] ?? null;
-  const canNavigate = orderedProjects.length > 1;
+  useEffect(() => {
+    if (!canNavigate || isHovering) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % orderedProjects.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [canNavigate, isHovering, orderedProjects.length]);
 
   const goToPrevious = () => {
     if (!canNavigate) {
@@ -116,49 +127,44 @@ export default function ProjectsClient({
         </div>
 
         <div className="space-y-4">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-cyan-200/80">
-                {t("allProjectsEyebrow")}
-              </p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                {t("allProjectsDescription")}
-              </p>
-            </div>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={goToPrevious}
-                disabled={!canNavigate}
-                aria-label="Previous project"
-                className={cn(
-                  "flex h-9 w-9 items-center justify-center rounded-full border border-border/70 bg-background/50 text-white transition-colors",
-                  canNavigate
-                    ? "hover:border-cyan-400/40 hover:bg-cyan-500/10"
-                    : "cursor-not-allowed opacity-35"
-                )}
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </button>
-              <button
-                type="button"
-                onClick={goToNext}
-                disabled={!canNavigate}
-                aria-label="Next project"
-                className={cn(
-                  "flex h-9 w-9 items-center justify-center rounded-full border border-border/70 bg-background/50 text-white transition-colors",
-                  canNavigate
-                    ? "hover:border-cyan-400/40 hover:bg-cyan-500/10"
-                    : "cursor-not-allowed opacity-35"
-                )}
-              >
-                <ChevronRight className="h-4 w-4" />
-              </button>
-            </div>
-          </div>
+          <div
+            className="flex items-center justify-center gap-4 lg:gap-6"
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+          >
+            <button
+              type="button"
+              onClick={goToPrevious}
+              disabled={!canNavigate}
+              aria-label="Previous project"
+              className={cn(
+                "flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-border/70 bg-background/50 text-white transition-colors",
+                canNavigate
+                  ? "hover:border-cyan-400/40 hover:bg-cyan-500/10"
+                  : "cursor-not-allowed opacity-35"
+              )}
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
 
-          <div className="rounded-2xl border border-border/70 bg-background/20 p-2 sm:p-3">
-            {currentProject ? renderProjectCard(currentProject) : null}
+            <div className="min-w-0 flex-1 rounded-2xl border border-border/70 bg-background/20 p-2 sm:p-3">
+              {currentProject ? renderProjectCard(currentProject) : null}
+            </div>
+
+            <button
+              type="button"
+              onClick={goToNext}
+              disabled={!canNavigate}
+              aria-label="Next project"
+              className={cn(
+                "flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-border/70 bg-background/50 text-white transition-colors",
+                canNavigate
+                  ? "hover:border-cyan-400/40 hover:bg-cyan-500/10"
+                  : "cursor-not-allowed opacity-35"
+              )}
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
           </div>
 
           <div className="flex flex-wrap items-center justify-between gap-3">
