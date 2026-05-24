@@ -152,50 +152,114 @@
   }
 }
 
-/* Light mode overrides for hardcoded dark colors */
-.light .text-white {
+/* =============================================
+   LIGHT MODE OVERRIDES
+   ============================================= */
+
+/* --- Textes blancs (toutes variantes d'opacité) --- */
+.light [class*="text-white"] {
   color: hsl(var(--foreground)) !important;
 }
+
+/* --- Textes cyan clairs → cyan foncé lisible --- */
 .light .text-cyan-50,
 .light .text-cyan-100,
-.light .text-cyan-200 {
-  color: hsl(196, 80%, 28%) !important;
+.light .text-cyan-200,
+.light [class*="text-cyan-1"],
+.light [class*="text-cyan-2"] {
+  color: hsl(196, 80%, 25%) !important;
 }
+/* Accents cyan (icônes, badges) → version plus sombre */
+.light .text-cyan-300,
+.light .text-cyan-400 {
+  color: hsl(196, 70%, 35%) !important;
+}
+
+/* --- Textes sky clairs → sky foncé --- */
 .light .text-sky-100,
-.light .text-sky-200 {
-  color: hsl(204, 75%, 28%) !important;
+.light .text-sky-200,
+.light [class*="text-sky-1"],
+.light [class*="text-sky-2"] {
+  color: hsl(204, 75%, 25%) !important;
 }
+
+/* --- Textes slate clairs --- */
 .light .text-slate-100,
-.light .text-slate-200 {
+.light .text-slate-200,
+.light .text-slate-300,
+.light [class*="text-slate-1"],
+.light [class*="text-slate-2"],
+.light [class*="text-slate-3"] {
   color: hsl(var(--foreground)) !important;
 }
-.light .text-emerald-100 {
-  color: hsl(152, 65%, 25%) !important;
-}
-.light .text-indigo-200 {
-  color: hsl(240, 60%, 35%) !important;
-}
-.light .text-pink-200 {
-  color: hsl(330, 60%, 35%) !important;
-}
-.light .text-amber-100 {
-  color: hsl(38, 75%, 30%) !important;
-}
+
+/* --- Autres couleurs claires --- */
+.light .text-emerald-100 { color: hsl(152, 65%, 22%) !important; }
+.light .text-indigo-200  { color: hsl(240, 60%, 32%) !important; }
+.light .text-pink-200    { color: hsl(330, 60%, 32%) !important; }
+.light .text-amber-100   { color: hsl(38,  75%, 28%) !important; }
+.light .text-violet-400  { color: hsl(262, 65%, 45%) !important; }
+
+/* --- Panneaux et cartes --- */
 .light .section-panel {
-  background: hsl(var(--card) / 0.85) !important;
-  border-color: hsl(var(--border) / 0.8) !important;
+  background: hsl(var(--card) / 0.92) !important;
+  border-color: hsl(var(--border) / 0.85) !important;
 }
+
+/* Fond bg-background/* : en dark c'est quasi-noir, en light ça doit être visible */
+.light [class*="bg-background\/"] {
+  background-color: hsl(var(--card)) !important;
+}
+
+/* bg-card/* */
+.light [class*="bg-card\/"] {
+  background-color: hsl(var(--card) / 0.95) !important;
+}
+
+/* bg-muted/* — CSS vars, OK, juste forcer un peu plus d'opacité */
+.light [class*="bg-muted\/"] {
+  background-color: hsl(var(--muted) / 0.7) !important;
+}
+
+/* Fonds colorés semi-transparents utilisés dans les badges / panneaux */
+.light [class*="bg-cyan-5"]  { background-color: hsl(196, 70%, 93%) !important; }
+.light [class*="bg-sky-5"]   { background-color: hsl(204, 70%, 93%) !important; }
+.light [class*="bg-violet-5"]{ background-color: hsl(262, 65%, 93%) !important; }
+.light [class*="bg-emerald-5"]{ background-color: hsl(152, 60%, 92%) !important; }
+.light [class*="bg-pink-5"]  { background-color: hsl(330, 60%, 93%) !important; }
+.light [class*="bg-amber-5"] { background-color: hsl(38,  70%, 92%) !important; }
+.light [class*="bg-indigo-5"]{ background-color: hsl(240, 60%, 93%) !important; }
+.light [class*="bg-white\/"] { background-color: hsl(215, 20%, 88%) !important; }
+
+/* --- Bordures --- */
+.light [class*="border-cyan-4"]   { border-color: hsl(196, 55%, 75%) !important; }
+.light [class*="border-sky-4"]    { border-color: hsl(204, 55%, 75%) !important; }
+.light [class*="border-emerald-4"]{ border-color: hsl(152, 45%, 72%) !important; }
+.light [class*="border-violet-4"] { border-color: hsl(262, 50%, 78%) !important; }
+
+/* --- Glow et ombres --- */
 .light .card-glow {
   box-shadow:
-    0 0 0 1px hsl(214, 18%, 80%),
-    0 4px 24px rgba(14, 165, 233, 0.08),
-    0 1px 3px rgba(0,0,0,0.06) !important;
+    0 0 0 1px hsl(214, 18%, 82%),
+    0 4px 24px rgba(14, 165, 233, 0.07),
+    0 1px 3px rgba(0, 0, 0, 0.05) !important;
 }
+.light .card-hover-glow:hover {
+  box-shadow:
+    0 0 0 1px hsl(196, 55%, 70%),
+    0 0 20px rgba(6, 182, 212, 0.12),
+    0 8px 32px rgba(0, 0, 0, 0.07) !important;
+  transform: translateY(-3px) scale(1.01);
+}
+
+/* --- Grille de fond --- */
 .light .bg-grid {
   background-image:
-    linear-gradient(to right, rgba(100, 116, 139, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(100, 116, 139, 0.1) 1px, transparent 1px);
+    linear-gradient(to right, rgba(100, 116, 139, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(100, 116, 139, 0.09) 1px, transparent 1px);
 }
+
+/* --- Dégradé mobile nav --- */
 .light .nav-mobile-fade {
   background: linear-gradient(
     to right,
@@ -203,6 +267,11 @@
     transparent 70%,
     hsl(var(--background)) 100%
   );
+}
+
+/* --- Gradient texte (TypeWriter) --- */
+.light .text-gradient {
+  background-image: linear-gradient(to right, hsl(196, 80%, 38%), hsl(204, 75%, 45%), hsl(228, 31%, 20%));
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -138,3 +138,5 @@ dist
 # Documentation
 *.md
 !README.md
+
+.vscode/
