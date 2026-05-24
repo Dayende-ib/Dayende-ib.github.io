@@ -31,7 +31,7 @@ export default function RootPage() {
     <main className="flex min-h-screen items-center justify-center bg-background px-6 text-foreground">
       <div className="flex flex-col items-center gap-3 rounded-xl border border-border/60 bg-card/80 px-6 py-5">
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-muted border-t-white" />
-        <p className="text-sm text-muted-foreground">Redirection...</p>
+        <p className="text-sm text-muted-foreground">Téléportation...</p>
       </div>
     </main>
   );

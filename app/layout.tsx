@@ -83,7 +83,7 @@ export default async function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang={defaultLocale} className={inter.variable} suppressHydrationWarning>
+    <html lang={defaultLocale} className={inter.variable} suppressHydrationWarning data-scroll-behavior="smooth">
       <body>
         <ThemeProvider>
           {children}
