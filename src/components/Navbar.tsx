@@ -44,7 +44,7 @@ export default async function Navbar({ locale }: NavbarProps) {
                   Ibrahim Dayende
                 </p>
                 <p className="hidden text-xs text-muted-foreground sm:block">
-                  Full-stack | Mobile | Automation
+                  Full-stack Developer | AI Automation
                 </p>
               </div>
             </Link>

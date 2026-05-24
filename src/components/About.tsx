@@ -33,7 +33,7 @@ export default async function About({ locale }: AboutProps) {
               const colorMap = [
                 "border-cyan-400/25 bg-cyan-500/10 text-cyan-100",
                 "border-emerald-400/25 bg-emerald-500/10 text-emerald-100",
-                "border-violet-400/25 bg-violet-500/10 text-violet-100"
+                "border-violet-400/25 bg-violet-500/10 text-violet-400"
               ];
               const colorClass = colorMap[itemIndex] || colorMap[0];
 

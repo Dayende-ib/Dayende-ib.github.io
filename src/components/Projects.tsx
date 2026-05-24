@@ -8,12 +8,19 @@ import { projects, projectFilters } from "@/data/projects";
 
 const ProjectsClient = dynamic(() => import("@/components/ProjectsClient"), {
   loading: () => (
-    <div className="grid gap-6 md:grid-cols-2">
-      {Array.from({ length: 4 }).map((_, index) => (
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {Array.from({ length: 9 }).map((_, index) => (
         <div
           key={`project-skeleton-${index}`}
-          className="h-72 rounded-2xl border border-border/60 bg-muted/20"
-        />
+          className="animate-pulse rounded-[22px] border border-border/60 bg-muted/20 overflow-hidden"
+        >
+          <div className="aspect-video bg-muted/30" />
+          <div className="p-4 space-y-2">
+            <div className="h-3.5 w-3/4 rounded-full bg-muted/40" />
+            <div className="h-3 w-full rounded-full bg-muted/30" />
+            <div className="h-3 w-2/3 rounded-full bg-muted/30" />
+          </div>
+        </div>
       ))}
     </div>
   )

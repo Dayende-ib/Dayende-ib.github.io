@@ -217,7 +217,7 @@ export default function ContactForm() {
             <p className="text-sm font-medium text-emerald-100">
               {t("quick.primaryLabel")}
             </p>
-            <p className="mt-1 text-xs leading-5 text-emerald-100/80">
+            <p className="mt-1 text-xs leading-5 text-black-100/80">
               {t("quick.whatsappHint")}
             </p>
             <Button
@@ -248,14 +248,15 @@ export default function ContactForm() {
                 {t("quick.linkedin")}
               </a>
             </Button>
-          </div>
-          <Button
+            <Button
             asChild
             variant="outline"
             className="rounded-full border-rose-400/50 bg-rose-500/20 text-white hover:bg-rose-500/30 hover:text-white"
           >
             <a href="mailto:dayendeib@gmail.com">{t("quick.email")}</a>
           </Button>
+          </div>
+          
           <Button asChild variant="outline" className="rounded-full">
             <a
               href="https://github.com/dayende-ib"
