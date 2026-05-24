@@ -26,6 +26,11 @@ export type Project = {
   ctaSecondary?: { label: string; href: string };
   microcopy?: string;
   codeLabel?: string;
+  caseStudy?: {
+    challenge: string;
+    approach: string;
+    result: string;
+  };
 };
 
 export const projectFilters: ProjectFilter[] = [
@@ -78,7 +83,36 @@ export const projects: Project[] = [
     liveUrl: "https://kawari-finance-app.vercel.app/",
     codeUrl: "https://github.com/Dayende-ib/Kawari-finance-app",
     blurDataURL: blurDataUrls[5],
-    featured: true
+    featured: true,
+    caseStudy: {
+      challenge: "Les utilisateurs n'avaient aucune visibilité sur leurs flux financiers réels et prenaient des décisions de dépenses sans données fiables.",
+      approach: "Interface React centrée sur la lisibilité, avec une couche IA qui analyse les tendances de dépenses et génère des recommandations personnalisées.",
+      result: "Visualisation budgétaire en temps réel et conseils IA actionnables pour une meilleure discipline financière."
+    }
+  },
+  {
+    id: "propiflow",
+    title: "Propiflow - Système de Gestion Locative Intelligent",
+    description:
+      "Plateforme complète de gestion immobilière locative : biens, locataires, contrats, loyers, maintenance et dashboard d'administration, avec application mobile dédiée aux locataires.",
+    category: "web",
+    tags: ["Node.js", "Flutter", "PostgreSQL", "React.js"],
+    role: "End-to-end (solo)",
+    impact:
+      "Impact: gestion centralisée -> zéro tableur dispersé; app mobile locataires -> communication fluide; automatisation administrative -> gain de temps opérationnel.",
+    image: "/projects/propiflow.webp",
+    codeUrl: "https://github.com/Dayende-ib/rental-management",
+    liveUrl: "https://propiflow.vercel.app/",
+    blurDataURL: blurDataUrls[3],
+    featured: true,
+    caseStudy: {
+      challenge:
+        "La gestion locative reposait sur des tableurs épars, des appels téléphoniques et des contrats papier — aucun outil unifié pour propriétaires, gestionnaires et locataires.",
+      approach:
+        "Plateforme full-stack avec dashboard web d'administration (biens, locataires, contrats, loyers, maintenance) et application mobile Flutter pour les locataires.",
+      result:
+        "Gestion locative entièrement digitalisée : tâches administratives automatisées, suivi en temps réel des interventions et communication centralisée entre toutes les parties."
+    }
   },
   {
     id: "sud-stratvision",
@@ -94,7 +128,12 @@ export const projects: Project[] = [
     blurDataURL: blurDataUrls[0],
     featured: true,
     clientProject: true,
-    codePrivate: true
+    codePrivate: true,
+    caseStudy: {
+      challenge: "L'organisation utilisait des fichiers Excel dispersés pour suivre objectifs, congés et formations — aucune vue consolidée pour les décideurs.",
+      approach: "Dashboard Laravel avec modules interconnectés (objectifs, RH, missions), contrôle d'accès par rôle et visualisations de données temps réel.",
+      result: "Centralisation complète du pilotage, adoption immédiate par les équipes et décisions plus rapides grâce à des données fiables et accessibles."
+    }
   },
   {
     id: "clinic-appointment-scheduler",
@@ -109,7 +148,12 @@ export const projects: Project[] = [
     image: "/projects/caretime_clinic_appointment.png",
     codeUrl: "https://github.com/Dayende-ib/clinic-appointment-scheduler",
     blurDataURL: blurDataUrls[1],
-    featured: true
+    featured: true,
+    caseStudy: {
+      challenge: "La gestion des rendez-vous par téléphone et papier entraînait des oublis, des conflits de planning et une mauvaise coordination entre médecins et patients.",
+      approach: "Application Flutter multi-rôles (patient, médecin, admin) avec une API Express/MongoDB gérant notifications, historiques et disponibilités en temps réel.",
+      result: "Parcours de prise de rendez-vous entièrement digitalisé, réduction des conflits de planning et meilleure coordination clinique."
+    }
   },
   {
     id: "offline-gpt",

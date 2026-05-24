@@ -202,6 +202,12 @@
         "impact": "Impact: 3.6M+ impressions, 577k+ people reached -> stronger visibility; 5,000+ WhatsApp & Messenger conversations -> higher engagement; cost per conversation as low as $0.18 -> efficient ROI.",
         "role": "Media Buyer & Campaign Manager"
       },
+      "propiflow": {
+        "title": "Propiflow — Intelligent Rental Management System",
+        "description": "Complete property rental management platform: properties, tenants, contracts, rent tracking, maintenance, and admin dashboard — with a dedicated mobile app for tenants.",
+        "impact": "Impact: centralized management -> no more scattered spreadsheets; tenant mobile app -> smooth communication; automated admin tasks -> significant time savings.",
+        "role": "End-to-end (solo)"
+      },
       "kawari-finance-app": {
         "title": "Kawari Finance App",
         "description": "Finance management app to track expenses and income and visualize budgets with AI.",
@@ -378,6 +384,77 @@
       "github": "GitHub",
       "availabilityLabel": "Availability",
       "availability": "Limited availability - response guaranteed within 48h."
+    }
+  },
+  "blog": {
+    "eyebrow": "Articles & Publications",
+    "title": "Technical insights and lessons learned",
+    "description": "Thoughts on development, automation, and building products that actually work.",
+    "readMore": "Read article",
+    "ctaPrompt": "All publications on LinkedIn",
+    "ctaLabel": "View LinkedIn profile",
+    "ctaUrl": "https://www.linkedin.com/in/ibrahimdayende",
+    "items": {
+      "a1": {
+        "title": "Are you a student? You literally have access to +$200K in FREE tools… and you might not even know it.",
+        "summary": "GitHub Education gives students free access to the same tools professional developers use: Azure cloud credits, a free .dev domain, GitHub Pro, premium courses, and much more. A massive advantage most students overlook.",
+        "tag": "Student Resources",
+        "date": "2026",
+        "url": "https://www.linkedin.com/posts/ibrahimdayende_tu-es-%C3%A9tudiant-tu-as-litt%C3%A9ralement-acc%C3%A8s-activity-7440098929679007744-VbQz?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADsMhz4BriTcUi_0p5123bek2prR43tuDlU"
+      },
+      "a2": {
+        "title": "Winning the 2025 AI Hackathon — what I learned in 48 hours",
+        "summary": "The story of the ANAM Météo project: how we designed, built, and presented an AI solution for meteorological data evaluation in under 48 hours.",
+        "tag": "Hackathon",
+        "date": "2025",
+        "url": "https://www.linkedin.com/posts/ibrahimdayende_hackathonia-semainedunumerique-fasodeme-activity-7398673787556220928-g50D?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADsMhz4BriTcUi_0p5123bek2prR43tuDlU"
+      },
+      "a3": {
+        "title": "Building a Telegram bot that auto-summarizes YouTube videos with n8n",
+        "summary": "Architecture of an AI agent using n8n: YouTube link detection, transcript extraction, LLM summary, and Telegram response in a single pipeline.",
+        "tag": "AI & n8n",
+        "date": "2025",
+        "url": "https://www.linkedin.com/in/ibrahimdayende"
+      },
+      "a4": {
+        "title": "This website taught me what never to do in UX/UI",
+        "summary": "User Inyerface, built by Belgian agency Bagaar, illustrates the worst UX practices in a playful way. An experience that opened my eyes to the importance of user-centered design.",
+        "tag": "UX/UI",
+        "date": "2025",
+        "url": "https://www.linkedin.com/pulse/ce-site-ma-appris-quil-ne-faut-jamais-faire-en-uxui-ougda-pndde/?trackingId=QajWoyo%2BQwu3%2BNMEMEeOGw%3D%3D"
+      },
+      "a5": {
+        "title": "Your CPA is too high? The problem is probably not your ad budget.",
+        "summary": "On most projects I work on, the issue isn't the ads — it's the system around them. CPA between $0.18 and $0.25, 1,500+ conversations: that's what a well-structured funnel delivers.",
+        "tag": "Growth & Ads",
+        "date": "2025",
+        "url": "https://www.linkedin.com/posts/ibrahimdayende_growthmarketing-conversion-cpa-activity-7416425237803704321-9WF9?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADsMhz4BriTcUi_0p5123bek2prR43tuDlU"
+      }
+    }
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "What people I've worked with say",
+    "description": "Concrete feedback from clients and collaborators on the experience of working together.",
+    "items": {
+      "t1": {
+        "quote": "Ibrahim delivered a robust web application in record time, with clear communication at every step. He understands the business stakes behind the technical work — that's rare and valuable.",
+        "name": "General Manager",
+        "role": "SUD Develop",
+        "initials": "GM"
+      },
+      "t2": {
+        "quote": "The strategic management software developed by Ibrahim transformed the way we track objectives and performance. Clean interface, reliable data, and immediate adoption by the teams.",
+        "name": "Project Manager",
+        "role": "SUD-StratVision",
+        "initials": "PM"
+      },
+      "t3": {
+        "quote": "Our Meta Ads campaigns reached over 3.6 million impressions with a cost per conversation of $0.18. Ibrahim masters both the technical side and the acquisition strategy.",
+        "name": "Marketing Project Lead",
+        "role": "E-commerce client",
+        "initials": "ML"
+      }
     }
   },
   "footer": {

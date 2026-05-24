@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 
+import ScrollProgress from "@/components/ScrollProgress";
+
 import { defaultLocale, locales, type Locale } from "../../i18n";
 
 type LocaleLayoutProps = {
@@ -57,12 +59,21 @@ export async function generateMetadata({
       type: "website",
       url: localizedUrl,
       locale: ogLocale,
-      siteName: "Ibrahim Dayende OUGDA"
+      siteName: "Ibrahim Dayende OUGDA",
+      images: [
+        {
+          url: `https://ibrahimdayende.me/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: "Ibrahim Dayende OUGDA - Full-Stack Web & Mobile Developer"
+        }
+      ]
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description
+      description,
+      images: ["https://ibrahimdayende.me/og-image.png"]
     }
   };
 }
@@ -82,6 +93,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={resolvedLocale} messages={messages}>
+      <ScrollProgress />
       {children}
     </NextIntlClientProvider>
   );

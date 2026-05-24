@@ -5,6 +5,7 @@ import { getTranslations } from "next-intl/server";
 
 import Container from "@/components/Container";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
 
 type NavbarProps = {
@@ -64,6 +65,7 @@ export default async function Navbar({ locale }: NavbarProps) {
             </nav>
 
             <div className="flex items-center gap-3">
+              <ThemeToggle />
               <Suspense fallback={null}>
                 <LanguageSwitcher />
               </Suspense>

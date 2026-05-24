@@ -324,12 +324,35 @@ export default function ProjectsClient({
                 {description}
               </CardDescription>
             </div>
-            <div className="rounded-2xl border border-border/70 bg-background/35 p-4">
-              <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-200/80">
-                {t("impactEyebrow")}
-              </p>
-              <p className="mt-2 text-sm leading-6 text-white/90">{impact}</p>
-            </div>
+
+            {project.caseStudy ? (
+              <div className="space-y-2 rounded-2xl border border-border/70 bg-background/35 p-4">
+                <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-200/80">
+                  Case Study
+                </p>
+                <div className="space-y-2 text-sm leading-6">
+                  <p>
+                    <span className="font-medium text-white/70">Défi — </span>
+                    <span className="text-white/80">{project.caseStudy.challenge}</span>
+                  </p>
+                  <p>
+                    <span className="font-medium text-white/70">Approche — </span>
+                    <span className="text-white/80">{project.caseStudy.approach}</span>
+                  </p>
+                  <p>
+                    <span className="font-medium text-cyan-300/80">Résultat — </span>
+                    <span className="text-white/90">{project.caseStudy.result}</span>
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <div className="rounded-2xl border border-border/70 bg-background/35 p-4">
+                <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-200/80">
+                  {t("impactEyebrow")}
+                </p>
+                <p className="mt-2 text-sm leading-6 text-white/90">{impact}</p>
+              </div>
+            )}
           </CardHeader>
           <CardContent className="space-y-4 lg:space-y-5">
             <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">

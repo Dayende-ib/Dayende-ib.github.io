@@ -28,6 +28,30 @@
   --violet: 262 83% 68%;
 }
 
+.light {
+  color-scheme: light;
+  --background: 220 25% 97%;
+  --foreground: 228 31% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 228 31% 12%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 228 31% 12%;
+  --primary: 189 85% 36%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 214 18% 90%;
+  --secondary-foreground: 228 31% 12%;
+  --accent: 214 18% 87%;
+  --accent-foreground: 228 31% 12%;
+  --muted: 210 15% 92%;
+  --muted-foreground: 215 16% 40%;
+  --border: 214 18% 82%;
+  --input: 214 18% 82%;
+  --ring: 189 85% 36%;
+  --destructive: 0 62.8% 40%;
+  --destructive-foreground: 0 0% 98%;
+  --violet: 262 75% 50%;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -44,6 +68,13 @@
       radial-gradient(circle at 85% 18%, rgba(14, 165, 233, 0.12), transparent 24%),
       linear-gradient(180deg, rgba(12, 17, 29, 0.96), rgba(8, 12, 22, 1));
     min-height: 100vh;
+  }
+
+  .light body {
+    background-image:
+      radial-gradient(circle at top, rgba(6, 182, 212, 0.07), transparent 34%),
+      radial-gradient(circle at 85% 18%, rgba(14, 165, 233, 0.05), transparent 24%),
+      linear-gradient(180deg, hsl(220, 25%, 97%), hsl(215, 22%, 95%));
   }
 }
 
@@ -119,6 +150,59 @@
       hsl(var(--background)) 100%
     );
   }
+}
+
+/* Light mode overrides for hardcoded dark colors */
+.light .text-white {
+  color: hsl(var(--foreground)) !important;
+}
+.light .text-cyan-50,
+.light .text-cyan-100,
+.light .text-cyan-200 {
+  color: hsl(196, 80%, 28%) !important;
+}
+.light .text-sky-100,
+.light .text-sky-200 {
+  color: hsl(204, 75%, 28%) !important;
+}
+.light .text-slate-100,
+.light .text-slate-200 {
+  color: hsl(var(--foreground)) !important;
+}
+.light .text-emerald-100 {
+  color: hsl(152, 65%, 25%) !important;
+}
+.light .text-indigo-200 {
+  color: hsl(240, 60%, 35%) !important;
+}
+.light .text-pink-200 {
+  color: hsl(330, 60%, 35%) !important;
+}
+.light .text-amber-100 {
+  color: hsl(38, 75%, 30%) !important;
+}
+.light .section-panel {
+  background: hsl(var(--card) / 0.85) !important;
+  border-color: hsl(var(--border) / 0.8) !important;
+}
+.light .card-glow {
+  box-shadow:
+    0 0 0 1px hsl(214, 18%, 80%),
+    0 4px 24px rgba(14, 165, 233, 0.08),
+    0 1px 3px rgba(0,0,0,0.06) !important;
+}
+.light .bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(100, 116, 139, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(100, 116, 139, 0.1) 1px, transparent 1px);
+}
+.light .nav-mobile-fade {
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 70%,
+    hsl(var(--background)) 100%
+  );
 }
 
 @media (prefers-reduced-motion: reduce) {

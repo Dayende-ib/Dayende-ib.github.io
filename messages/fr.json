@@ -202,6 +202,12 @@
         "impact": "Impact: +3 600 000 impressions, 577 000+ personnes touchées -> visibilité accrue; 5 000+ conversations WhatsApp & Messenger -> engagement fort; coût par conversation jusqu'à 0,18 $ -> ROI optimisé.",
         "role": "Media Buyer & Campaign Manager"
       },
+      "propiflow": {
+        "title": "Propiflow — Système de Gestion Locative Intelligent",
+        "description": "Plateforme complète de gestion immobilière locative : biens, locataires, contrats, loyers, maintenance et dashboard d'administration, avec application mobile dédiée aux locataires.",
+        "impact": "Impact: gestion centralisée -> zéro tableur dispersé; app mobile locataires -> communication fluide; automatisation administrative -> gain de temps opérationnel.",
+        "role": "End-to-end (solo)"
+      },
       "kawari-finance-app": {
         "title": "Kawari Finance App",
         "description": "Application de gestion financière pour suivre les dépenses, revenus et visualiser le budget avec une IA financière.",
@@ -378,6 +384,77 @@
       "github": "GitHub",
       "availabilityLabel": "Disponibilité",
       "availability": "Disponibilités limitées - réponse garantie sous 48h."
+    }
+  },
+  "blog": {
+    "eyebrow": "Articles & Publications",
+    "title": "Partages techniques et retours d'expérience",
+    "description": "Réflexions sur le développement, l'automatisation et la construction de produits qui fonctionnent vraiment.",
+    "readMore": "Lire l'article",
+    "ctaPrompt": "Toutes les publications sur LinkedIn",
+    "ctaLabel": "Voir le profil LinkedIn",
+    "ctaUrl": "https://www.linkedin.com/in/ibrahimdayende",
+    "items": {
+      "a1": {
+        "title": "Tu es étudiant ? Tu as accès à +200 000$ d'outils GRATUITS… et tu ne le sais peut-être pas.",
+        "summary": "GitHub Education donne aux étudiants un accès gratuit aux mêmes outils que les développeurs professionnels : cloud Azure, domaine .dev, GitHub Pro, formations premium et bien plus. Un avantage énorme souvent ignoré.",
+        "tag": "Ressources étudiants",
+        "date": "2026",
+        "url": "https://www.linkedin.com/posts/ibrahimdayende_tu-es-%C3%A9tudiant-tu-as-litt%C3%A9ralement-acc%C3%A8s-activity-7440098929679007744-VbQz?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADsMhz4BriTcUi_0p5123bek2prR43tuDlU"
+      },
+      "a2": {
+        "title": "Vainqueur du Hackathon IA 2025, ce que j'ai appris en 48h",
+        "summary": "Récit du projet ANAM Météo : comment nous avons conçu, développé et présenté une solution IA d'évaluation de données météo en moins de 48 heures.",
+        "tag": "Hackathon",
+        "date": "2025",
+        "url": "https://www.linkedin.com/posts/ibrahimdayende_hackathonia-semainedunumerique-fasodeme-ugcPost-7398673786578935808-9q5H/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADsMhz4BriTcUi_0p5123bek2prR43tuDlU"
+      },
+      "a3": {
+        "title": "Construire un bot Telegram qui résume automatiquement des vidéos YouTube avec n8n",
+        "summary": "Architecture d'un agent IA avec n8n : détection de liens YouTube, extraction de transcription, résumé LLM et réponse Telegram en pipeline.",
+        "tag": "IA & n8n",
+        "date": "2025",
+        "url": "https://www.linkedin.com/in/ibrahimdayende"
+      },
+      "a4": {
+        "title": "Ce site m'a appris ce qu'il ne faut jamais faire en UX/UI",
+        "summary": "User Inyerface, conçu par l'agence Bagaar, illustre les pires pratiques UX de manière pédagogique. Une expérience qui m'a ouvert les yeux sur l'importance de la conception centrée utilisateur.",
+        "tag": "UX/UI",
+        "date": "2025",
+        "url": "https://www.linkedin.com/pulse/ce-site-ma-appris-quil-ne-faut-jamais-faire-en-uxui-ougda-pndde/?trackingId=QajWoyo%2BQwu3%2BNMEMEeOGw%3D%3D"
+      },
+      "a5": {
+        "title": "Votre CPA est trop élevé ? Le problème n'est probablement pas votre budget pub.",
+        "summary": "Sur la plupart des projets que j'accompagne, le souci n'est pas la publicité elle-même — c'est le système autour. CPA entre 0,18 $ et 0,25 $, 1 500+ conversations : voilà ce que produit un funnel bien structuré.",
+        "tag": "Growth & Ads",
+        "date": "2025",
+        "url": "https://www.linkedin.com/posts/ibrahimdayende_growthmarketing-conversion-cpa-activity-7416425237803704321-9WF9?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADsMhz4BriTcUi_0p5123bek2prR43tuDlU"
+      }
+    }
+  },
+  "testimonials": {
+    "eyebrow": "Témoignages",
+    "title": "Ce que disent ceux avec qui j'ai travaillé",
+    "description": "Des retours concrets de clients et collaborateurs sur l'expérience de travail en commun.",
+    "items": {
+      "t1": {
+        "quote": "Ibrahim a livré une application web robuste en un temps record, avec une communication claire à chaque étape. Il comprend les enjeux business derrière le technique — c'est rare et précieux.",
+        "name": "Directeur Général",
+        "role": "SUD Develop",
+        "initials": "DG"
+      },
+      "t2": {
+        "quote": "Le logiciel de pilotage stratégique développé par Ibrahim a transformé notre façon de suivre les objectifs et les performances. Interface claire, données fiables, adoption immédiate par les équipes.",
+        "name": "Responsable Projets",
+        "role": "SUD-StratVision",
+        "initials": "RP"
+      },
+      "t3": {
+        "quote": "Nos campagnes Meta Ads ont atteint plus de 3,6 millions d'impressions avec un coût par conversation à 0,18$. Ibrahim maîtrise autant la technique que la stratégie d'acquisition.",
+        "name": "Chef de Projet Marketing",
+        "role": "Client e-commerce",
+        "initials": "CP"
+      }
     }
   },
   "footer": {

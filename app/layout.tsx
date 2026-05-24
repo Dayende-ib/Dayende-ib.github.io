@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
 import { defaultLocale } from "../i18n";
+import ThemeProvider from "@/components/ThemeProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -57,13 +58,22 @@ export const metadata: Metadata = {
     description:
       "Développeur Full-Stack Web & Mobile. Découvrez mes projets, services et réalisations.",
     url: siteUrl,
-    locale: "fr_FR"
+    locale: "fr_FR",
+    images: [
+      {
+        url: `${siteUrl}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Ibrahim Dayende OUGDA - Full-Stack Web & Mobile Developer"
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: "Ibrahim Dayende OUGDA | Full-Stack Web & Mobile Developer",
     description:
-      "Développeur Full-Stack Web & Mobile. Projets web/mobile, automatisation et livraison orientée impact."
+      "Développeur Full-Stack Web & Mobile. Projets web/mobile, automatisation et livraison orientée impact.",
+    images: [`${siteUrl}/og-image.png`]
   }
 };
 
@@ -73,10 +83,12 @@ export default async function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang={defaultLocale} className={inter.variable}>
+    <html lang={defaultLocale} className={inter.variable} suppressHydrationWarning>
       <body>
-        {children}
-        <Analytics />
+        <ThemeProvider>
+          {children}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );
