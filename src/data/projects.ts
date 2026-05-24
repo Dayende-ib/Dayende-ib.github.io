@@ -57,10 +57,10 @@ export const projects: Project[] = [
     id: "meta-ads-conversations",
     title: "Campagnes Meta Ads - Génération de conversations & engagement",
     description:
-      "Gestion et optimisation de campagnes Facebook & Instagram orientées conversations WhatsApp & Messenger et engagement. Budgets quotidiens et globaux, suivi CPC, coût par conversation, couverture, impressions et optimisations continues.",
+      "Des campagnes Facebook & Instagram conçues pour déclencher de vraies conversations, pas juste des clics. 5 000+ échanges WhatsApp & Messenger générés, coût par conversation descendu à 0,18 $.",
     category: "ads",
     tags: ["Meta Ads", "Facebook Ads", "Instagram Ads", "Media Buying", "WhatsApp"],
-    role: "Media Buyer & Campaign Manager",
+    role: "Media Buying & Stratégie Ads",
     impact:
       "Impact: +3 600 000 impressions, 577 000+ Personnes touchées -> visibilité accrue; 5 000+ conversations WhatsApp & Messenger -> engagement direct; coût par conversation jusqu'à 0,18 $.",
     image: "/projects/campagne_ads.webp",
@@ -73,10 +73,10 @@ export const projects: Project[] = [
     id: "mindease",
     title: "MindEase – Plateforme Digitale de Soutien Émotionnel Préventif",
     description:
-      "Solution digitale de bien-être émotionnel et psychologique adaptée aux réalités de l'Afrique de l'Ouest. Suivi émotionnel, recommandations IA, contenus contextualisés - accessible via app mobile, web et WhatsApp.",
+      "L'accès au soutien psychologique reste rare et souvent inadapté en Afrique de l'Ouest. MindEase propose un suivi émotionnel et des recommandations IA accessibles via mobile, web et WhatsApp - là où les gens sont déjà.",
     category: "mobile",
     tags: ["Flutter", "TypeScript", "Supabase", "WhatsApp API", "IA"],
-    role: "End-to-end (solo)",
+    role: "Conception & développement",
     impact:
       "Impact: soutien psychologique accessible via 3 canaux (mobile, web, WhatsApp); recommandations IA personnalisées -> meilleure gestion du stress; contenus adaptés aux réalités locales -> adoption accrue.",
     image: "/projects/mindease.webp",
@@ -96,10 +96,10 @@ export const projects: Project[] = [
     id: "propiflow",
     title: "Propiflow - Système de Gestion Locative Intelligent",
     description:
-      "Plateforme complète de gestion immobilière locative : biens, locataires, contrats, loyers, maintenance et dashboard d'administration, avec application mobile dédiée aux locataires.",
+      "Finis les tableurs épars et les appels pour rappeler les loyers. Propiflow centralise biens, locataires, contrats et maintenance dans un seul outil - avec une app mobile dédiée aux locataires.",
     category: "web",
     tags: ["Node.js", "Flutter", "PostgreSQL", "React.js"],
-    role: "End-to-end (solo)",
+    role: "Conception & développement",
     impact:
       "Impact: gestion centralisée -> zéro tableur dispersé; app mobile locataires -> communication fluide; automatisation administrative -> gain de temps opérationnel.",
     image: "/projects/propiflow.webp",
@@ -120,10 +120,10 @@ export const projects: Project[] = [
     id: "kawari-finance-app",
     title: "Kawari Finance App",
     description:
-      "Application de gestion financière pour suivre les dépenses, revenus et visualiser le budget avec une IA financière.",
+      "Savoir ce qu'on dépense, c'est un début. Comprendre pourquoi et décider autrement, c'est là que Kawari intervient - visualisation des flux financiers et recommandations IA actionnables.",
     category: "web",
     tags: ["React", "MongoDB", "Finance", "IA"],
-    role: "End-to-end (solo)",
+    role: "Conception & développement",
     impact:
       "Impact: visualisation budgétaire -> décisions plus claires; recommandations IA -> meilleure discipline financière.",
     image: "/projects/kawari.webp",
@@ -141,10 +141,10 @@ export const projects: Project[] = [
     id: "sud-stratvision",
     title: "SUD-StratVision - Logiciel de Pilotage Stratégique",
     description:
-      "Logiciel de pilotage stratégique centralisant objectifs, performances, congés, formations et missions via un tableau de bord interactif.",
+      "Quand les objectifs sont dans Excel et les missions par email, les décisions arrivent trop tard. SUD-StratVision regroupe tout en un dashboard : objectifs, performances, RH, congés et formations.",
     category: "web",
     tags: ["Laravel 11", "MySQL", "Data viz", "Dashboard"],
-    role: "Full-stack & integration",
+    role: "Développement full-stack",
     impact:
       "Impact: centralisation des objectifs -> décisions plus rapides; suivi RH -> gestion optimisée.",
     image: "/projects/sudstratvision.webp",
@@ -162,10 +162,10 @@ export const projects: Project[] = [
     id: "clinic-appointment-scheduler",
     title: "Clinic Appointment Scheduler",
     description:
-      "Application mobile pour la prise, la gestion et le suivi des rendez-vous médicaux côté patients, médecins et administrateurs.",
+      "Gérer les rendez-vous médicaux par téléphone, c'est des oublis, des conflits de planning et du stress de part et d'autre. Cette app Flutter offre une vue commune en temps réel à patients, médecins et admins.",
     category: "mobile",
     tags: ["Flutter", "Express", "MongoDB", "Sante"],
-    role: "Mobile & API integration",
+    role: "Développement mobile & API",
     impact:
       "Impact: digitalisation des rendez-vous -> parcours patient fluidifié; suivi en temps réel -> coordination clinique renforcée.",
     image: "/projects/caretime_clinic_appointment.png",
@@ -182,10 +182,10 @@ export const projects: Project[] = [
     id: "offline-gpt",
     title: "Offline GPT",
     description:
-      "Projet de recherche visant à exécuter un assistant de type GPT en environnement local, sans connexion Internet.",
+      "Et si un assistant IA fonctionnait sans connexion internet ? Ce projet R&D explore l'exécution locale d'un LLM sur mobile - une piste concrète pour rendre l'IA accessible là où la connectivité n'est pas garantie.",
     category: "mobile",
     tags: ["Python", "IA", "Offline", "R&D", "Mobile"],
-    role: "End-to-end (solo)",
+    role: "Conception & développement",
     impact:
       "Impact: solutions IA hors ligne -> accessibilité accrue en contexte de faible connectivité.",
     image: "/projects/offline_gpt.webp",
@@ -200,10 +200,10 @@ export const projects: Project[] = [
     id: "make-social-automation",
     title: "Automatisation de publication Social Media (Facebook & Instagram)",
     description:
-      "Automatisation complète de publication via Make, depuis Google Sheets vers Facebook Pages et Instagram Business, avec mise à jour de statut.",
+      "Publier manuellement sur Facebook et Instagram chaque semaine, c'est du temps perdu. Ce pipeline Make lit un Google Sheet, publie automatiquement sur les deux plateformes et met à jour le statut sans intervention humaine.",
     category: "ia",
     tags: ["Make", "Automation", "Social Media", "Google Sheets", "Facebook API"],
-    role: "Automation Specialist & Developer",
+    role: "Développement & Automatisation",
     impact:
       "Impact: gain de temps massif -> opérations rapides; réduction des erreurs -> qualité stable; publication multi-plateformes -> workflow scalable.",
     image: "/projects/make_automation.webp",
@@ -215,10 +215,10 @@ export const projects: Project[] = [
     id: "telegram-youtube-summarizer",
     title: "Bot Telegram IA - Résumé automatique de vidéos YouTube",
     description:
-      "Bot Telegram détectant les liens YouTube, récupérant la transcription, nettoyant le texte, générant un résumé IA et renvoyant une réponse claire.",
+      "On envoie un lien YouTube dans le bot, on reçoit un résumé clair en quelques secondes. Plus besoin de regarder une vidéo de 40 minutes pour en extraire l'essentiel.",
     category: "ia",
     tags: ["AI Automation", "Telegram Bot", "n8n", "YouTube API", "LLM"],
-    role: "IA Developer & Automation Engineer",
+    role: "IA & Automatisation",
     impact:
       "Impact: résumés automatisés -> gain de temps; veille accélérée -> apprentissage efficace; architecture modulaire -> évolution facile.",
     image: "/projects/n8n_automation.webp",
@@ -230,10 +230,10 @@ export const projects: Project[] = [
     id: "bfa-administration-assistant",
     title: "BFA Administration Assistant",
     description:
-      "Assistant administratif numérique facilitant la gestion des tâches et données administratives dans un contexte institutionnel local.",
+      "Un assistant RAG entraîné sur de vrais documents administratifs pour répondre aux questions des agents en quelques secondes. Conçu pour un contexte institutionnel local où les procédures changent souvent.",
     category: "web",
     tags: ["Laravel", "MySQL", "GovTech"],
-    role: "End-to-end (solo)",
+    role: "Conception & développement",
     impact:
       "Impact: réduction des tâches manuelles -> gain de temps agents; processus formalisés -> service plus fiable.",
     image: "/projects/rag_administration.webp",
@@ -245,10 +245,10 @@ export const projects: Project[] = [
     id: "sud-develop-website",
     title: "SUD Develop Website",
     description:
-      "Site web corporate multilingue présentant les divisions, produits, actualités et services avec un module de demande de devis.",
+      "Premier point de contact digital entre SUD Develop et ses clients potentiels. Site corporate multilingue avec présentation des divisions, actualités et module de demande de devis directement intégré.",
     category: "web",
     tags: ["HTML5", "Sass", "Bootstrap", "i18n"],
-    role: "Full-stack & integration",
+    role: "Développement full-stack",
     impact:
       "Impact: visibilité digitale renforcée -> demandes qualifiées; offre clarifiée -> conversion améliorée.",
     image: "/projects/suddevelp.webp",
@@ -261,10 +261,10 @@ export const projects: Project[] = [
     id: "anam-meteo-eval",
     title: "ANAM Meteo Eval",
     description:
-      "Projet d'analyse et d'évaluation des données météo pour mesurer leur qualité, fiabilité et cohérence.",
+      "Construit en 48 heures lors du Hackathon IA 2025, puis livré à l'Agence Nationale de la Météo du Burkina Faso. Il évalue automatiquement la qualité des données météorologiques avec des indicateurs fiables.",
     category: "ia",
     tags: ["Python", "Data", "Scraping", "Meteo"],
-    role: "End-to-end (solo)",
+    role: "Conception & développement",
     impact:
       "Impact: évaluation continue -> qualité des données améliorée; indicateurs fiables -> décisions climatiques plus solides.",
     image: "/projects/anam_meteo.webp",
@@ -274,10 +274,10 @@ export const projects: Project[] = [
     id: "cv-studio",
     title: "CV Studio",
     description:
-      "Application web permettant de créer et personnaliser des CV modernes via une interface interactive.",
+      "Construire un CV qui se démarque ne devrait pas prendre une journée entière. CV Studio guide l'utilisateur étape par étape pour produire un document moderne et personnalisé - sans Word, sans galère.",
     category: "web",
     tags: ["React.js", "Web App", "UI/UX"],
-    role: "End-to-end (solo)",
+    role: "Conception & développement",
     impact:
       "Impact: valorisation des profils -> employabilité renforcée; création guidée -> expérience utilisateur fluide.",
     image: "/projects/cvstudio.webp",
@@ -289,10 +289,10 @@ export const projects: Project[] = [
     id: "gestion-bibliotheque",
     title: "Gestion de Bibliotheque",
     description:
-      "Système de gestion de bibliothèque permettant le suivi des livres, emprunts et utilisateurs via une interface sécurisée.",
+      "Une bibliothèque bien gérée, ce sont des livres qui circulent vraiment. Ce système Laravel/MySQL suit les emprunts, les retours et les utilisateurs - avec des alertes automatiques pour éviter les pertes.",
     category: "web",
     tags: ["Laravel", "MySQL", "Bootstrap", "Education"],
-    role: "End-to-end (solo)",
+    role: "Conception & développement",
     impact:
       "Impact: suivi des emprunts -> réduction des pertes; opérations automatisées -> gain de temps.",
     image: "/projects/library_management.webp",
@@ -303,10 +303,10 @@ export const projects: Project[] = [
     id: "bytemarket",
     title: "ByteMarket",
     description:
-      "Site e-commerce développé en HTML/CSS/JS vanilla, avec une navigation produits claire et une expérience d'achat fluide.",
+      "Un site e-commerce construit de zéro en HTML/CSS/JS pur, sans framework. Un exercice volontaire pour maîtriser les fondamentaux du web avant d'aborder les stacks modernes.",
     category: "web",
     tags: ["HTML5", "CSS3", "JavaScript"],
-    role: "End-to-end (solo)",
+    role: "Conception & développement",
     impact:
       "Impact: parcours d'achat simplifié -> conversion accrue; catalogue clair -> navigation rapide.",
     image: "/projects/ByteMarket.webp",

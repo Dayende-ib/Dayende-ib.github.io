@@ -46,8 +46,7 @@ export default function ProjectsClient({ projects, filters }: ProjectsClientProp
   const common = useTranslations("common");
   const messages = useMessages() as Messages;
   const closeButtonRef = useRef<HTMLButtonElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
-  const firstCardRef = useRef<HTMLButtonElement>(null);
+const firstCardRef = useRef<HTMLButtonElement>(null);
   const paginatedRef = useRef(false);
 
   const filteredProjects = useMemo(() => {
@@ -65,16 +64,16 @@ export default function ProjectsClient({ projects, filters }: ProjectsClientProp
   const goToPage = (next: number) => {
     paginatedRef.current = true;
     setPage(next);
-    gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   // Reset page when filter changes
   useEffect(() => { setPage(0); }, [activeFilter]);
 
-  // Focus first card after pagination (after exit animation ~250ms)
+  // Scroll to section top + focus first card after pagination
   useEffect(() => {
     if (!paginatedRef.current) return;
     paginatedRef.current = false;
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth", block: "start" });
     const id = setTimeout(() => firstCardRef.current?.focus({ preventScroll: true }), 280);
     return () => clearTimeout(id);
   }, [page]);
@@ -121,10 +120,11 @@ export default function ProjectsClient({ projects, filters }: ProjectsClientProp
       </div>
 
       {/* Grid */}
-      <div ref={gridRef} className="scroll-mt-28">
+      <div>
         <m.div layout className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {pageProjects.map((project, i) => {
+              const globalIndex = page * PAGE_SIZE + i + 1;
               const title = getField(project, "title", project.title);
               const description = getField(project, "description", project.description);
 
@@ -176,6 +176,9 @@ export default function ProjectsClient({ projects, filters }: ProjectsClientProp
                       <Badge className={cn("text-[10px]", categoryColors[project.category])}>
                         {t(`categories.${project.category}`).toUpperCase()}
                       </Badge>
+                    </div>
+                    <div className="absolute bottom-2.5 right-2.5 flex h-5 w-5 items-center justify-center rounded-full bg-black/50 backdrop-blur-sm text-[10px] font-mono font-semibold text-white/70 border border-white/10">
+                      {globalIndex}
                     </div>
                   </div>
 

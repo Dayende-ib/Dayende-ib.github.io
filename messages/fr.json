@@ -197,97 +197,97 @@
     },
     "items": {
       "meta-ads-conversations": {
-        "title": "Campagnes Meta Ads - Génération de conversations & engagement",
-        "description": "Gestion et optimisation de campagnes Facebook & Instagram orientées conversations WhatsApp & Messenger et engagement. Budgets quotidiens et globaux, suivi CPC, coût par conversation, couverture, impressions et optimisations continues.",
-        "impact": "Impact: +3 600 000 impressions, 577 000+ personnes touchées -> visibilité accrue; 5 000+ conversations WhatsApp & Messenger -> engagement fort; coût par conversation jusqu'à 0,18 $ -> ROI optimisé.",
-        "role": "Media Buyer & Campaign Manager"
+        "title": "Campagnes Meta Ads - Conversations & Engagement",
+        "description": "Des campagnes Facebook & Instagram conçues pour déclencher de vraies conversations, pas juste des clics. 5 000+ échanges WhatsApp & Messenger générés, coût par conversation descendu à 0,18 $.",
+        "impact": "3 600 000+ impressions et 577 000+ personnes touchées. Plus de 5 000 conversations WhatsApp & Messenger déclenchées, avec un coût unitaire abaissé jusqu'à 0,18 $ grâce à des itérations créatives et une optimisation continue.",
+        "role": "Media Buying & Stratégie Ads"
       },
       "mindease": {
-        "title": "MindEase – Plateforme Digitale de Soutien Émotionnel Préventif",
-        "description": "Solution digitale de bien-être émotionnel et psychologique adaptée aux réalités de l'Afrique de l'Ouest. Suivi émotionnel, recommandations IA, contenus contextualisés - accessible via app mobile, web et WhatsApp.",
-        "impact": "Impact: soutien psychologique accessible via 3 canaux (mobile, web, WhatsApp); recommandations IA personnalisées -> meilleure gestion du stress; contenus adaptés aux réalités locales -> adoption accrue.",
-        "role": "End-to-end (solo)"
+        "title": "MindEase – Soutien Émotionnel Adapté à l'Afrique de l'Ouest",
+        "description": "L'accès au soutien psychologique reste rare et souvent inadapté en Afrique de l'Ouest. MindEase propose un suivi émotionnel et des recommandations IA accessibles via mobile, web et WhatsApp - là où les gens sont déjà.",
+        "impact": "Accessible sans installation via WhatsApp, ou via web et app mobile. Les recommandations IA s'adaptent au profil et au contexte local de l'utilisateur, pour un soutien préventif concret - sans passer par un thérapeute.",
+        "role": "Conception & développement"
       },
       "propiflow": {
-        "title": "Propiflow - Système de Gestion Locative Intelligent",
-        "description": "Plateforme complète de gestion immobilière locative : biens, locataires, contrats, loyers, maintenance et dashboard d'administration, avec application mobile dédiée aux locataires.",
-        "impact": "Impact: gestion centralisée -> zéro tableur dispersé; app mobile locataires -> communication fluide; automatisation administrative -> gain de temps opérationnel.",
-        "role": "End-to-end (solo)"
+        "title": "Propiflow - Gestion Locative sans Tableurs",
+        "description": "Finis les tableurs épars et les appels pour rappeler les loyers. Propiflow centralise biens, locataires, contrats et maintenance dans un seul outil - avec une app mobile dédiée aux locataires.",
+        "impact": "Toutes les opérations locatives centralisées en un endroit. Les locataires ont leur propre interface mobile, les interventions sont tracées en temps réel, et les tâches administratives répétitives disparaissent.",
+        "role": "Conception & développement"
       },
       "kawari-finance-app": {
-        "title": "Kawari Finance App",
-        "description": "Application de gestion financière pour suivre les dépenses, revenus et visualiser le budget avec une IA financière.",
-        "impact": "Impact: visualisation budgétaire -> décisions plus claires; recommandations IA -> meilleure discipline financière.",
-        "role": "End-to-end (solo)"
+        "title": "Kawari Finance App - Clarté Budgétaire & IA",
+        "description": "Savoir ce qu'on dépense, c'est un début. Comprendre pourquoi et décider autrement, c'est là que Kawari intervient - visualisation des flux financiers et recommandations IA actionnables.",
+        "impact": "Une vue claire sur ses dépenses change les comportements. Les recommandations IA aident à repérer les dérives, identifier les postes prioritaires et prendre de meilleures décisions financières au quotidien.",
+        "role": "Conception & développement"
       },
       "sud-stratvision": {
-        "title": "SUD-StratVision - Logiciel de pilotage stratégique",
-        "description": "Logiciel de pilotage stratégique centralisant objectifs, performances, congés, formations et missions via un tableau de bord interactif.",
-        "impact": "Impact: centralisation des objectifs -> décisions plus rapides; suivi RH -> gestion optimisée.",
-        "role": "Full-stack & integration"
+        "title": "SUD-StratVision - Pilotage Stratégique Centralisé",
+        "description": "Quand les objectifs sont dans Excel et les missions par email, les décisions arrivent trop tard. SUD-StratVision regroupe tout en un dashboard : objectifs, performances, RH, congés et formations.",
+        "impact": "Adoption immédiate par les équipes dès le déploiement. Les décideurs disposent d'une vue consolidée en temps réel - sans courir après des fichiers Excel éparpillés entre les services.",
+        "role": "Développement full-stack"
       },
       "clinic-appointment-scheduler": {
-        "title": "Clinic Appointment Scheduler",
-        "description": "Application mobile pour la prise, la gestion et le suivi des rendez-vous médicaux côté patients, médecins et administrateurs.",
-        "impact": "Impact: digitalisation des rendez-vous -> parcours patient fluidifié; suivi en temps réel -> coordination clinique renforcée.",
-        "role": "Mobile & API integration"
+        "title": "Clinic Appointment Scheduler - Rendez-vous sans Friction",
+        "description": "Gérer les rendez-vous médicaux par téléphone, c'est des oublis, des conflits de planning et du stress de part et d'autre. Cette app Flutter offre une vue commune en temps réel à patients, médecins et admins.",
+        "impact": "Fini les conflits de planning et les rendez-vous oubliés. Les patients réservent en autonomie, les médecins gèrent leurs disponibilités, et les admins ont une vue complète sur la coordination clinique.",
+        "role": "Développement mobile & API"
       },
       "offline-gpt": {
-        "title": "Offline GPT",
-        "description": "Projet de recherche visant à exécuter un assistant de type GPT en environnement local, sans connexion Internet.",
-        "impact": "Impact: solutions IA hors ligne -> accessibilité accrue en contexte de faible connectivité.",
-        "role": "End-to-end (solo)",
+        "title": "Offline GPT - IA Locale sans Connexion",
+        "description": "Et si un assistant IA fonctionnait sans connexion internet ? Ce projet R&D explore l'exécution locale d'un LLM sur mobile - une piste concrète pour rendre l'IA accessible là où la connectivité n'est pas garantie.",
+        "impact": "Un modèle LLM qui tourne entièrement en local sur mobile, sans serveur, sans data. Une direction réelle pour démocratiser l'IA dans des contextes où l'infrastructure réseau reste un frein.",
+        "role": "Conception & développement",
         "microcopy": "Projet en cours - contributions et retours bienvenus.",
         "ctaSecondary": "Discuter du projet",
         "codeLabel": "Voir le code"
       },
       "make-social-automation": {
-        "title": "Automatisation de publication Social Media (Facebook & Instagram)",
-        "description": "Automatisation complète de publication via Make, depuis Google Sheets vers Facebook Pages et Instagram Business, avec mise à jour de statut.",
-        "impact": "Impact: gain de temps massif -> opérations rapides; réduction des erreurs -> qualité stable; publication multi-plateformes -> workflow scalable.",
-        "role": "Automation Specialist & Developer"
+        "title": "Automatisation Social Media - Google Sheets → Facebook & Instagram",
+        "description": "Publier manuellement sur Facebook et Instagram chaque semaine, c'est du temps perdu. Ce pipeline Make lit un Google Sheet, publie automatiquement sur les deux plateformes et met à jour le statut sans intervention humaine.",
+        "impact": "Des heures de publication manuelle supprimées chaque semaine. Le contenu sort au bon moment sur les deux plateformes, le statut se met à jour automatiquement - et rien ne passe entre les mailles.",
+        "role": "Développement & Automatisation"
       },
       "telegram-youtube-summarizer": {
-        "title": "Bot Telegram IA - Résumé automatique de vidéos YouTube",
-        "description": "Bot Telegram détectant les liens YouTube, récupérant la transcription, nettoyant le texte, générant un résumé IA et renvoyant une réponse claire.",
-        "impact": "Impact: résumés automatisés -> gain de temps; veille accélérée -> apprentissage efficace; architecture modulaire -> évolution facile.",
-        "role": "IA Developer & Automation Engineer"
+        "title": "Bot Telegram IA - Résumés YouTube Instantanés",
+        "description": "On envoie un lien YouTube dans le bot, on reçoit un résumé clair en quelques secondes. Plus besoin de regarder une vidéo de 40 minutes pour en extraire l'essentiel.",
+        "impact": "La veille YouTube devient passive. L'architecture modulaire permet d'ajouter facilement de nouvelles sources de contenu ou de nouveaux canaux de sortie - le bot grandit avec les besoins.",
+        "role": "IA & Automatisation"
       },
       "bfa-administration-assistant": {
-        "title": "BFA Administration Assistant",
-        "description": "Assistant administratif numérique facilitant la gestion des tâches et données administratives dans un contexte institutionnel local.",
-        "impact": "Impact: réduction des tâches manuelles -> gain de temps agents; processus formalisés -> service plus fiable.",
-        "role": "End-to-end (solo)"
+        "title": "BFA Administration Assistant - RAG Institutionnel",
+        "description": "Un assistant RAG entraîné sur de vrais documents administratifs pour répondre aux questions des agents en quelques secondes. Conçu pour un contexte institutionnel local où les procédures changent souvent.",
+        "impact": "Les agents trouvent l'information en secondes au lieu de chercher dans des PDF. Un assistant précis, ancré dans la documentation réelle de l'institution - opérationnel dès le premier jour.",
+        "role": "Conception & développement"
       },
       "sud-develop-website": {
-        "title": "SUD Develop Website",
-        "description": "Site web corporate multilingue présentant les divisions, produits, actualités et services avec un module de demande de devis.",
-        "impact": "Impact: visibilité digitale renforcée -> demandes qualifiées; offre clarifiée -> conversion améliorée.",
-        "role": "Full-stack & integration"
+        "title": "SUD Develop - Site Corporate Multilingue",
+        "description": "Premier point de contact digital entre SUD Develop et ses clients potentiels. Site corporate multilingue avec présentation des divisions, actualités et module de demande de devis directement intégré.",
+        "impact": "Présence en ligne renforcée avec un site qui reflète vraiment l'offre de SUD Develop. Le module de devis transforme les visites en opportunités qualifiées sans passer par email.",
+        "role": "Développement full-stack"
       },
       "anam-meteo-eval": {
-        "title": "ANAM Meteo Eval",
-        "description": "Projet d'analyse et d'évaluation des données météo pour mesurer leur qualité, fiabilité et cohérence.",
-        "impact": "Impact: évaluation continue -> qualité des données améliorée; indicateurs fiables -> décisions climatiques plus solides.",
-        "role": "End-to-end (solo)"
+        "title": "ANAM Meteo Eval - Vainqueur Hackathon IA 2025",
+        "description": "Construit en 48 heures lors du Hackathon IA 2025, puis livré à l'Agence Nationale de la Météo du Burkina Faso. Il évalue automatiquement la qualité des données météorologiques avec des indicateurs fiables.",
+        "impact": "Projet récompensé au Hackathon IA 2025 et déployé auprès de l'ANAM. Il automatise l'évaluation de la qualité des données météo, avec des métriques actionnables pour améliorer la fiabilité des prévisions.",
+        "role": "Conception & développement"
       },
       "cv-studio": {
-        "title": "CV Studio",
-        "description": "Application web permettant de créer et personnaliser des CV modernes via une interface interactive.",
-        "impact": "Impact: valorisation des profils -> employabilité renforcée; création guidée -> expérience utilisateur fluide.",
-        "role": "End-to-end (solo)"
+        "title": "CV Studio - Créer un CV Moderne en Minutes",
+        "description": "Construire un CV qui se démarque ne devrait pas prendre une journée entière. CV Studio guide l'utilisateur étape par étape pour produire un document moderne et personnalisé - sans Word, sans galère.",
+        "impact": "Des CVs modernes en quelques minutes, sans compétences en design. Les utilisateurs repartent avec un document structuré, lisible et prêt à envoyer - ce qui était auparavant un vrai frein.",
+        "role": "Conception & développement"
       },
       "gestion-bibliotheque": {
-        "title": "Gestion de Bibliotheque",
-        "description": "Système de gestion de bibliothèque permettant le suivi des livres, emprunts et utilisateurs via une interface sécurisée.",
-        "impact": "Impact: suivi des emprunts -> réduction des pertes; opérations automatisées -> gain de temps.",
-        "role": "End-to-end (solo)"
+        "title": "Gestion de Bibliothèque - Suivi des Emprunts & Alertes",
+        "description": "Une bibliothèque bien gérée, ce sont des livres qui circulent vraiment. Ce système Laravel/MySQL suit les emprunts, les retours et les utilisateurs - avec des alertes automatiques pour éviter les pertes.",
+        "impact": "Suivi des emprunts automatisé, alertes de retard, historique par utilisateur. Un outil qui rend la bibliothèque plus facile à gérer et les livres plus accessibles pour les lecteurs.",
+        "role": "Conception & développement"
       },
       "bytemarket": {
-        "title": "ByteMarket",
-        "description": "Site e-commerce développé en HTML/CSS/JS vanilla, avec une navigation produits claire et une expérience d'achat fluide.",
-        "impact": "Impact: parcours d'achat simplifié -> conversion accrue; catalogue clair -> navigation rapide.",
-        "role": "End-to-end (solo)"
+        "title": "ByteMarket - E-commerce Vanilla JS",
+        "description": "Un site e-commerce construit de zéro en HTML/CSS/JS pur, sans framework. Un exercice volontaire pour maîtriser les fondamentaux du web avant d'aborder les stacks modernes.",
+        "impact": "Construire sans dépendances, c'est comprendre chaque ligne. ByteMarket a posé les bases d'une approche web sérieuse - ce travail fondamental se retrouve dans la qualité des projets qui ont suivi.",
+        "role": "Conception & développement"
       }
     }
   },

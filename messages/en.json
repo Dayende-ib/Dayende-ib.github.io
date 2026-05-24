@@ -197,97 +197,97 @@
     },
     "items": {
       "meta-ads-conversations": {
-        "title": "Meta Ads Campaigns - Conversation & Engagement Generation",
-        "description": "Management and optimization of Facebook & Instagram ad campaigns focused on WhatsApp & Messenger conversations and engagement. Daily and lifetime budgets, CPC, cost per conversation, reach, impressions, and continuous optimization.",
-        "impact": "Impact: 3.6M+ impressions, 577k+ people reached -> stronger visibility; 5,000+ WhatsApp & Messenger conversations -> higher engagement; cost per conversation as low as $0.18 -> efficient ROI.",
-        "role": "Media Buyer & Campaign Manager"
+        "title": "Meta Ads Campaigns - Conversations & Engagement",
+        "description": "Not just clicks - real conversations. These Meta Ads campaigns were built around WhatsApp & Messenger intent, driving 5,000+ direct exchanges at a cost per conversation as low as $0.18.",
+        "impact": "3.6M+ impressions and 577k+ people reached. Over 5,000 WhatsApp & Messenger conversations triggered, with cost per conversation pushed as low as $0.18 through continuous creative iteration and bid optimization.",
+        "role": "Media Buying & Ads Strategy"
       },
       "mindease": {
-        "title": "MindEase – Digital Platform for Preventive Emotional Support",
-        "description": "Digital emotional and psychological well-being solution adapted to West African realities. Emotional tracking, AI recommendations, contextualized content - accessible via mobile app, web, and WhatsApp.",
-        "impact": "Impact: psychological support accessible via 3 channels (mobile, web, WhatsApp); personalized AI recommendations -> better stress management; locally adapted content -> higher adoption.",
-        "role": "End-to-end (solo)"
+        "title": "MindEase - Emotional Support Built for West Africa",
+        "description": "Mental health support is scarce and often misaligned with West African realities. MindEase delivers emotional tracking and AI-driven recommendations across mobile, web, and WhatsApp - meeting people where they already are.",
+        "impact": "Accessible without installation via WhatsApp, or through the web and mobile app. AI recommendations adapt to the user's profile and local context, providing real preventive support without requiring professional therapy.",
+        "role": "Design & development"
       },
       "propiflow": {
-        "title": "Propiflow - Intelligent Rental Management System",
-        "description": "Complete property rental management platform: properties, tenants, contracts, rent tracking, maintenance, and admin dashboard - with a dedicated mobile app for tenants.",
-        "impact": "Impact: centralized management -> no more scattered spreadsheets; tenant mobile app -> smooth communication; automated admin tasks -> significant time savings.",
-        "role": "End-to-end (solo)"
+        "title": "Propiflow - Rental Management Without the Spreadsheets",
+        "description": "Rental management shouldn't live in scattered spreadsheets and phone calls. Propiflow brings properties, tenants, contracts, and maintenance into one place - with a dedicated mobile app for tenants.",
+        "impact": "All rental operations centralized in one place. Tenants have their own mobile interface, maintenance requests are tracked in real time, and repetitive admin tasks are gone.",
+        "role": "Design & development"
       },
       "kawari-finance-app": {
-        "title": "Kawari Finance App",
-        "description": "Finance management app to track expenses and income and visualize budgets with AI.",
-        "impact": "Impact: budget visibility -> clearer decisions; AI recommendations -> better financial discipline.",
-        "role": "End-to-end (solo)"
+        "title": "Kawari Finance App - Budget Clarity & AI",
+        "description": "Knowing what you spend is a start. Understanding why and deciding differently is where Kawari comes in - financial flow visualization and actionable AI recommendations built into one app.",
+        "impact": "A clear view of spending changes behavior. AI recommendations help users spot drift, identify priority expense areas, and make better financial decisions day to day.",
+        "role": "Design & development"
       },
       "sud-stratvision": {
-        "title": "SUD-StratVision - Strategic Management Platform",
-        "description": "Strategic management platform centralizing goals, performance, leave, training, and missions through an interactive dashboard.",
-        "impact": "Impact: centralized objectives -> faster decisions; HR tracking -> optimized management.",
-        "role": "Full-stack & integration"
+        "title": "SUD-StratVision - Centralized Strategic Management",
+        "description": "When goals live in Excel and missions are tracked by email, decisions arrive too late. SUD-StratVision pulls everything together - objectives, performance, HR, leave, and training - in one dashboard.",
+        "impact": "Immediate adoption by teams from day one. Decision-makers finally have a consolidated real-time view without chasing down files scattered across departments.",
+        "role": "Full-stack development"
       },
       "clinic-appointment-scheduler": {
-        "title": "Clinic Appointment Scheduler",
-        "description": "Mobile app for booking, managing, and tracking medical appointments for patients, doctors, and admins.",
-        "impact": "Impact: appointment digitization -> smoother patient journey; real-time tracking -> stronger clinic coordination.",
-        "role": "Mobile & API integration"
+        "title": "Clinic Appointment Scheduler - No More Scheduling Chaos",
+        "description": "Phone-based appointment booking means missed slots, scheduling conflicts, and frustrated patients. This Flutter app gives patients, doctors, and admins a shared real-time view to coordinate without friction.",
+        "impact": "Scheduling conflicts and forgotten appointments are gone. Patients book autonomously, doctors manage their availability, and admins have full visibility across all clinic coordination.",
+        "role": "Mobile & API development"
       },
       "offline-gpt": {
-        "title": "Offline GPT",
-        "description": "Research project to run a GPT-like assistant locally without internet access.",
-        "impact": "Impact: offline AI solutions -> increased accessibility in low-connectivity contexts.",
-        "role": "End-to-end (solo)",
+        "title": "Offline GPT - Local AI Without Internet",
+        "description": "What if a GPT-like assistant worked with no internet? This R&D project explores running a local LLM on mobile - a practical path to AI accessibility in places where connectivity isn't guaranteed.",
+        "impact": "A full LLM running locally on a mobile device - no server, no data connection needed. A real step toward democratizing AI in contexts where network infrastructure remains a barrier.",
+        "role": "Design & development",
         "microcopy": "Work in progress - contributions and feedback welcome.",
         "ctaSecondary": "Discuss the project",
         "codeLabel": "View code"
       },
       "make-social-automation": {
-        "title": "Social Media Posting Automation (Facebook & Instagram)",
-        "description": "Full social media posting automation using Make (formerly Integromat). The system fetches content from Google Sheets, posts to Facebook Pages and Instagram Business, and updates status in the tracking sheet.",
-        "impact": "Impact: significant time savings -> faster operations; reduced human errors -> consistent quality; centralized multi-platform publishing -> scalable workflow.",
-        "role": "Automation Specialist & Developer"
+        "title": "Social Media Automation - Google Sheets → Facebook & Instagram",
+        "description": "Posting manually to Facebook and Instagram every week is time nobody has. This Make pipeline reads a Google Sheet, publishes to both platforms automatically, and updates status without any human touch.",
+        "impact": "Hours of manual publishing eliminated every week. Content goes out on time across both platforms, status updates automatically, and nothing slips through the cracks.",
+        "role": "Development & Automation"
       },
       "telegram-youtube-summarizer": {
-        "title": "AI Telegram Bot - Automatic YouTube Video Summaries",
-        "description": "AI Telegram bot that detects YouTube links, fetches transcripts via API, cleans the text, generates AI summaries, and returns clear, formatted responses.",
-        "impact": "Impact: automated video summaries -> time saved; faster monitoring -> better learning; modular architecture -> easy evolution.",
-        "role": "AI Developer & Automation Engineer"
+        "title": "AI Telegram Bot - Instant YouTube Summaries",
+        "description": "Drop a YouTube link in the bot, get a clean AI summary in seconds. No more sitting through 40-minute videos just to extract the key points.",
+        "impact": "YouTube monitoring becomes passive. The modular architecture makes it easy to add new content sources or output channels as needs evolve - the bot grows with the workflow.",
+        "role": "AI & Automation"
       },
       "bfa-administration-assistant": {
-        "title": "BFA Administration Assistant",
-        "description": "Digital admin assistant to manage tasks and administrative data in a local institutional context.",
-        "impact": "Impact: fewer manual tasks -> time saved for agents; formalized processes -> more reliable service.",
-        "role": "End-to-end (solo)"
+        "title": "BFA Administration Assistant - Institutional RAG",
+        "description": "A RAG assistant trained on real institutional documents to answer admin questions in seconds. Built for a local context where procedures change often and staff spend too much time searching for answers.",
+        "impact": "Agents find answers in seconds instead of digging through PDFs. Accurate, grounded in the institution's real documentation - operational from day one.",
+        "role": "Design & development"
       },
       "sud-develop-website": {
-        "title": "SUD Develop Website",
-        "description": "Multilingual corporate website presenting divisions, products, news, and services with a quote request module.",
-        "impact": "Impact: stronger digital visibility -> more qualified leads; clearer offer -> improved conversion.",
-        "role": "Full-stack & integration"
+        "title": "SUD Develop - Multilingual Corporate Website",
+        "description": "SUD Develop's first serious digital presence. A multilingual corporate site with a clear structure, division overview, and integrated quote request form to turn visits into real leads.",
+        "impact": "Stronger online presence with a site that actually reflects SUD Develop's offering. The integrated quote module converts visits into qualified business opportunities without an email back-and-forth.",
+        "role": "Full-stack development"
       },
       "anam-meteo-eval": {
-        "title": "ANAM Meteo Eval",
-        "description": "Project to analyze and evaluate weather data to measure quality, reliability, and consistency.",
-        "impact": "Impact: continuous evaluation -> improved data quality; reliable indicators -> stronger climate decisions.",
-        "role": "End-to-end (solo)"
+        "title": "ANAM Meteo Eval - 2025 AI Hackathon Winner",
+        "description": "Built in 48 hours at the 2025 AI Hackathon, then delivered to Burkina Faso's National Meteorological Agency. It automatically evaluates weather data quality with reliable, actionable metrics.",
+        "impact": "Award-winning at the 2025 AI Hackathon and deployed with ANAM. It automates weather data quality assessment with metrics that directly improve forecast reliability.",
+        "role": "Design & development"
       },
       "cv-studio": {
-        "title": "CV Studio",
-        "description": "Web app to create and customize modern resumes through an interactive interface.",
-        "impact": "Impact: profile valorization -> improved employability; guided creation -> smooth user experience.",
-        "role": "End-to-end (solo)"
+        "title": "CV Studio - Modern Resumes in Minutes",
+        "description": "Building a standout resume shouldn't take a full day. CV Studio walks users through a step-by-step flow to produce a polished, modern document - no design skills or Word gymnastics required.",
+        "impact": "Modern CVs in minutes, no design background needed. Users leave with a structured, readable document ready to send - removing what was previously a real barrier to job applications.",
+        "role": "Design & development"
       },
       "gestion-bibliotheque": {
-        "title": "Library Management",
-        "description": "Library management system to track books, loans, and users through a secure interface.",
-        "impact": "Impact: loan tracking -> fewer losses; automated operations -> time savings.",
-        "role": "End-to-end (solo)"
+        "title": "Library Management - Loans, Returns & Alerts",
+        "description": "A well-run library means books that actually circulate. This Laravel/MySQL system handles loans, returns, and users - with automated alerts to prevent losses before they happen.",
+        "impact": "Automated loan tracking, overdue alerts, per-user history. A tool that makes the library easier to manage and books more accessible to readers.",
+        "role": "Design & development"
       },
       "bytemarket": {
-        "title": "ByteMarket",
-        "description": "E-commerce site built in vanilla HTML/CSS/JS with clear product navigation and a smooth checkout experience.",
-        "impact": "Impact: simplified purchase flow -> higher conversion; clear catalog -> faster navigation.",
-        "role": "End-to-end (solo)"
+        "title": "ByteMarket - Vanilla JS E-commerce",
+        "description": "An e-commerce site built from scratch in pure HTML/CSS/JS - no framework, no shortcuts. A deliberate exercise in mastering the web fundamentals before moving on to modern stacks.",
+        "impact": "Building without dependencies means understanding every line. ByteMarket laid the foundation for a serious web approach - the discipline from this work shows in every project that followed.",
+        "role": "Design & development"
       }
     }
   },
