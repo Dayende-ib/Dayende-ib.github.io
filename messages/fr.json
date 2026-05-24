@@ -202,8 +202,14 @@
         "impact": "Impact: +3 600 000 impressions, 577 000+ personnes touchées -> visibilité accrue; 5 000+ conversations WhatsApp & Messenger -> engagement fort; coût par conversation jusqu'à 0,18 $ -> ROI optimisé.",
         "role": "Media Buyer & Campaign Manager"
       },
+      "mindease": {
+        "title": "MindEase – Plateforme Digitale de Soutien Émotionnel Préventif",
+        "description": "Solution digitale de bien-être émotionnel et psychologique adaptée aux réalités de l'Afrique de l'Ouest. Suivi émotionnel, recommandations IA, contenus contextualisés - accessible via app mobile, web et WhatsApp.",
+        "impact": "Impact: soutien psychologique accessible via 3 canaux (mobile, web, WhatsApp); recommandations IA personnalisées -> meilleure gestion du stress; contenus adaptés aux réalités locales -> adoption accrue.",
+        "role": "End-to-end (solo)"
+      },
       "propiflow": {
-        "title": "Propiflow — Système de Gestion Locative Intelligent",
+        "title": "Propiflow - Système de Gestion Locative Intelligent",
         "description": "Plateforme complète de gestion immobilière locative : biens, locataires, contrats, loyers, maintenance et dashboard d'administration, avec application mobile dédiée aux locataires.",
         "impact": "Impact: gestion centralisée -> zéro tableur dispersé; app mobile locataires -> communication fluide; automatisation administrative -> gain de temps opérationnel.",
         "role": "End-to-end (solo)"
@@ -425,7 +431,7 @@
       },
       "a5": {
         "title": "Votre CPA est trop élevé ? Le problème n'est probablement pas votre budget pub.",
-        "summary": "Sur la plupart des projets que j'accompagne, le souci n'est pas la publicité elle-même — c'est le système autour. CPA entre 0,18 $ et 0,25 $, 1 500+ conversations : voilà ce que produit un funnel bien structuré.",
+        "summary": "Sur la plupart des projets que j'accompagne, le souci n'est pas la publicité elle-même - c'est le système autour. CPA entre 0,18 $ et 0,25 $, 1 500+ conversations : voilà ce que produit un funnel bien structuré.",
         "tag": "Growth & Ads",
         "date": "2025",
         "url": "https://www.linkedin.com/posts/ibrahimdayende_growthmarketing-conversion-cpa-activity-7416425237803704321-9WF9?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADsMhz4BriTcUi_0p5123bek2prR43tuDlU"
@@ -438,7 +444,7 @@
     "description": "Des retours concrets de clients et collaborateurs sur l'expérience de travail en commun.",
     "items": {
       "t1": {
-        "quote": "Ibrahim a livré une application web robuste en un temps record, avec une communication claire à chaque étape. Il comprend les enjeux business derrière le technique — c'est rare et précieux.",
+        "quote": "Ibrahim a livré une application web robuste en un temps record, avec une communication claire à chaque étape. Il comprend les enjeux business derrière le technique - c'est rare et précieux.",
         "name": "Directeur Général",
         "role": "SUD Develop",
         "initials": "DG"

@@ -141,7 +141,7 @@ export default function ProjectsClient({ projects, filters }: ProjectsClientProp
                   className="group text-left rounded-[22px] border border-border/70 bg-card/80 overflow-hidden card-hover-glow card-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   aria-label={`Voir le détail : ${title}`}
                 >
-                  {/* Image — full aspect ratio, no crop */}
+                  {/* Image - full aspect ratio, no crop */}
                   <div className="relative w-full aspect-video bg-background/60 overflow-hidden">
                     <Image
                       src={project.image}
@@ -341,7 +341,7 @@ function ModalContent({
 
   return (
     <div>
-      {/* Image header — full image, no crop */}
+      {/* Image header - full image, no crop */}
       <div className="relative w-full aspect-video bg-background/80 rounded-t-[28px] overflow-hidden">
         <Image
           src={project.image}
@@ -400,9 +400,9 @@ function ModalContent({
           <div className="rounded-2xl border border-border/70 bg-background/35 p-4 space-y-3">
             <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-200/80">Case Study</p>
             <div className="space-y-2.5 text-sm leading-6">
-              <p><span className="font-medium text-white/60">Défi — </span><span className="text-white/80">{project.caseStudy.challenge}</span></p>
-              <p><span className="font-medium text-white/60">Approche — </span><span className="text-white/80">{project.caseStudy.approach}</span></p>
-              <p><span className="font-medium text-cyan-300/80">Résultat — </span><span className="text-white/90">{project.caseStudy.result}</span></p>
+              <p><span className="font-medium text-white/60">Défi - </span><span className="text-white/80">{project.caseStudy.challenge}</span></p>
+              <p><span className="font-medium text-white/60">Approche - </span><span className="text-white/80">{project.caseStudy.approach}</span></p>
+              <p><span className="font-medium text-cyan-300/80">Résultat - </span><span className="text-white/90">{project.caseStudy.result}</span></p>
             </div>
           </div>
         ) : (

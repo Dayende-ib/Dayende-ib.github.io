@@ -202,9 +202,15 @@
         "impact": "Impact: 3.6M+ impressions, 577k+ people reached -> stronger visibility; 5,000+ WhatsApp & Messenger conversations -> higher engagement; cost per conversation as low as $0.18 -> efficient ROI.",
         "role": "Media Buyer & Campaign Manager"
       },
+      "mindease": {
+        "title": "MindEase – Digital Platform for Preventive Emotional Support",
+        "description": "Digital emotional and psychological well-being solution adapted to West African realities. Emotional tracking, AI recommendations, contextualized content - accessible via mobile app, web, and WhatsApp.",
+        "impact": "Impact: psychological support accessible via 3 channels (mobile, web, WhatsApp); personalized AI recommendations -> better stress management; locally adapted content -> higher adoption.",
+        "role": "End-to-end (solo)"
+      },
       "propiflow": {
-        "title": "Propiflow — Intelligent Rental Management System",
-        "description": "Complete property rental management platform: properties, tenants, contracts, rent tracking, maintenance, and admin dashboard — with a dedicated mobile app for tenants.",
+        "title": "Propiflow - Intelligent Rental Management System",
+        "description": "Complete property rental management platform: properties, tenants, contracts, rent tracking, maintenance, and admin dashboard - with a dedicated mobile app for tenants.",
         "impact": "Impact: centralized management -> no more scattered spreadsheets; tenant mobile app -> smooth communication; automated admin tasks -> significant time savings.",
         "role": "End-to-end (solo)"
       },
@@ -403,7 +409,7 @@
         "url": "https://www.linkedin.com/posts/ibrahimdayende_tu-es-%C3%A9tudiant-tu-as-litt%C3%A9ralement-acc%C3%A8s-activity-7440098929679007744-VbQz?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADsMhz4BriTcUi_0p5123bek2prR43tuDlU"
       },
       "a2": {
-        "title": "Winning the 2025 AI Hackathon — what I learned in 48 hours",
+        "title": "Winning the 2025 AI Hackathon - what I learned in 48 hours",
         "summary": "The story of the ANAM Météo project: how we designed, built, and presented an AI solution for meteorological data evaluation in under 48 hours.",
         "tag": "Hackathon",
         "date": "2025",
@@ -425,7 +431,7 @@
       },
       "a5": {
         "title": "Your CPA is too high? The problem is probably not your ad budget.",
-        "summary": "On most projects I work on, the issue isn't the ads — it's the system around them. CPA between $0.18 and $0.25, 1,500+ conversations: that's what a well-structured funnel delivers.",
+        "summary": "On most projects I work on, the issue isn't the ads - it's the system around them. CPA between $0.18 and $0.25, 1,500+ conversations: that's what a well-structured funnel delivers.",
         "tag": "Growth & Ads",
         "date": "2025",
         "url": "https://www.linkedin.com/posts/ibrahimdayende_growthmarketing-conversion-cpa-activity-7416425237803704321-9WF9?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADsMhz4BriTcUi_0p5123bek2prR43tuDlU"
@@ -438,7 +444,7 @@
     "description": "Concrete feedback from clients and collaborators on the experience of working together.",
     "items": {
       "t1": {
-        "quote": "Ibrahim delivered a robust web application in record time, with clear communication at every step. He understands the business stakes behind the technical work — that's rare and valuable.",
+        "quote": "Ibrahim delivered a robust web application in record time, with clear communication at every step. He understands the business stakes behind the technical work - that's rare and valuable.",
         "name": "General Manager",
         "role": "SUD Develop",
         "initials": "GM"

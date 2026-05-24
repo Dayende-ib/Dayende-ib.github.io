@@ -70,6 +70,53 @@ export const projects: Project[] = [
     codePrivate: true
   },
   {
+    id: "mindease",
+    title: "MindEase – Plateforme Digitale de Soutien Émotionnel Préventif",
+    description:
+      "Solution digitale de bien-être émotionnel et psychologique adaptée aux réalités de l'Afrique de l'Ouest. Suivi émotionnel, recommandations IA, contenus contextualisés - accessible via app mobile, web et WhatsApp.",
+    category: "mobile",
+    tags: ["Flutter", "TypeScript", "Supabase", "WhatsApp API", "IA"],
+    role: "End-to-end (solo)",
+    impact:
+      "Impact: soutien psychologique accessible via 3 canaux (mobile, web, WhatsApp); recommandations IA personnalisées -> meilleure gestion du stress; contenus adaptés aux réalités locales -> adoption accrue.",
+    image: "/projects/mindease.webp",
+    liveUrl: "https://mindeasev1.vercel.app",
+    blurDataURL: blurDataUrls[5],
+    featured: true,
+    caseStudy: {
+      challenge:
+        "Le soutien en santé mentale est quasi inexistant ou inadapté en Afrique de l'Ouest : outils trop occidentaux, barrières culturelles, faible accessibilité mobile et manque de ressources contextualisées.",
+      approach:
+        "Plateforme multi-canal (Flutter + web bêta + WhatsApp Cloud API) avec backend TypeScript/Supabase, suivi émotionnel interactif et IA pour personnaliser les recommandations selon le profil et le contexte local.",
+      result:
+        "Solution préventive accessible sans installation via WhatsApp, version web bêta ouverte, app mobile intuitive - avec une approche centrée sur l'utilisateur et les réalités communautaires locales."
+    }
+  },
+    {
+    id: "propiflow",
+    title: "Propiflow - Système de Gestion Locative Intelligent",
+    description:
+      "Plateforme complète de gestion immobilière locative : biens, locataires, contrats, loyers, maintenance et dashboard d'administration, avec application mobile dédiée aux locataires.",
+    category: "web",
+    tags: ["Node.js", "Flutter", "PostgreSQL", "React.js"],
+    role: "End-to-end (solo)",
+    impact:
+      "Impact: gestion centralisée -> zéro tableur dispersé; app mobile locataires -> communication fluide; automatisation administrative -> gain de temps opérationnel.",
+    image: "/projects/propiflow.webp",
+    codeUrl: "https://github.com/Dayende-ib/rental-management",
+    liveUrl: "https://propiflow.vercel.app/",
+    blurDataURL: blurDataUrls[3],
+    featured: true,
+    caseStudy: {
+      challenge:
+        "La gestion locative reposait sur des tableurs épars, des appels téléphoniques et des contrats papier - aucun outil unifié pour propriétaires, gestionnaires et locataires.",
+      approach:
+        "Plateforme full-stack avec dashboard web d'administration (biens, locataires, contrats, loyers, maintenance) et application mobile Flutter pour les locataires.",
+      result:
+        "Gestion locative entièrement digitalisée : tâches administratives automatisées, suivi en temps réel des interventions et communication centralisée entre toutes les parties."
+    }
+  },
+  {
     id: "kawari-finance-app",
     title: "Kawari Finance App",
     description:
@@ -91,30 +138,6 @@ export const projects: Project[] = [
     }
   },
   {
-    id: "propiflow",
-    title: "Propiflow - Système de Gestion Locative Intelligent",
-    description:
-      "Plateforme complète de gestion immobilière locative : biens, locataires, contrats, loyers, maintenance et dashboard d'administration, avec application mobile dédiée aux locataires.",
-    category: "web",
-    tags: ["Node.js", "Flutter", "PostgreSQL", "React.js"],
-    role: "End-to-end (solo)",
-    impact:
-      "Impact: gestion centralisée -> zéro tableur dispersé; app mobile locataires -> communication fluide; automatisation administrative -> gain de temps opérationnel.",
-    image: "/projects/propiflow.webp",
-    codeUrl: "https://github.com/Dayende-ib/rental-management",
-    liveUrl: "https://propiflow.vercel.app/",
-    blurDataURL: blurDataUrls[3],
-    featured: true,
-    caseStudy: {
-      challenge:
-        "La gestion locative reposait sur des tableurs épars, des appels téléphoniques et des contrats papier — aucun outil unifié pour propriétaires, gestionnaires et locataires.",
-      approach:
-        "Plateforme full-stack avec dashboard web d'administration (biens, locataires, contrats, loyers, maintenance) et application mobile Flutter pour les locataires.",
-      result:
-        "Gestion locative entièrement digitalisée : tâches administratives automatisées, suivi en temps réel des interventions et communication centralisée entre toutes les parties."
-    }
-  },
-  {
     id: "sud-stratvision",
     title: "SUD-StratVision - Logiciel de Pilotage Stratégique",
     description:
@@ -130,7 +153,7 @@ export const projects: Project[] = [
     clientProject: true,
     codePrivate: true,
     caseStudy: {
-      challenge: "L'organisation utilisait des fichiers Excel dispersés pour suivre objectifs, congés et formations — aucune vue consolidée pour les décideurs.",
+      challenge: "L'organisation utilisait des fichiers Excel dispersés pour suivre objectifs, congés et formations - aucune vue consolidée pour les décideurs.",
       approach: "Dashboard Laravel avec modules interconnectés (objectifs, RH, missions), contrôle d'accès par rôle et visualisations de données temps réel.",
       result: "Centralisation complète du pilotage, adoption immédiate par les équipes et décisions plus rapides grâce à des données fiables et accessibles."
     }

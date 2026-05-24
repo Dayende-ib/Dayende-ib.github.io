@@ -77,7 +77,7 @@ export default async function Navbar({ locale }: NavbarProps) {
             </div>
           </div>
 
-          {/* Mobile nav — scrollable with fade indicator */}
+          {/* Mobile nav - scrollable with fade indicator */}
           <div className="border-t border-border/60 bg-background/30 md:hidden">
             <div className="relative">
               <div className="flex items-center gap-2 overflow-x-auto scrollbar-none px-4 py-3">
