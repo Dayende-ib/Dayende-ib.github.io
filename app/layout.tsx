@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Ibrahim Dayende OUGDA"
   },
   description:
-    "Portfolio de Ibrahim Dayende OUGDA, développeur Full-Stack Web & Mobile. Projets, services et contact.",
+    "Ibrahim Dayende OUGDA — Full-Stack Web & Mobile Developer. Web apps, mobile apps, AI automation and Meta/Google Ads. Based in West Africa, available for remote missions.",
   alternates: {
     canonical: "/",
     languages: {
@@ -84,6 +84,62 @@ export default async function RootLayout({
 }) {
   return (
     <html lang={defaultLocale} className={inter.variable} suppressHydrationWarning data-scroll-behavior="smooth">
+      <head>
+        {/* Security headers via meta (GitHub Pages static — no server-side headers) */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta httpEquiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content={[
+            "default-src 'self'",
+            /* unsafe-eval: React dev mode; unsafe-inline: Next.js hydration scripts */
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com",
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+            "font-src 'self' data: https://fonts.gstatic.com",
+            "img-src 'self' data: blob: https:",
+            "connect-src 'self' https://api.web3forms.com https://vitals.vercel-insights.com https://va.vercel-scripts.com",
+            "frame-src 'none'",
+            "object-src 'none'",
+            "base-uri 'self'",
+            "form-action 'self' https://api.web3forms.com",
+            "upgrade-insecure-requests",
+          ].join("; ")}
+        />
+        {/* JSON-LD structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                name: "Ibrahim Dayende OUGDA",
+                url: "https://ibrahimdayende.me",
+                jobTitle: "Full-Stack Web & Mobile Developer",
+                description: "I build modern web and mobile products, automate with AI, and help brands grow with Meta & Google Ads.",
+                image: "https://ibrahimdayende.me/og-image.png",
+                address: { "@type": "PostalAddress", addressRegion: "West Africa", addressCountry: "BF" },
+                sameAs: [
+                  "https://www.linkedin.com/in/ibrahimdayende",
+                  "https://github.com/Dayende-ib"
+                ],
+                knowsAbout: ["Next.js","React","Flutter","Laravel","Node.js","TypeScript","PostgreSQL","Meta Ads","Google Ads","AI Automation","Make","n8n"]
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                name: "Ibrahim Dayende OUGDA",
+                url: "https://ibrahimdayende.me",
+                author: { "@type": "Person", name: "Ibrahim Dayende OUGDA" }
+              }
+            ])
+            .replace(/</g, "\\u003c")
+            .replace(/>/g, "\\u003e")
+            .replace(/&/g, "\\u0026")
+          }}
+        />
+      </head>
       <body>
         <ThemeProvider>
           {children}

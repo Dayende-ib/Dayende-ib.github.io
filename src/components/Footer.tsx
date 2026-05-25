@@ -53,6 +53,7 @@ export default async function Footer({ locale }: FooterProps) {
                 width={140}
                 height={40}
                 className="h-10 w-auto"
+                style={{ height: "2.5rem", width: "auto" }}
               />
             </Link>
             {footerLinks.map((link) => (
