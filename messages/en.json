@@ -471,6 +471,32 @@
       "contact": "Contact"
     },
     "copyright": "© {year} Ibrahim Dayende. All rights reserved."
+  },
+  "mindease": {
+    "metaTitle": "MindEase - Video demos",
+    "metaDescription": "See MindEase in action: video demos of the web, mobile and WhatsApp versions.",
+    "backHome": "Back to home",
+    "eyebrow": "Demo",
+    "title": "MindEase in action",
+    "subtitle": "A concrete look at MindEase across its three channels: web, mobile and WhatsApp.",
+    "unavailable": "Your browser does not support playing this video.",
+    "demos": {
+      "web": {
+        "label": "Web",
+        "title": "Web Platform",
+        "description": "MindEase from your browser, no sign-up, no install."
+      },
+      "mobile": {
+        "label": "Mobile",
+        "title": "Mobile App",
+        "description": "Pauline in your pocket. Chat, emotional tracking, exercises and resources designed for daily use, even offline."
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "title": "WhatsApp Assistant",
+        "description": "Find Pauline right where you already chat. Advice and guidance, without leaving WhatsApp. No app to download."
+      }
+    }
   }
 }
 
