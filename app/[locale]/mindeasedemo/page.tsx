@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -75,7 +76,9 @@ export default async function MindeaseDemoPage({ params }: MindeaseDemoPageProps
             Ibrahim Dayende
           </Link>
           <div className="flex items-center gap-4">
-            <LanguageSwitcher />
+            <Suspense fallback={null}>
+              <LanguageSwitcher />
+            </Suspense>
             <Button asChild variant="outline" size="sm">
               <Link href={`/${locale}`}>{t("backHome")}</Link>
             </Button>
