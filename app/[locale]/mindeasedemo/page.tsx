@@ -135,8 +135,8 @@ export default async function MindeaseDemoPage({ params }: MindeaseDemoPageProps
                     preload="metadata"
                     className={
                       demo.orientation === "portrait"
-                        ? "aspect-[9/16] h-full w-full object-cover"
-                        : "aspect-video h-full w-full object-cover"
+                        ? "aspect-[9/16] h-full w-full object-contain"
+                        : "aspect-video h-full w-full object-contain"
                     }
                   >
                     <source src={demo.src} type="video/mp4" />
