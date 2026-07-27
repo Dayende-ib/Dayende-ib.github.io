@@ -24,7 +24,6 @@ type DemoConfig = {
   orientation: "landscape" | "portrait";
 };
 
-// Dépose les fichiers dans public/mindease/ (web.mp4, mobile.mp4, whatsapp.mp4).
 const demos: DemoConfig[] = [
   { key: "web", src: "/mindease/web.mp4", orientation: "landscape" },
   { key: "mobile", src: "/mindease/mobile.mp4", orientation: "portrait" },
