@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Bricolage_Grotesque, Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
 import { defaultLocale } from "../i18n";
@@ -10,6 +10,18 @@ import "./globals.css";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap"
+});
+
+const display = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap"
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: "swap"
 });
 
@@ -83,7 +95,7 @@ export default async function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang={defaultLocale} className={inter.variable} suppressHydrationWarning data-scroll-behavior="smooth">
+    <html lang={defaultLocale} className={`${inter.variable} ${display.variable} ${mono.variable}`} suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         {/* Security headers via meta (GitHub Pages static — no server-side headers) */}
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
@@ -124,6 +136,7 @@ export default async function RootLayout({
                   "https://www.linkedin.com/in/ibrahimdayende",
                   "https://github.com/Dayende-ib"
                 ],
+                award: "Vainqueur du Hackathon IA 2025 (MTDPCE)",
                 knowsAbout: ["Next.js","React","Flutter","Laravel","Node.js","TypeScript","PostgreSQL","Meta Ads","Google Ads","AI Automation","Make","n8n"]
               },
               {

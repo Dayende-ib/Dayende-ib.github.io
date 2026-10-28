@@ -1,38 +1,20 @@
-"use client";
+import EnglishRedirect from "@/components/EnglishRedirect";
+import LocaleProviders from "@/components/LocaleProviders";
 
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { defaultLocale } from "../../i18n";
+import MindeaseDemoPage, { generateMetadata as generateDemoMetadata } from "../[locale]/mindeasedemo/page";
 
-export default function MindeaseDemoRedirectPage() {
-  const router = useRouter();
+const params = Promise.resolve({ locale: defaultLocale });
 
-  useEffect(() => {
-    const storedLocale = localStorage.getItem("preferred-locale");
-    if (storedLocale === "fr" || storedLocale === "en") {
-      router.replace(`/${storedLocale}/mindeasedemo/`);
-      return;
-    }
+export const generateMetadata = () => generateDemoMetadata({ params });
 
-    const languages = [
-      ...(navigator.languages || []),
-      navigator.language,
-      (navigator as Navigator & { userLanguage?: string }).userLanguage
-    ].filter(Boolean) as string[];
-
-    const normalized = languages.map((item) => item.toLowerCase());
-    const hasFrench = normalized.some((item) => item.startsWith("fr"));
-    const hasEnglish = normalized.some((item) => item.startsWith("en"));
-
-    const locale = hasFrench ? "fr" : hasEnglish ? "en" : "fr";
-    router.replace(`/${locale}/mindeasedemo/`);
-  }, [router]);
-
+export default function MindeaseDemoRootPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-background px-6 text-foreground">
-      <div className="flex flex-col items-center gap-3 rounded-xl border border-border/60 bg-card/80 px-6 py-5">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-muted border-t-white" />
-        <p className="text-sm text-muted-foreground">Téléportation...</p>
-      </div>
-    </main>
+    <>
+      <EnglishRedirect path="mindeasedemo/" />
+      <LocaleProviders locale={defaultLocale}>
+        <MindeaseDemoPage params={params} />
+      </LocaleProviders>
+    </>
   );
 }

@@ -1,12 +1,18 @@
 ﻿"use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
+import { AnimatePresence, m } from "framer-motion";
+import { ArrowUpRight, Check, Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
+import { easeOutExpo } from "@/components/motion/easing";
+import { CONTACT_PREFILL_EVENT } from "@/components/projects/ProjectProvider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import type { ProjectCategory } from "@/data/projects";
+import { cn } from "@/lib/utils";
 
 type FormState = {
   name: string;
@@ -16,264 +22,238 @@ type FormState = {
 
 type FormErrors = Record<keyof FormState, string>;
 
-const inquiryTypes = ["web", "mobile", "automation"] as const;
+const inquiryTypes = ["web", "mobile", "automation", "ads", "other"] as const;
+type InquiryType = (typeof inquiryTypes)[number];
 
-const initialState: FormState = {
-  name: "",
-  email: "",
-  message: ""
+const categoryToInquiry: Record<ProjectCategory, InquiryType> = {
+  web: "web",
+  mobile: "mobile",
+  ia: "automation",
+  ads: "ads"
 };
 
+const initialState: FormState = { name: "", email: "", message: "" };
+const noErrors: FormErrors = { name: "", email: "", message: "" };
+
 export default function ContactForm() {
-  const t = useTranslations("contact");
+  const t = useTranslations("contact.form");
   const [form, setForm] = useState<FormState>(initialState);
-  const [errors, setErrors] = useState<FormErrors>({
-    name: "",
-    email: "",
-    message: ""
-  });
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
-    "idle"
-  );
+  const [types, setTypes] = useState<InquiryType[]>([]);
+  const [errors, setErrors] = useState<FormErrors>(noErrors);
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
-  const hasEmailConfig = Boolean(accessKey);
+
+  // Pré-remplissage depuis une fiche projet ("Discuter d'un projet similaire")
+  useEffect(() => {
+    const onPrefill = (event: Event) => {
+      const { message, type } = (event as CustomEvent<{ message: string; type?: ProjectCategory }>).detail;
+      setForm((prev) => ({ ...prev, message }));
+      if (type) setTypes([categoryToInquiry[type]]);
+      setStatus("idle");
+    };
+    window.addEventListener(CONTACT_PREFILL_EVENT, onPrefill);
+    return () => window.removeEventListener(CONTACT_PREFILL_EVENT, onPrefill);
+  }, []);
 
   const validate = () => {
     const nextErrors: FormErrors = {
-      name: form.name.trim() ? "" : t("form.errors.name"),
-      email: /\S+@\S+\.\S+/.test(form.email)
-        ? ""
-        : t("form.errors.email"),
-      message:
-        form.message.trim().length >= 10
-          ? ""
-          : t("form.errors.message")
+      name: form.name.trim() ? "" : t("errors.name"),
+      email: /\S+@\S+\.\S+/.test(form.email) ? "" : t("errors.email"),
+      message: form.message.trim().length >= 10 ? "" : t("errors.message")
     };
-
     setErrors(nextErrors);
     return Object.values(nextErrors).every((error) => !error);
   };
 
-  const handleChange = (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
     setForm((prev) => ({ ...prev, [name]: value }));
-    setStatus("idle");
+    if (errors[name as keyof FormState]) setErrors((prev) => ({ ...prev, [name]: "" }));
+    if (status === "error") setStatus("idle");
   };
+
+  const toggleType = (type: InquiryType) =>
+    setTypes((prev) => (prev.includes(type) ? prev.filter((item) => item !== type) : [...prev, type]));
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!validate()) {
-      return;
-    }
-    if (!hasEmailConfig) {
+    if (!validate()) return;
+    if (!accessKey) {
       setStatus("error");
       return;
     }
     setStatus("sending");
+    const botcheck = new FormData(event.currentTarget).get("botcheck");
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: accessKey,
+          subject: `Portfolio — ${form.name}`,
           name: form.name,
           email: form.email,
-          message: form.message
+          project_type: types.map((type) => t(`types.${type}`)).join(", ") || "—",
+          message: form.message,
+          botcheck
         })
       });
-
-      if (!response.ok) {
-        throw new Error("Request failed");
-      }
-
       const result = (await response.json()) as { success?: boolean };
-      if (!result.success) {
-        throw new Error("Submission failed");
-      }
-
+      if (!response.ok || !result.success) throw new Error("Submission failed");
       setStatus("success");
       setForm(initialState);
+      setTypes([]);
     } catch {
       setStatus("error");
     }
   };
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-      <form
-        className="section-panel card-glow space-y-5 rounded-[28px] p-6"
-        onSubmit={handleSubmit}
-      >
-        <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-cyan-200/80">
-            {t("form.eyebrow")}
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {inquiryTypes.map((type) => (
-              <span
-                key={type}
-                className="rounded-full border border-border/70 bg-background/40 px-3 py-1.5 text-xs text-white/85"
-              >
-                {t(`form.types.${type}`)}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="space-y-2">
-            <label className="text-sm text-muted-foreground" htmlFor="name">
-              {t("form.nameLabel")}
-            </label>
-            <Input
-              id="name"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder={t("form.placeholders.name")}
-              aria-invalid={Boolean(errors.name)}
-              aria-describedby={errors.name ? "error-name" : undefined}
-            />
-            {errors.name ? (
-              <p id="error-name" className="text-xs text-pink-200">
-                {errors.name}
+    <div className="relative rounded-3xl border border-border bg-card p-5 sm:p-6">
+      <AnimatePresence mode="wait" initial={false}>
+        {status === "success" ? (
+          <m.div
+            key="success"
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: easeOutExpo }}
+            className="flex min-h-[380px] flex-col items-center justify-center text-center"
+            role="status"
+          >
+            <m.span
+              className="flex h-16 w-16 items-center justify-center rounded-full bg-signal text-signal-foreground"
+              initial={{ scale: 0, rotate: -90 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ type: "spring", stiffness: 260, damping: 18, delay: 0.1 }}
+            >
+              <Check className="h-7 w-7" />
+            </m.span>
+            <p className="mt-6 font-display text-2xl font-semibold tracking-tight">{t("successTitle")}</p>
+            <p className="mt-2 max-w-sm text-muted-foreground">{t("success")}</p>
+            <Button variant="outline" className="mt-8" onClick={() => setStatus("idle")}>
+              {t("again")}
+            </Button>
+          </m.div>
+        ) : (
+          <m.form
+            key="form"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="space-y-5"
+            onSubmit={handleSubmit}
+            noValidate
+          >
+            {/* Piège à robots (web3forms) */}
+            <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
+
+            <fieldset className="space-y-2">
+              <legend className="eyebrow mb-2">{t("typeLabel")}</legend>
+              <div className="flex flex-wrap gap-2">
+                {inquiryTypes.map((type) => {
+                  const isActive = types.includes(type);
+                  return (
+                    <button
+                      key={type}
+                      type="button"
+                      aria-pressed={isActive}
+                      onClick={() => toggleType(type)}
+                      className={cn(
+                        "flex items-center gap-1.5 rounded-full border px-3.5 py-2 text-sm transition-all",
+                        isActive
+                          ? "border-primary bg-primary text-primary-foreground"
+                          : "border-border text-muted-foreground hover:border-foreground/30 hover:text-foreground"
+                      )}
+                    >
+                      {isActive ? <Check className="h-3.5 w-3.5" /> : null}
+                      {t(`types.${type}`)}
+                    </button>
+                  );
+                })}
+              </div>
+            </fieldset>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="space-y-2">
+                <label className="text-sm font-medium" htmlFor="name">
+                  {t("nameLabel")}
+                </label>
+                <Input
+                  id="name"
+                  name="name"
+                  autoComplete="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder={t("placeholders.name")}
+                  aria-invalid={Boolean(errors.name)}
+                  aria-describedby={errors.name ? "error-name" : undefined}
+                />
+                {errors.name ? (
+                  <p id="error-name" className="text-xs text-destructive">
+                    {errors.name}
+                  </p>
+                ) : null}
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium" htmlFor="email">
+                  {t("emailLabel")}
+                </label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder={t("placeholders.email")}
+                  aria-invalid={Boolean(errors.email)}
+                  aria-describedby={errors.email ? "error-email" : undefined}
+                />
+                {errors.email ? (
+                  <p id="error-email" className="text-xs text-destructive">
+                    {errors.email}
+                  </p>
+                ) : null}
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm font-medium" htmlFor="message">
+                {t("messageLabel")}
+              </label>
+              <Textarea
+                id="message"
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                placeholder={t("placeholders.message")}
+                aria-invalid={Boolean(errors.message)}
+                aria-describedby={errors.message ? "error-message" : undefined}
+              />
+              {errors.message ? (
+                <p id="error-message" className="text-xs text-destructive">
+                  {errors.message}
+                </p>
+              ) : null}
+            </div>
+
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-xs text-muted-foreground">{t("responseTime")}</p>
+              <Button type="submit" size="lg" disabled={status === "sending"}>
+                {status === "sending" ? <Loader2 className="animate-spin" /> : null}
+                {status === "sending" ? t("sending") : t("submit")}
+                {status !== "sending" ? <ArrowUpRight /> : null}
+              </Button>
+            </div>
+            {status === "error" ? (
+              <p className="rounded-xl border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm" role="alert">
+                {t("errors.submit")}
               </p>
             ) : null}
-          </div>
-          <div className="space-y-2">
-            <label className="text-sm text-muted-foreground" htmlFor="email">
-              {t("form.emailLabel")}
-            </label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder={t("form.placeholders.email")}
-              aria-invalid={Boolean(errors.email)}
-              aria-describedby={errors.email ? "error-email" : undefined}
-            />
-            {errors.email ? (
-              <p id="error-email" className="text-xs text-pink-200">
-                {errors.email}
-              </p>
-            ) : null}
-          </div>
-        </div>
-        <div className="space-y-2">
-          <label className="text-sm text-muted-foreground" htmlFor="message">
-            {t("form.messageLabel")}
-          </label>
-          <Textarea
-            id="message"
-            name="message"
-            value={form.message}
-            onChange={handleChange}
-            placeholder={t("form.placeholders.message")}
-            aria-invalid={Boolean(errors.message)}
-            aria-describedby={errors.message ? "error-message" : undefined}
-          />
-          {errors.message ? (
-            <p id="error-message" className="text-xs text-pink-200">
-              {errors.message}
-            </p>
-          ) : null}
-        </div>
-        <div className="flex flex-wrap items-center gap-3">
-          <Button
-            type="submit"
-            disabled={status === "sending" || status === "success"}
-            className="rounded-full"
-          >
-            {t("form.submit")}
-          </Button>
-          <p className="text-xs text-muted-foreground">{t("form.responseTime")}</p>
-          {status === "success" ? (
-            <p className="text-sm text-emerald-300" aria-live="polite">
-              {t("form.success")}
-            </p>
-          ) : null}
-          {status === "error" ? (
-            <p className="text-sm text-rose-300" aria-live="polite">
-              {t("form.errors.submit")}
-            </p>
-          ) : null}
-        </div>
-      </form>
-      <div className="section-panel space-y-5 rounded-[28px] p-6">
-        <div className="space-y-2">
-          <p className="text-xs uppercase tracking-[0.3em] text-cyan-200/80">
-            {t("quick.eyebrow")}
-          </p>
-          <p className="text-lg font-medium text-white">{t("quick.title")}</p>
-          <p className="text-sm leading-6 text-muted-foreground">
-            {t("quick.description")}
-          </p>
-        </div>
-        <div className="flex flex-col gap-3">
-          <div className="rounded-2xl border border-emerald-400/30 bg-emerald-500/10 p-4">
-            <p className="text-sm font-medium text-emerald-100">
-              {t("quick.primaryLabel")}
-            </p>
-            <p className="mt-1 text-xs leading-5 text-black-100/80">
-              {t("quick.whatsappHint")}
-            </p>
-            <Button
-              asChild
-              variant="secondary"
-              className="mt-3 w-full rounded-full border border-emerald-400/40 bg-emerald-500/20 text-emerald-100 hover:bg-emerald-500/30"
-            >
-              <a
-                href="https://wa.me/0022657760302"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {t("quick.whatsapp")}
-              </a>
-            </Button>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            <Button
-              asChild
-              variant="outline"
-              className="rounded-full border-blue-400/50 bg-blue-500/20 text-white hover:bg-blue-500/30 hover:text-white"
-            >
-              <a
-                href="https://linkedin.com/in/ibrahimdayende"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {t("quick.linkedin")}
-              </a>
-            </Button>
-            <Button
-            asChild
-            variant="outline"
-            className="rounded-full border-rose-400/50 bg-rose-500/20 text-white hover:bg-rose-500/30 hover:text-white"
-          >
-            <a href="mailto:dayendeib@gmail.com">{t("quick.email")}</a>
-          </Button>
-          </div>
-          
-          <Button asChild variant="outline" className="rounded-full">
-            <a
-              href="https://github.com/dayende-ib"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t("quick.github")}
-            </a>
-          </Button>
-        </div>
-        <div className="rounded-2xl border border-border/70 bg-background/35 p-4">
-          <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">
-            {t("quick.availabilityLabel")}
-          </p>
-          <p className="mt-2 text-sm text-white/90">{t("quick.availability")}</p>
-        </div>
-      </div>
+          </m.form>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

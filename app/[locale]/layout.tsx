@@ -1,10 +1,9 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
-import ScrollProgress from "@/components/ScrollProgress";
+import LocaleProviders from "@/components/LocaleProviders";
 
 import { defaultLocale, locales, type Locale } from "../../i18n";
 
@@ -88,13 +87,5 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  setRequestLocale(resolvedLocale);
-  const messages = await getMessages({ locale: resolvedLocale });
-
-  return (
-    <NextIntlClientProvider locale={resolvedLocale} messages={messages}>
-      <ScrollProgress />
-      {children}
-    </NextIntlClientProvider>
-  );
+  return <LocaleProviders locale={resolvedLocale}>{children}</LocaleProviders>;
 }

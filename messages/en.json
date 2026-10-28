@@ -4,108 +4,219 @@
     "description": "I build modern web and mobile products, automate with AI, and help brands grow with Meta & Google Ads."
   },
   "common": {
-    "roleLabel": "Role"
+    "roleLabel": "Role",
+    "close": "Close",
+    "themeToLight": "Switch to light mode",
+    "themeToDark": "Switch to dark mode",
+    "language": "Language",
+    "emailCopied": "Email copied to clipboard",
+    "copyEmail": "Copy email"
   },
   "navbar": {
     "ariaLabel": "Main navigation",
     "cta": "Contact me",
+    "menu": "Open menu",
+    "closeMenu": "Close menu",
+    "search": "Search",
+    "skip": "Skip to content",
     "links": {
       "home": "Home",
+      "impact": "Results",
+      "skills": "Skills",
       "services": "Services",
       "projects": "Projects",
       "about": "About",
       "contact": "Contact"
     }
   },
-  "hero": {
-    "eyebrow": "Web and mobile development",
-    "title": {
-      "name": "Ibrahim Dayende OUGDA",
-      "role": "Full-Stack Web & Mobile Developer"
+  "palette": {
+    "trigger": "Quick search",
+    "placeholder": "Search a project, a skill, an action…",
+    "empty": "No results for “{query}”",
+    "skillHint": "{count, plural, =1 {# project} other {# projects}}",
+    "groups": {
+      "sections": "Navigation",
+      "projects": "Projects",
+      "skills": "Skills",
+      "actions": "Actions"
     },
-    "description": "I help startups, founders, and brands launch solid web and mobile products, automate operations with AI, and drive measurable acquisition results.",
+    "actions": {
+      "copyEmail": "Copy my email",
+      "whatsapp": "Message on WhatsApp",
+      "linkedin": "Open my LinkedIn",
+      "github": "Open my GitHub",
+      "theme": "Toggle theme",
+      "language": "Passer en français"
+    },
+    "hints": {
+      "navigate": "navigate",
+      "select": "open",
+      "close": "close"
+    }
+  },
+  "hero": {
+    "status": "Available for projects",
+    "location": "Burkina Faso · remote",
+    "intro": "Ibrahim Dayende OUGDA — Full-Stack Web & Mobile",
+    "role": "Full-Stack Web & Mobile",
+    "headline": {
+      "before": "I build",
+      "words": [
+        "web products",
+        "mobile apps",
+        "AI automations",
+        "ad campaigns"
+      ],
+      "lead": "that deliver measurable",
+      "highlight": "results.",
+      "tail": ""
+    },
+    "description": "I help startups, founders and organizations launch solid web and mobile products, automate operations with AI and acquire customers with Meta & Google Ads: one partner, from code to ROI.",
     "cta": {
       "primary": "Discuss your project",
-      "secondary": "View case studies"
+      "secondary": "See the results"
+    },
+    "ring": "Available • Web • Mobile • AI • Ads •",
+    "chips": {
+      "award": {
+        "title": "Winner",
+        "label": "2025 AI Hackathon"
+      },
+      "cost": {
+        "value": "$0.18",
+        "label": "per Meta Ads conversation"
+      },
+      "shipped": {
+        "value": "9+",
+        "label": "products shipped"
+      }
     },
     "proofs": {
-      "projectsDelivered": {
+      "projects": {
         "value": "9+",
-        "label": "projects delivered",
-        "detail": "Web, mobile, and internal tools shipped for real-world usage."
+        "label": "products shipped"
       },
-      "adsCampaigns": {
+      "campaigns": {
         "value": "30+",
-        "label": "campaigns managed",
-        "detail": "Meta & Google Ads handled with ROI logic and ongoing optimization."
+        "label": "ad campaigns managed"
       },
-      "aiAutomations": {
+      "automations": {
+        "value": "5+",
+        "label": "AI automations"
+      },
+      "impressions": {
+        "value": "3.6M+",
+        "label": "impressions generated"
+      }
+    },
+    "stackLabel": "Everyday stack"
+  },
+  "impact": {
+    "eyebrow": "Results",
+    "title": "Concrete results, not promises",
+    "description": "The numbers that matter, from real projects. Click a card to open the full case.",
+    "open": "See details",
+    "bubbles": [
+      "Hi, I saw your ad",
+      "Welcome! How can I help?",
+      "I'd like to know more about the offer."
+    ],
+    "tiles": {
+      "conversations": {
+        "kicker": "Meta Ads · WhatsApp & Messenger",
+        "value": "5,000+",
+        "label": "conversations triggered",
+        "stats": [
+          {
+            "value": "3.6M+",
+            "label": "impressions"
+          },
+          {
+            "value": "577K+",
+            "label": "people reached"
+          }
+        ]
+      },
+      "cost": {
+        "value": "$0.18",
+        "label": "per conversation",
+        "detail": "Cost driven down through creative iterations and continuous optimization."
+      },
+      "hackathon": {
+        "value": "1st",
+        "label": "2025 AI Hackathon",
+        "detail": "Prototype built in 48h, then delivered to the National Meteorology Agency.",
+        "tag": "MTDPCE · ANAM"
+      },
+      "products": {
+        "value": "9+",
+        "label": "products shipped",
+        "detail": "Web, mobile and business tools used in real conditions."
+      },
+      "automations": {
         "value": "5+",
         "label": "AI automations",
-        "detail": "Operational workflows connected to your tools to save actual time."
-      }
-    },
-    "spotlight": {
-      "eyebrow": "How I work",
-      "title": "Structured execution, not a generic portfolio.",
-      "description": "I shape projects to reduce ambiguity and deliver something useful as early as possible.",
-      "items": {
-        "build": {
-          "title": "Build",
-          "description": "Web products, apps, and business interfaces designed for actual use."
-        },
-        "scale": {
-          "title": "Scale",
-          "description": "Acquisition, tracking, and automation to move the business forward."
-        },
-        "ship": {
-          "title": "Ship cleanly",
-          "description": "Clear scoping, fast iterations, and direct communication."
-        }
-      }
-    },
-    "availability": {
-      "title": "Available for focused engagements",
-      "description": "Reply within 24 to 48 hours with concrete feedback on feasibility, scope, and the best next step."
-    },
-    "badges": {
-      "stack": "Stack",
-      "delivery": "What I deliver",
-      "items": {
-        "next": "Next.js",
-        "react": "React",
-        "laravel": "Laravel",
-        "flutter": "Flutter",
-        "webApps": "Web apps",
-        "mobileApps": "Mobile apps",
-        "aiAutomation": "AI & Automation",
-        "googleAds": "Acquisition & Ads"
+        "detail": "Make, n8n and LLM workflows wired into business tools."
+      },
+      "campaigns": {
+        "value": "30+",
+        "label": "ad campaigns",
+        "detail": "Tracked with reporting and an ROI mindset."
+      },
+      "communities": {
+        "value": "10+",
+        "label": "communities managed",
+        "detail": "Brand digital presence and community management."
+      },
+      "channels": {
+        "value": "3",
+        "label": "channels for MindEase",
+        "detail": "Web, mobile and WhatsApp: where users already are."
       }
     }
   },
-  "stats": {
-    "ariaLabel": "Proof points",
-    "eyebrow": "Quick proof",
-    "intro": "A few markers to understand the kind of missions I take on and the range I operate in.",
-    "confidence": "Execution, clarity, and outcomes first.",
-    "projectsDelivered": "Projects delivered",
-    "projectsDeliveredValue": "9+",
-    "projectsDeliveredDetail": "Products shipped or used in real operational contexts.",
-    "adsCampaigns": "Ad campaigns",
-    "adsCampaignsValue": "30+",
-    "adsCampaignsDetail": "Campaigns tracked with reporting and continuous optimization.",
-    "communities": "Communities managed",
-    "communitiesValue": "10+",
-    "communitiesDetail": "Brand communities supported with ongoing digital presence.",
-    "aiAutomations": "AI automations",
-    "aiAutomationsValue": "5+",
-    "aiAutomationsDetail": "Automated workflows connected to business tools."
+  "skills": {
+    "eyebrow": "Skills",
+    "title": "Skills backed by real projects",
+    "description": "Pick a domain, then a technology: you instantly see where I used it and what it produced.",
+    "pickSkill": "Filter by technology",
+    "allInDomain": "Whole domain",
+    "projectsTitle": "Projects that prove it",
+    "provenBy": "Proven by · {skill}",
+    "skillCount": "{count} skills",
+    "domains": {
+      "web": {
+        "label": "Web",
+        "title": "Web products & business tools",
+        "description": "Fast, maintainable apps, dashboards and websites, from Laravel back-offices to React interfaces.",
+        "proof": "SUD-StratVision dashboard adopted by teams from day one."
+      },
+      "mobile": {
+        "label": "Mobile",
+        "title": "Flutter mobile apps",
+        "description": "Apps connected to reliable APIs, built for real-world use, multi-role and even offline.",
+        "proof": "3 Flutter apps shipped: healthcare, rental management and well-being."
+      },
+      "ai": {
+        "label": "AI & Automation",
+        "title": "Applied AI & automation",
+        "description": "LLMs, RAG and Make / n8n workflows that remove repetitive work and make information accessible.",
+        "proof": "Winner of the 2025 AI Hackathon with ANAM Meteo Eval."
+      },
+      "growth": {
+        "label": "Growth & Ads",
+        "title": "Data-driven acquisition",
+        "description": "Meta & Google Ads campaigns built to generate business signals, not vanity metrics.",
+        "proof": "5,000+ conversations, as low as $0.18 each."
+      }
+    }
   },
   "services": {
     "eyebrow": "Services",
-    "title": "What I can design, launch, and improve with you",
+    "title": "What I can build with you",
     "description": "I combine product thinking, technical execution, and acquisition so a project can move forward without too many handoffs.",
-    "benefitEyebrow": "What this changes",
+    "cta": "Discuss your needs",
+    "benefitLabel": "What it changes:",
     "items": {
       "web": {
         "title": "Clear and robust web products",
@@ -136,41 +247,61 @@
         "tag": "Automation"
       }
     },
-    "panel": {
-      "eyebrow": "Working style",
-      "title": "A technical partner who keeps the business view in focus",
-      "description": "The goal is not only to produce screens or code. The goal is to move fast with clear priorities and something usable at each step.",
-      "items": {
-        "scoping": {
-          "title": "Useful scoping",
-          "description": "We clarify the need, constraints, and ambition level before building."
+    "process": {
+      "eyebrow": "Process",
+      "title": "A simple framework, visible deliverables early",
+      "description": "Clear needs, visible priorities, concrete delivery, then continuous improvement based on real usage.",
+      "steps": {
+        "scope": {
+          "title": "Scoping",
+          "description": "We clarify the need, the constraints and the level of ambition before writing a single line of code.",
+          "deliverable": "Scope & priorities"
         },
-        "delivery": {
+        "prototype": {
+          "title": "Fast prototype",
+          "description": "You quickly see something concrete, so decisions rely on reality rather than assumptions.",
+          "deliverable": "Mockup or MVP"
+        },
+        "ship": {
           "title": "Iterative delivery",
-          "description": "You see something concrete early, then we improve from real feedback."
+          "description": "Short cycles, direct communication and technical choices that make sense for the business.",
+          "deliverable": "Production release"
         },
-        "support": {
-          "title": "Readable decisions",
-          "description": "I favor technical choices that are defendable and understandable on the business side."
+        "measure": {
+          "title": "Measure & optimize",
+          "description": "Tracking, user feedback and iterations: we improve what actually moves the metrics.",
+          "deliverable": "Report & next steps"
         }
       }
-    },
-    "cta": "Discuss your needs"
+    }
   },
   "projects": {
-    "eyebrow": "Projects",
+    "eyebrow": "Case studies",
     "title": "Concrete projects, measurable impact",
     "description": "Solutions designed to solve real problems, with a focus on performance and growth.",
     "ctaPrompt": "Have a similar project in mind?",
+    "ctaDescription": "Describe it in a few lines: I'll get back to you within 48h with concrete feedback.",
     "ctaLabel": "Discuss your project",
-    "ctaGithub": "See all my projects",
+    "ctaGithub": "View my GitHub",
     "filtersLabel": "Project filters",
-    "featuredEyebrow": "Featured work",
-    "featuredDescription": "The strongest examples of my approach: product clarity, concrete impact, and clean execution.",
-    "allProjectsEyebrow": "More projects",
-    "allProjectsDescription": "An additional selection showing a wider range of contexts, stacks, and business problems.",
     "impactEyebrow": "Outcome / impact",
-    "scrollHint": "Scroll to explore",
+    "archive": {
+      "title": "More projects",
+      "description": "Different contexts, different stacks: from automation to R&D."
+    },
+    "count": "{count, plural, =1 {# project} other {# projects}}",
+    "showMore": "{count, plural, =1 {Show # more project} other {Show # more projects}}",
+    "showLess": "Show less",
+    "prev": "Previous project",
+    "next": "Next project",
+    "copyLink": "Copy project link",
+    "linkCopied": "Project link copied",
+    "prefill": "Hi Ibrahim, I'd like to discuss a project similar to “{title}”.",
+    "caseStudy": {
+      "challenge": "The challenge",
+      "approach": "The approach",
+      "result": "The result"
+    },
     "filters": {
       "all": "All",
       "web": "Web",
@@ -179,15 +310,18 @@
       "ia": "AI"
     },
     "badges": {
-      "featured": "Featured",
-      "client": "Client project",
-      "wip": "IN PROGRESS",
-      "hackathonWinner": "2025 AI Hackathon Winner"
+      "client": "Client",
+      "wip": "In progress",
+      "hackathonWinner": "2025 AI Hackathon winner",
+      "demo": "Video demo"
     },
     "cta": {
       "viewProject": "View project",
       "requestDemo": "Request a demo",
-      "viewCode": "View code"
+      "viewCode": "View code",
+      "viewDemo": "Watch the video demo",
+      "readCase": "Read the case study",
+      "similar": "Discuss a similar project"
     },
     "categories": {
       "web": "Web",
@@ -200,37 +334,147 @@
         "title": "Meta Ads Campaigns - Conversations & Engagement",
         "description": "Not just clicks - real conversations. These Meta Ads campaigns were built around WhatsApp & Messenger intent, driving 5,000+ direct exchanges at a cost per conversation as low as $0.18.",
         "impact": "3.6M+ impressions and 577k+ people reached. Over 5,000 WhatsApp & Messenger conversations triggered, with cost per conversation pushed as low as $0.18 through continuous creative iteration and bid optimization.",
-        "role": "Media Buying & Ads Strategy"
+        "role": "Media Buying & Ads Strategy",
+        "metrics": [
+          {
+            "value": "5,000+",
+            "label": "WhatsApp & Messenger conversations"
+          },
+          {
+            "value": "$0.18",
+            "label": "per conversation"
+          },
+          {
+            "value": "3.6M+",
+            "label": "impressions"
+          },
+          {
+            "value": "577K+",
+            "label": "people reached"
+          }
+        ],
+        "caseStudy": {
+          "challenge": "Drive direct conversations with qualified prospects - not just clicks or reach - while keeping acquisition costs under control.",
+          "approach": "Conversation-focused Facebook & Instagram campaigns (WhatsApp & Messenger), regular creative iterations, audience testing and continuous bid optimization.",
+          "result": "3.6M+ impressions, 577k+ people reached and over 5,000 conversations triggered, with cost per conversation pushed as low as $0.18."
+        }
       },
       "mindease": {
         "title": "MindEase - Emotional Support Built for West Africa",
         "description": "Mental health support is scarce and often misaligned with West African realities. MindEase delivers emotional tracking and AI-driven recommendations across mobile, web, and WhatsApp - meeting people where they already are.",
         "impact": "Accessible without installation via WhatsApp, or through the web and mobile app. AI recommendations adapt to the user's profile and local context, providing real preventive support without requiring professional therapy.",
-        "role": "Design & development"
+        "role": "Design & development",
+        "metrics": [
+          {
+            "value": "3",
+            "label": "channels: web, mobile, WhatsApp"
+          },
+          {
+            "value": "0",
+            "label": "install needed via WhatsApp"
+          },
+          {
+            "value": "AI",
+            "label": "personalized recommendations"
+          }
+        ],
+        "caseStudy": {
+          "challenge": "Mental health support in West Africa is nearly non-existent or poorly adapted: tools built for Western contexts, cultural barriers, low mobile accessibility and a lack of localized resources.",
+          "approach": "Multi-channel platform (Flutter + web beta + WhatsApp Cloud API) with a TypeScript/Supabase backend, interactive emotional tracking and AI that personalizes recommendations to the user's profile and local context.",
+          "result": "A preventive solution available with no install via WhatsApp, an open web beta and an intuitive mobile app - designed around users and local community realities."
+        }
       },
       "propiflow": {
         "title": "Propiflow - Rental Management Without the Spreadsheets",
         "description": "Rental management shouldn't live in scattered spreadsheets and phone calls. Propiflow brings properties, tenants, contracts, and maintenance into one place - with a dedicated mobile app for tenants.",
         "impact": "All rental operations centralized in one place. Tenants have their own mobile interface, maintenance requests are tracked in real time, and repetitive admin tasks are gone.",
-        "role": "Design & development"
+        "role": "Design & development",
+        "metrics": [
+          {
+            "value": "2",
+            "label": "apps: web back-office + tenant mobile"
+          },
+          {
+            "value": "0",
+            "label": "scattered spreadsheets"
+          },
+          {
+            "value": "Live",
+            "label": "maintenance tracking"
+          }
+        ],
+        "caseStudy": {
+          "challenge": "Rental management relied on scattered spreadsheets, phone calls and paper contracts - no unified tool for owners, managers and tenants.",
+          "approach": "Full-stack platform with a web admin dashboard (properties, tenants, contracts, rent, maintenance) and a Flutter mobile app for tenants.",
+          "result": "Fully digital rental management: automated admin tasks, real-time maintenance tracking and centralized communication between all parties."
+        }
       },
       "kawari-finance-app": {
         "title": "Kawari Finance App - Budget Clarity & AI",
         "description": "Knowing what you spend is a start. Understanding why and deciding differently is where Kawari comes in - financial flow visualization and actionable AI recommendations built into one app.",
         "impact": "A clear view of spending changes behavior. AI recommendations help users spot drift, identify priority expense areas, and make better financial decisions day to day.",
-        "role": "Design & development"
+        "role": "Design & development",
+        "metrics": [
+          {
+            "value": "AI",
+            "label": "actionable recommendations"
+          },
+          {
+            "value": "Live",
+            "label": "cash-flow visualization"
+          }
+        ],
+        "caseStudy": {
+          "challenge": "Users had no visibility into their real cash flows and made spending decisions without reliable data.",
+          "approach": "A React interface built for readability, with an AI layer that analyzes spending trends and generates personalized recommendations.",
+          "result": "Real-time budget visualization and actionable AI advice for better financial discipline."
+        }
       },
       "sud-stratvision": {
         "title": "SUD-StratVision - Centralized Strategic Management",
         "description": "When goals live in Excel and missions are tracked by email, decisions arrive too late. SUD-StratVision pulls everything together - objectives, performance, HR, leave, and training - in one dashboard.",
         "impact": "Immediate adoption by teams from day one. Decision-makers finally have a consolidated real-time view without chasing down files scattered across departments.",
-        "role": "Full-stack development"
+        "role": "Full-stack development",
+        "metrics": [
+          {
+            "value": "5",
+            "label": "modules: goals, perf., HR, leave, training"
+          },
+          {
+            "value": "Day 1",
+            "label": "team adoption"
+          },
+          {
+            "value": "1",
+            "label": "consolidated view for leaders"
+          }
+        ],
+        "caseStudy": {
+          "challenge": "The organization tracked goals, leave and training in scattered Excel files - with no consolidated view for decision-makers.",
+          "approach": "Laravel dashboard with interconnected modules (goals, HR, missions), role-based access control and real-time data visualizations.",
+          "result": "Fully centralized management, immediate team adoption and faster decisions thanks to reliable, accessible data."
+        }
       },
       "clinic-appointment-scheduler": {
         "title": "Clinic Appointment Scheduler - No More Scheduling Chaos",
         "description": "Phone-based appointment booking means missed slots, scheduling conflicts, and frustrated patients. This Flutter app gives patients, doctors, and admins a shared real-time view to coordinate without friction.",
         "impact": "Scheduling conflicts and forgotten appointments are gone. Patients book autonomously, doctors manage their availability, and admins have full visibility across all clinic coordination.",
-        "role": "Mobile & API development"
+        "role": "Mobile & API development",
+        "metrics": [
+          {
+            "value": "3",
+            "label": "roles: patient, doctor, admin"
+          },
+          {
+            "value": "Live",
+            "label": "real-time availability"
+          }
+        ],
+        "caseStudy": {
+          "challenge": "Phone and paper-based booking caused missed appointments, scheduling conflicts and poor coordination between doctors and patients.",
+          "approach": "Multi-role Flutter app (patient, doctor, admin) backed by an Express/MongoDB API handling notifications, history and real-time availability.",
+          "result": "A fully digital booking journey, fewer scheduling conflicts and better clinic coordination."
+        }
       },
       "offline-gpt": {
         "title": "Offline GPT - Local AI Without Internet",
@@ -238,168 +482,209 @@
         "impact": "A full LLM running locally on a mobile device - no server, no data connection needed. A real step toward democratizing AI in contexts where network infrastructure remains a barrier.",
         "role": "Design & development",
         "microcopy": "Work in progress - contributions and feedback welcome.",
-        "ctaSecondary": "Discuss the project",
-        "codeLabel": "View code"
+        "metrics": [
+          {
+            "value": "100%",
+            "label": "on-device, no server"
+          },
+          {
+            "value": "0",
+            "label": "connection needed"
+          }
+        ]
       },
       "make-social-automation": {
         "title": "Social Media Automation - Google Sheets → Facebook & Instagram",
         "description": "Posting manually to Facebook and Instagram every week is time nobody has. This Make pipeline reads a Google Sheet, publishes to both platforms automatically, and updates status without any human touch.",
         "impact": "Hours of manual publishing eliminated every week. Content goes out on time across both platforms, status updates automatically, and nothing slips through the cracks.",
-        "role": "Development & Automation"
+        "role": "Development & Automation",
+        "metrics": [
+          {
+            "value": "2",
+            "label": "platforms published automatically"
+          },
+          {
+            "value": "0",
+            "label": "manual steps"
+          }
+        ]
       },
       "telegram-youtube-summarizer": {
         "title": "AI Telegram Bot - Instant YouTube Summaries",
         "description": "Drop a YouTube link in the bot, get a clean AI summary in seconds. No more sitting through 40-minute videos just to extract the key points.",
         "impact": "YouTube monitoring becomes passive. The modular architecture makes it easy to add new content sources or output channels as needs evolve - the bot grows with the workflow.",
-        "role": "AI & Automation"
+        "role": "AI & Automation",
+        "metrics": [
+          {
+            "value": "40 min",
+            "label": "of video summarized in seconds"
+          }
+        ]
       },
       "bfa-administration-assistant": {
         "title": "BFA Administration Assistant - Institutional RAG",
         "description": "A RAG assistant trained on real institutional documents to answer admin questions in seconds. Built for a local context where procedures change often and staff spend too much time searching for answers.",
         "impact": "Agents find answers in seconds instead of digging through PDFs. Accurate, grounded in the institution's real documentation - operational from day one.",
-        "role": "Design & development"
+        "role": "Design & development",
+        "metrics": [
+          {
+            "value": "RAG",
+            "label": "answers grounded in real documents"
+          }
+        ]
       },
       "sud-develop-website": {
         "title": "SUD Develop - Multilingual Corporate Website",
         "description": "SUD Develop's first serious digital presence. A multilingual corporate site with a clear structure, division overview, and integrated quote request form to turn visits into real leads.",
         "impact": "Stronger online presence with a site that actually reflects SUD Develop's offering. The integrated quote module converts visits into qualified business opportunities without an email back-and-forth.",
-        "role": "Full-stack development"
+        "role": "Full-stack development",
+        "metrics": [
+          {
+            "value": "i18n",
+            "label": "multilingual site + quote module"
+          }
+        ]
       },
       "anam-meteo-eval": {
         "title": "ANAM Meteo Eval - 2025 AI Hackathon Winner",
         "description": "Built in 48 hours at the 2025 AI Hackathon, then delivered to Burkina Faso's National Meteorological Agency. It automatically evaluates weather data quality with reliable, actionable metrics.",
         "impact": "Award-winning at the 2025 AI Hackathon and deployed with ANAM. It automates weather data quality assessment with metrics that directly improve forecast reliability.",
-        "role": "Design & development"
+        "role": "Design & development",
+        "metrics": [
+          {
+            "value": "1st",
+            "label": "2025 AI Hackathon"
+          },
+          {
+            "value": "48h",
+            "label": "from idea to prototype"
+          },
+          {
+            "value": "ANAM",
+            "label": "delivered to the agency"
+          }
+        ],
+        "caseStudy": {
+          "challenge": "Burkina Faso's National Meteorology Agency needed a way to assess the quality of its weather data - a key step for reliable forecasts.",
+          "approach": "A Python solution built in 48 hours during the 2025 AI Hackathon: data collection, automatic computation of quality indicators and outputs the teams can act on.",
+          "result": "Winner of the 2025 AI Hackathon (MTDPCE), then delivered to ANAM: data quality assessment is now automated, with actionable metrics."
+        }
       },
       "cv-studio": {
         "title": "CV Studio - Modern Resumes in Minutes",
         "description": "Building a standout resume shouldn't take a full day. CV Studio walks users through a step-by-step flow to produce a polished, modern document - no design skills or Word gymnastics required.",
         "impact": "Modern CVs in minutes, no design background needed. Users leave with a structured, readable document ready to send - removing what was previously a real barrier to job applications.",
-        "role": "Design & development"
+        "role": "Design & development",
+        "metrics": [
+          {
+            "value": "Minutes",
+            "label": "to produce a modern CV"
+          }
+        ]
       },
       "gestion-bibliotheque": {
         "title": "Library Management - Loans, Returns & Alerts",
         "description": "A well-run library means books that actually circulate. This Laravel/MySQL system handles loans, returns, and users - with automated alerts to prevent losses before they happen.",
         "impact": "Automated loan tracking, overdue alerts, per-user history. A tool that makes the library easier to manage and books more accessible to readers.",
-        "role": "Design & development"
+        "role": "Design & development",
+        "metrics": [
+          {
+            "value": "Auto",
+            "label": "overdue loan alerts"
+          }
+        ]
       },
       "bytemarket": {
         "title": "ByteMarket - Vanilla JS E-commerce",
         "description": "An e-commerce site built from scratch in pure HTML/CSS/JS - no framework, no shortcuts. A deliberate exercise in mastering the web fundamentals before moving on to modern stacks.",
         "impact": "Building without dependencies means understanding every line. ByteMarket laid the foundation for a serious web approach - the discipline from this work shows in every project that followed.",
-        "role": "Design & development"
+        "role": "Design & development",
+        "metrics": [
+          {
+            "value": "0",
+            "label": "frameworks: pure HTML, CSS, JS"
+          }
+        ]
       }
     }
   },
   "about": {
-    "eyebrow": "Why work with me",
-    "title": "A hybrid profile to turn an idea into something usable",
-    "description": "I combine product thinking, technical execution, and business awareness to move a project forward without wasting time in ambiguity.",
-    "cta": {
-      "primary": "Discuss your project",
-      "secondary": "Download the CV"
+    "eyebrow": "About",
+    "title": "A hybrid profile: product, code and growth",
+    "role": "Full-Stack Web & Mobile Developer",
+    "statement": "I combine product thinking, technical execution and business sense to turn an idea into something useful - without wasting time in the fog.",
+    "bio": "I work on web and mobile products, AI automation and acquisition whenever a project needs one coherent view across tech and performance. Based in Burkina Faso, I collaborate on both local and international projects.",
+    "facts": {
+      "location": {
+        "label": "Based in",
+        "value": "Burkina Faso · remote"
+      },
+      "time": {
+        "label": "Local time"
+      },
+      "collaboration": {
+        "label": "Collaboration",
+        "value": "Freelance & contracts"
+      },
+      "response": {
+        "label": "Response",
+        "value": "24–48h"
+      }
     },
     "values": {
       "product": {
-        "eyebrow": "Product view",
         "title": "Prioritize what actually matters",
         "description": "I focus first on what needs to exist to create value, not what looks impressive at first glance."
       },
       "execution": {
-        "eyebrow": "Execution",
         "title": "Move fast without damaging the future",
         "description": "The goal is to move quickly with a base that stays clean, readable, and strong enough to evolve."
       },
       "growth": {
-        "eyebrow": "Business impact",
         "title": "Connect technical work to outcomes",
         "description": "I keep a direct link between what gets built, what gets measured, and what changes for the business."
       }
-    },
-    "approach": {
-      "eyebrow": "How I collaborate",
-      "title": "Direct communication, clear decisions, short iterations",
-      "description": "I prefer a simple operating model: clarify the need, make priorities visible, deliver something concrete, then improve from reality."
-    },
-    "profile": {
-      "title": "Full-Stack Web & Mobile Developer",
-      "description": "I work on web products, mobile apps, AI automations, and acquisition topics when keeping a coherent view between tech and performance matters."
     },
     "achievement": {
       "eyebrow": "Recognition",
       "title": "Winner of the 2025 AI Hackathon (MTDPCE)",
       "description": "ANAM Meteo project awarded at the 2025 AI Hackathon organized by the Ministry of Digital Transition, Posts and Electronic Communications (MTDPCE), then delivered to the National Meteorological Agency."
     },
-    "details": {
-      "eyebrow": "Useful context",
-      "items": {
-        "location": {
-          "title": "Base",
-          "description": "Based in West Africa, with experience working on both local and international projects."
-        },
-        "collaboration": {
-          "title": "Engagement style",
-          "description": "Freelance work, focused missions, product support, or reinforcement on a critical slice of the project."
-        },
-        "response": {
-          "title": "Responsiveness",
-          "description": "Reply within 24 to 48 hours with a concrete view on scope, feasibility, and realistic options."
-        }
-      }
-    }
+    "learning": "Certified training on"
   },
-  "contact": {
-    "eyebrow": "Contact",
-    "title": "Let's talk about your next project",
-    "subtitle": "Describe your needs and I will get back to you within 48h with a clear proposal.",
-    "noCommitment": "First exchange with no commitment.",
-    "form": {
-      "eyebrow": "Quick brief",
-      "nameLabel": "Full name",
-      "emailLabel": "Email",
-      "messageLabel": "Message",
-      "types": {
-        "web": "Website or web app",
-        "mobile": "Mobile app",
-        "automation": "AI automation"
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "What people I've worked with say",
+    "description": "Concrete feedback from clients and collaborators on the experience of working together.",
+    "items": {
+      "t1": {
+        "quote": "Ibrahim delivered a robust web application in record time, with clear communication at every step. He understands the business stakes behind the technical work - that's rare and valuable.",
+        "name": "General Manager",
+        "role": "SUD Develop",
+        "initials": "GM"
       },
-      "placeholders": {
-        "name": "Your name",
-        "email": "you@email.com",
-        "message": "Project goal, desired timeline, approximate budget (optional)..."
+      "t2": {
+        "quote": "The strategic management software developed by Ibrahim transformed the way we track objectives and performance. Clean interface, reliable data, and immediate adoption by the teams.",
+        "name": "Head of Marketing",
+        "role": "SUD-StratVision",
+        "initials": "PM"
       },
-      "errors": {
-        "name": "Name is required.",
-        "email": "Invalid email.",
-        "message": "Message too short (min. 10 characters).",
-        "submit": "Something went wrong. Please try again."
-      },
-      "submit": "Get a proposal",
-      "responseTime": "Reply within 24 to 48h.",
-      "success": "Thanks! I will get back to you within 48h."
+      "t3": {
+        "quote": "Our Meta Ads campaigns reached over 3.6 million impressions with a cost per conversation of $0.18. Ibrahim masters both the technical side and the acquisition strategy.",
+        "name": "Marketing Project Lead",
+        "role": "E-commerce client",
+        "initials": "ML"
+      }
     },
-    "quick": {
-      "eyebrow": "Recommended channel",
-      "title": "Pick the fastest way to reach out",
-      "description": "If the need is already clear, WhatsApp is the fastest way to start the conversation.",
-      "primaryLabel": "Quick first exchange",
-      "whatsapp": "WhatsApp",
-      "whatsappHint": "Ideal for a quick first exchange",
-      "linkedin": "LinkedIn",
-      "email": "Email",
-      "github": "GitHub",
-      "availabilityLabel": "Availability",
-      "availability": "Limited availability - response guaranteed within 48h."
-    }
+    "prev": "Previous testimonial",
+    "next": "Next testimonial"
   },
   "blog": {
     "eyebrow": "Articles & Publications",
     "title": "Technical insights and lessons learned",
     "description": "Thoughts on development, automation, and building products that actually work.",
     "readMore": "Read article",
-    "ctaPrompt": "All publications on LinkedIn",
     "ctaLabel": "View LinkedIn profile",
-    "ctaUrl": "https://www.linkedin.com/in/ibrahimdayende",
     "items": {
       "a1": {
         "title": "Are you a student? You literally have access to +$200K in FREE tools… and you might not even know it.",
@@ -438,38 +723,55 @@
       }
     }
   },
-  "testimonials": {
-    "eyebrow": "Testimonials",
-    "title": "What people I've worked with say",
-    "description": "Concrete feedback from clients and collaborators on the experience of working together.",
-    "items": {
-      "t1": {
-        "quote": "Ibrahim delivered a robust web application in record time, with clear communication at every step. He understands the business stakes behind the technical work - that's rare and valuable.",
-        "name": "General Manager",
-        "role": "SUD Develop",
-        "initials": "GM"
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about your next project",
+    "subtitle": "Describe your needs and I will get back to you within 48h with a clear proposal.",
+    "noCommitment": "First exchange with no commitment.",
+    "quick": {
+      "eyebrow": "Fastest",
+      "whatsappHint": "Ideal for a quick first exchange",
+      "availabilityLabel": "Availability",
+      "availability": "Limited availability - response guaranteed within 48h.",
+      "localTime": "Local time:"
+    },
+    "form": {
+      "typeLabel": "Project type (optional)",
+      "nameLabel": "Full name",
+      "emailLabel": "Email",
+      "messageLabel": "Message",
+      "types": {
+        "web": "Website or web app",
+        "mobile": "Mobile app",
+        "automation": "AI automation",
+        "ads": "Ad campaigns",
+        "other": "Other"
       },
-      "t2": {
-        "quote": "The strategic management software developed by Ibrahim transformed the way we track objectives and performance. Clean interface, reliable data, and immediate adoption by the teams.",
-        "name": "Head of Marketing",
-        "role": "SUD-StratVision",
-        "initials": "PM"
+      "placeholders": {
+        "name": "Your name",
+        "email": "you@email.com",
+        "message": "Project goal, desired timeline, approximate budget (optional)..."
       },
-      "t3": {
-        "quote": "Our Meta Ads campaigns reached over 3.6 million impressions with a cost per conversation of $0.18. Ibrahim masters both the technical side and the acquisition strategy.",
-        "name": "Marketing Project Lead",
-        "role": "E-commerce client",
-        "initials": "ML"
-      }
+      "errors": {
+        "name": "Name is required.",
+        "email": "Invalid email.",
+        "message": "Message too short (min. 10 characters).",
+        "submit": "Something went wrong. Please try again."
+      },
+      "submit": "Get a proposal",
+      "sending": "Sending…",
+      "responseTime": "Reply within 24 to 48h.",
+      "successTitle": "Message sent!",
+      "success": "Thanks! I will get back to you within 48h.",
+      "again": "Send another message"
     }
   },
   "footer": {
-    "links": {
-      "home": "Home",
-      "services": "Services",
-      "projects": "Projects",
-      "contact": "Contact"
-    },
+    "tagline": "Web, mobile and AI products, built to deliver measurable results.",
+    "navLabel": "Navigation",
+    "elsewhere": "Elsewhere",
+    "paletteHint": "Tip: press <key>Ctrl K</key> or <key>/</key> to explore everything.",
+    "backToTop": "Back to top",
     "copyright": "© {year} Ibrahim Dayende. All rights reserved."
   },
   "mindease": {
@@ -499,5 +801,3 @@
     }
   }
 }
-
-

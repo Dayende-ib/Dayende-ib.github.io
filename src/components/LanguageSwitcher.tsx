@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
 
 const locales = ["fr", "en"] as const;
 type Locale = (typeof locales)[number];
 
-const buildLocalePath = (pathname: string, locale: Locale) => {
+export const buildLocalePath = (pathname: string, locale: Locale) => {
   const segments = pathname.split("/");
   const currentLocale = segments[1] as Locale | undefined;
 
@@ -23,16 +23,29 @@ const buildLocalePath = (pathname: string, locale: Locale) => {
   return nextPath.replace(/\/\/+/g, "/");
 };
 
-export default function LanguageSwitcher() {
+export const rememberLocale = (locale: Locale) => {
+  try {
+    localStorage.setItem("preferred-locale", locale);
+  } catch {
+    // Stockage indisponible (navigation privée) : on ignore
+  }
+};
+
+export default function LanguageSwitcher({ className }: { className?: string }) {
   const locale = useLocale();
+  const t = useTranslations("common");
   const pathname = usePathname() || "/";
   const searchParams = useSearchParams();
   const query = searchParams?.toString();
 
   return (
     <div
-      className="flex items-center rounded-full border border-border/70 bg-background/35 p-1 text-[11px] uppercase tracking-[0.24em]"
-      aria-label="Language switcher"
+      className={cn(
+        "flex items-center rounded-full border border-border bg-background/60 p-0.5 font-mono text-[11px] uppercase tracking-wider",
+        className
+      )}
+      role="group"
+      aria-label={t("language")}
     >
       {locales.map((nextLocale) => {
         const href = buildLocalePath(pathname, nextLocale);
@@ -43,17 +56,17 @@ export default function LanguageSwitcher() {
           <Link
             key={nextLocale}
             href={hrefWithQuery}
-            onClick={() => {
-              localStorage.setItem("preferred-locale", nextLocale);
-            }}
+            hrefLang={nextLocale}
+            aria-current={isActive ? "true" : undefined}
+            onClick={() => rememberLocale(nextLocale)}
             className={cn(
-              "rounded-full px-3 py-1.5 transition-colors",
+              "rounded-full px-2.5 py-1.5 transition-colors",
               isActive
-                ? "bg-white/10 text-white"
-                : "text-muted-foreground hover:text-white"
+                ? "bg-foreground text-background"
+                : "text-muted-foreground hover:text-foreground"
             )}
           >
-            {nextLocale.toUpperCase()}
+            {nextLocale}
           </Link>
         );
       })}

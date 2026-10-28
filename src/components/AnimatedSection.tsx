@@ -1,15 +1,23 @@
 "use client";
 
-import { useRef } from "react";
-import { LazyMotion, domAnimation, m, useInView } from "framer-motion";
-import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
+import { m } from "framer-motion";
+
+import { easeOutExpo } from "@/components/motion/easing";
 
 interface AnimatedSectionProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   delay?: number;
   direction?: "up" | "left" | "right" | "none";
 }
+
+const offsets = {
+  up: { y: 28 },
+  left: { x: -28 },
+  right: { x: 28 },
+  none: {}
+} as const;
 
 export default function AnimatedSection({
   children,
@@ -17,38 +25,15 @@ export default function AnimatedSection({
   delay = 0,
   direction = "up"
 }: AnimatedSectionProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
-
-  const variants = {
-    hidden: {
-      opacity: 0,
-      y: direction === "up" ? 32 : 0,
-      x: direction === "left" ? -32 : direction === "right" ? 32 : 0
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      x: 0,
-      transition: {
-        duration: 0.55,
-        delay,
-        ease: [0.21, 0.47, 0.32, 0.98]
-      }
-    }
-  };
-
   return (
-    <LazyMotion features={domAnimation}>
-      <m.div
-        ref={ref}
-        className={cn(className)}
-        variants={variants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-      >
-        {children}
-      </m.div>
-    </LazyMotion>
+    <m.div
+      className={className}
+      initial={{ opacity: 0, filter: "blur(6px)", ...offsets[direction] }}
+      whileInView={{ opacity: 1, filter: "blur(0px)", x: 0, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.8, delay, ease: easeOutExpo }}
+    >
+      {children}
+    </m.div>
   );
 }

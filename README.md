@@ -1,39 +1,38 @@
 ﻿# Portfolio Next.js - Ibrahim Dayende
 
-Portfolio personnel realise avec Next.js 15 (App Router), TypeScript et Tailwind CSS. Le site presente un parcours complet (hero, stats, services, projets filtres, a propos, contact) avec animations Framer Motion et une UI responsive, disponible en FR/EN.
+Portfolio personnel réalisé avec Next.js (App Router, export statique), TypeScript, Tailwind CSS et Framer Motion, disponible en FR/EN et déployé sur GitHub Pages. Le parcours est pensé « résultats d'abord » : chaque compétence et chaque chiffre renvoie au projet qui le prouve.
 
-## Fonctionnalites
-- Sections modulaires: Hero, Stats, Services, Projets, A propos, Contact.
-- Projets avec badges (phare, client, en cours), roles et impacts cause -> effet.
-- CTA adaptes aux liens (voir le projet, demander une demo, voir le code).
-- Filtrage des projets (web, mobile, ads, ia) avec donnees centralisees.
-- Version FR/EN avec detection automatique (Accept-Language) et URLs propres (/fr, /en).
-- Switch de langue FR | EN dans la navbar.
-- Animations progressives et gestion du "reduced motion".
-- Formulaire de contact avec validation cote client et message de succes.
-- Navbar sticky + navigation ancres pour desktop et mobile.
+## Fonctionnalités
+- Parcours : Hero → Résultats → Compétences → Services & méthode → Études de cas → À propos → Témoignages → Articles → Contact.
+- **Résultats** : bento de chiffres clés animés, chaque carte ouvre le projet correspondant.
+- **Explorateur de compétences** : domaine → technologie → projets qui la prouvent (avec leur métrique principale).
+- **Études de cas** empilées au scroll (desktop) avec défi / approche / résultat et métriques.
+- **Fiche projet** accessible (focus piégé, Échap, flèches ← → pour naviguer) et partageable via `#project-<id>`.
+- **Palette de commandes** (`Ctrl/⌘ K` ou `/`) : sections, projets, compétences, copier l'email, thème, langue.
+- Formulaire de contact (Web3Forms) avec type de projet, pré-rempli depuis une fiche projet.
+- Thème clair par défaut (bascule sombre mémorisée), tokens CSS, respect de `prefers-reduced-motion`.
+- `/` affiche directement la version française, sans écran de redirection ; seuls les visiteurs anglophones (préférence enregistrée ou navigateur en anglais sans français) sont renvoyés vers `/en/` avant l'affichage (`src/components/EnglishRedirect.tsx`).
+- Navigation avec section active, menu mobile plein écran, lien d'évitement clavier.
 
 ## Stack
-- Next.js 15, React 19.2.0, TypeScript
-- Tailwind CSS + composants UI reutilisables
-- Framer Motion pour les animations
-- Lucide + utilities (clsx, tailwind-merge, CVA)
-- next-intl pour l'i18n
+- Next.js 16, React 19, TypeScript
+- Tailwind CSS (tokens HSL dans `app/globals.css`) + composants UI (CVA)
+- Framer Motion (chargé une fois via `LazyMotion`)
+- next-intl pour l'i18n, next-themes pour le thème
+- Polices : Inter, Bricolage Grotesque (titres), JetBrains Mono (libellés)
 
 ## Structure du projet
-- `app/` : layout racine et styles globaux.
-- `app/[locale]/` : pages localisees (FR/EN).
-- `i18n.ts` : configuration next-intl + fallback FR.
-- `middleware.ts` : redirection locale automatique.
-- `src/components/` : sections et composants UI.
-- `src/components/LanguageSwitcher.tsx` : switch de langue.
-- `src/data/projects.ts` : catalogue des projets + filtres.
-- `messages/` : fichiers de traduction.
-- `public/projects/` : images des projets.
-- `public/cv/` : CV PDF.
-- `tailwind.config.ts` : theme et styles.
+- `app/[locale]/page.tsx` : assemblage des sections.
+- `src/components/sections/` : une section par fichier.
+- `src/components/projects/` : fiche projet (`ProjectProvider`), études de cas, archive filtrable.
+- `src/components/motion/` : primitives d'animation (révélation de texte, compteurs, marquee, effet magnétique...).
+- `src/components/CommandPalette.tsx` : palette `Ctrl/⌘ K`.
+- `src/data/projects.ts` : catalogue des projets (liens, tags, études de cas mises en avant).
+- `src/data/skills.ts` : compétences par domaine, reliées aux projets.
+- `src/data/site.ts` : coordonnées, sections, stack affichée.
+- `messages/` : tous les textes FR/EN, y compris métriques et études de cas des projets.
 
-## Demarrage local
+## Démarrage local
 ```bash
 npm install
 npm run dev
@@ -42,14 +41,14 @@ npm run dev
 Ouvrir `http://localhost:3000` (redirige vers `/fr` ou `/en` selon le navigateur).
 
 ## Envoi du formulaire (email)
-Integration Web3Forms cote client.
-Variables d'environnement necessaires:
+Intégration Web3Forms côté client.
+Variable d'environnement nécessaire :
 - `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`
 
 ## Personnalisation rapide
-- Metadonnees et SEO: `app/[locale]/layout.tsx`.
-- Hero, services, about: `src/components/Hero.tsx`, `src/components/Services.tsx`, `src/components/About.tsx`.
-- Projets: `src/data/projects.ts` + textes dans `messages/`.
-- Coordonnees et liens: `src/components/ContactForm.tsx`.
-- Redirection locale: `middleware.ts`.
-- Traductions: `messages/fr.json` et `messages/en.json`.
+- Ajouter un projet : une entrée dans `src/data/projects.ts` + ses textes dans `messages/*.json` (`projects.items.<id>`, avec `metrics` et éventuellement `caseStudy`).
+- Mettre un projet en étude de cas : ajouter son id à `caseStudyIds`.
+- Relier une compétence à un projet : `src/data/skills.ts`.
+- Coordonnées et réseaux : `src/data/site.ts`.
+- Couleurs : variables `--primary` (bleu du logo) et `--signal` (résultats) dans `app/globals.css`.
+- Métadonnées et SEO : `app/layout.tsx` et `app/[locale]/layout.tsx`.

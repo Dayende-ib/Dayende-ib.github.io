@@ -42,6 +42,14 @@ export async function generateMetadata({
   return {
     title: t("metaTitle"),
     description: t("metaDescription"),
+    alternates: {
+      canonical: `/${resolvedLocale}/mindeasedemo`,
+      languages: {
+        fr: "/fr/mindeasedemo",
+        en: "/en/mindeasedemo",
+        "x-default": "/mindeasedemo"
+      }
+    },
     openGraph: {
       title: t("metaTitle"),
       description: t("metaDescription"),
@@ -87,9 +95,9 @@ export default async function MindeaseDemoPage({ params }: MindeaseDemoPageProps
 
       <main>
         <section className="relative overflow-hidden pt-20 pb-12">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-grid opacity-25" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(124,58,237,0.35),_transparent_55%),radial-gradient(circle_at_bottom,_rgba(34,211,238,0.25),_transparent_50%)] bg-[length:200%_200%] animate-gradient-slow" />
+          <div aria-hidden className="absolute inset-0 -z-10">
+            <div className="absolute inset-0 bg-grid mask-fade-b" />
+            <div className="absolute left-1/2 top-[-30%] h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px]" />
           </div>
           <Container className="relative">
             <SectionHeading
@@ -106,16 +114,13 @@ export default async function MindeaseDemoPage({ params }: MindeaseDemoPageProps
             {demos.map((demo) => (
               <article
                 key={demo.key}
-                className="rounded-xl border bg-card p-4 shadow sm:p-6"
+                className="rounded-3xl border border-border bg-card p-4 sm:p-6"
               >
                 <div className="mb-4 space-y-2">
-                  <Badge
-                    variant="secondary"
-                    className="border-cyan-400/30 bg-cyan-500/10 text-cyan-100"
-                  >
+                  <Badge variant="primary">
                     {t(`demos.${demo.key}.label`)}
                   </Badge>
-                  <h3 className="text-xl font-semibold text-white">
+                  <h3 className="font-display text-xl font-semibold tracking-tight">
                     {t(`demos.${demo.key}.title`)}
                   </h3>
                   <p className="text-sm text-muted-foreground">
@@ -125,8 +130,8 @@ export default async function MindeaseDemoPage({ params }: MindeaseDemoPageProps
                 <div
                   className={
                     demo.orientation === "portrait"
-                      ? "mx-auto w-full max-w-[320px] overflow-hidden rounded-lg border border-border/60 bg-black"
-                      : "w-full overflow-hidden rounded-lg border border-border/60 bg-black"
+                      ? "mx-auto w-full max-w-[320px] overflow-hidden rounded-2xl border border-border bg-black"
+                      : "w-full overflow-hidden rounded-2xl border border-border bg-black"
                   }
                 >
                   <video
@@ -151,7 +156,7 @@ export default async function MindeaseDemoPage({ params }: MindeaseDemoPageProps
 
       <footer className="border-t border-border/60 py-8">
         <Container className="flex flex-col items-center justify-between gap-4 text-sm text-muted-foreground sm:flex-row">
-          <Link href={`/${locale}`} className="transition-colors hover:text-white">
+          <Link href={`/${locale}`} className="transition-colors hover:text-foreground">
             {t("backHome")}
           </Link>
           <p>&copy; {new Date().getFullYear()} Ibrahim Dayende.</p>

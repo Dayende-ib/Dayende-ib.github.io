@@ -1,107 +1,94 @@
 import Image from "next/image";
-import Link from "next/link";
+import { ArrowUp, Github, Linkedin, MessageCircle } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { Github, Linkedin, MessageCircle, ArrowUpCircle } from "lucide-react";
 
 import Container from "@/components/Container";
+import LocalTime from "@/components/LocalTime";
+import { site } from "@/data/site";
 
-type FooterProps = {
-  locale: string;
-};
-
-export default async function Footer({ locale }: FooterProps) {
+export default async function Footer({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "footer" });
-  const footerLinks = [
-    { href: "#accueil", label: t("links.home") },
-    { href: "#services", label: t("links.services") },
-    { href: "#projects", label: t("links.projects") },
-    { href: "#contact", label: t("links.contact") }
-  ];
+  const nav = await getTranslations({ locale, namespace: "navbar.links" });
 
-  const socialLinks = [
-    {
-      href: "https://github.com/dayende-ib",
-      label: "GitHub",
-      icon: Github,
-      color: "hover:text-white hover:border-white/30"
-    },
-    {
-      href: "https://linkedin.com/in/ibrahimdayende",
-      label: "LinkedIn",
-      icon: Linkedin,
-      color: "hover:text-blue-400 hover:border-blue-400/40"
-    },
-    {
-      href: "https://wa.me/0022657760302",
-      label: "WhatsApp",
-      icon: MessageCircle,
-      color: "hover:text-emerald-400 hover:border-emerald-400/40"
-    }
+  const links = ["impact", "skills", "services", "projects", "about", "contact"] as const;
+  const socials = [
+    { href: site.github, label: "GitHub", icon: Github },
+    { href: site.linkedin, label: "LinkedIn", icon: Linkedin },
+    { href: site.whatsapp, label: "WhatsApp", icon: MessageCircle }
   ];
 
   return (
-    <footer className="border-t border-border/60 py-10">
-      {/* Gradient top divider */}
-      <div className="absolute left-0 right-0 -mt-10 h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent pointer-events-none" />
+    <footer className="relative overflow-hidden border-t border-border pt-12">
       <Container>
-        <div className="flex flex-col gap-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-wrap items-center gap-4">
-            <Link href="#accueil" className="flex items-center gap-2 text-foreground">
-              <Image
-                src="/logo_vertical.png"
-                alt="Logo Ibrahim Dayende"
-                width={140}
-                height={40}
-                className="h-10 w-auto"
-                style={{ height: "2.5rem", width: "auto" }}
-              />
-            </Link>
-            {footerLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="transition-colors hover:text-white"
-              >
-                {link.label}
-              </Link>
-            ))}
+        <div className="grid gap-8 md:grid-cols-[1.4fr_1fr_1fr]">
+          <div className="space-y-4">
+            <a href="#accueil" className="inline-flex items-center gap-3">
+              <Image src="/logo.png" alt="" width={40} height={40} className="h-10 w-10" />
+              <span className="font-display text-lg font-semibold tracking-tight">{site.name}</span>
+            </a>
+            <p className="max-w-sm text-sm leading-6 text-muted-foreground">{t("tagline")}</p>
+            <p className="font-mono text-xs text-muted-foreground">
+              Burkina Faso · <LocalTime />
+            </p>
           </div>
 
-          <div className="flex items-center gap-3">
-            {/* Social icons */}
-            {socialLinks.map((social) => {
-              const Icon = social.icon;
-              return (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={social.label}
-                  className={`flex h-9 w-9 items-center justify-center rounded-full border border-border/60 bg-background/30 text-muted-foreground transition-all duration-200 ${social.color}`}
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              );
-            })}
+          <nav aria-label={t("navLabel")}>
+            <p className="eyebrow mb-4">{t("navLabel")}</p>
+            <ul className="grid grid-cols-2 gap-2 text-sm md:grid-cols-1">
+              {links.map((id) => (
+                <li key={id}>
+                  <a href={`#${id}`} className="text-muted-foreground transition-colors hover:text-foreground">
+                    {nav(id)}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-            {/* Back to top */}
-            <a
-              href="#accueil"
-              aria-label="Retour en haut"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-border/60 bg-background/30 text-muted-foreground transition-all duration-200 hover:text-cyan-400 hover:border-cyan-400/40"
-            >
-              <ArrowUpCircle className="h-4 w-4" />
-            </a>
+          <div>
+            <p className="eyebrow mb-4">{t("elsewhere")}</p>
+            <ul className="space-y-2 text-sm">
+              {socials.map(({ href, label, icon: Icon }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    <Icon className="h-4 w-4" />
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-xs text-muted-foreground">
+              {t.rich("paletteHint", {
+                key: (chunks) => (
+                  <kbd className="rounded border border-border px-1.5 py-0.5 font-mono text-[10px] text-foreground">{chunks}</kbd>
+                )
+              })}
+            </p>
           </div>
         </div>
 
-        <div className="mt-6 flex items-center justify-between border-t border-border/40 pt-6">
-          <p className="text-xs text-muted-foreground">
-            {t("copyright", { year: new Date().getFullYear() })}
-          </p>
+        <div className="mt-10 flex flex-col-reverse items-start justify-between gap-4 border-t border-border py-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
+          <p>{t("copyright", { year: new Date().getFullYear() })}</p>
+          <a href="#accueil" className="inline-flex items-center gap-2 transition-colors hover:text-foreground">
+            {t("backToTop")}
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-border">
+              <ArrowUp className="h-3.5 w-3.5" />
+            </span>
+          </a>
         </div>
       </Container>
+
+      <p
+        aria-hidden
+        className="pointer-events-none select-none whitespace-nowrap text-center font-display text-[17vw] font-bold leading-[0.8] tracking-tighter text-outline"
+      >
+        Dayende
+      </p>
     </footer>
   );
 }
