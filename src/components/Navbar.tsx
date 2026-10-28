@@ -69,12 +69,7 @@ export default function Navbar() {
       >
         {t("skip")}
       </a>
-      <m.header
-        className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4"
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: easeOutExpo, delay: 0.1 }}
-      >
+      <header className="enter fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4">
         <div
           className={cn(
             "mx-auto flex max-w-6xl items-center justify-between gap-3 rounded-full border px-2 py-2 transition-all duration-500 sm:pl-3",
@@ -84,7 +79,7 @@ export default function Navbar() {
           )}
         >
           <a href="#accueil" className="flex min-w-0 items-center gap-2.5 rounded-full pr-2">
-            <Image src="/logo.png" alt="" width={32} height={32} className="h-8 w-8" priority />
+            <Image src="/logo-96.webp" alt="" width={32} height={32} className="h-8 w-8" priority />
             <span className="truncate font-display text-[15px] font-semibold tracking-tight">
               {site.shortName}
             </span>
@@ -134,7 +129,7 @@ export default function Navbar() {
               <LanguageSwitcher className="hidden sm:flex" />
             </Suspense>
             <Button asChild size="sm" className="hidden h-9 px-4 md:inline-flex">
-              <a href="#contact">
+              <a href="#contact" data-umami-event="cta-nav-contact">
                 {t("cta")}
                 <ArrowUpRight />
               </a>
@@ -151,7 +146,7 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-      </m.header>
+      </header>
 
       <AnimatePresence>
         {menuOpen ? (
@@ -222,7 +217,7 @@ export default function Navbar() {
                 </Suspense>
               </div>
               <Button asChild>
-                <a href={site.whatsapp} target="_blank" rel="noreferrer">
+                <a href={site.whatsapp} target="_blank" rel="noreferrer" data-umami-event="contact-whatsapp">
                   WhatsApp
                   <ArrowUpRight />
                 </a>

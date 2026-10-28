@@ -120,7 +120,9 @@ export default function ProjectGrid() {
                       <span className="mt-2 text-sm text-muted-foreground">
                         <span className="font-semibold text-signal">{metric.value}</span> {metric.label}
                       </span>
-                    ) : null}
+                    ) : (
+                      <span className="mt-2 text-sm text-muted-foreground">{content.role}</span>
+                    )}
                     <span className="mt-auto flex flex-wrap gap-1.5 pt-3">
                       {project.tags.slice(0, 3).map((tag) => (
                         <span key={tag} className="rounded-full bg-accent px-2.5 py-0.5 text-[11px] text-muted-foreground">

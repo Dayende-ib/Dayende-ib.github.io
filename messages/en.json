@@ -88,13 +88,13 @@
       },
       "shipped": {
         "value": "9+",
-        "label": "products shipped"
+        "label": "projects live or delivered"
       }
     },
     "proofs": {
       "projects": {
         "value": "9+",
-        "label": "products shipped"
+        "label": "projects live or delivered"
       },
       "campaigns": {
         "value": "30+",
@@ -150,8 +150,8 @@
       },
       "products": {
         "value": "9+",
-        "label": "products shipped",
-        "detail": "Web, mobile and business tools used in real conditions."
+        "label": "projects live or delivered",
+        "detail": "In production: publicly live or delivered to clients."
       },
       "automations": {
         "value": "5+",
@@ -294,7 +294,7 @@
     "impactEyebrow": "Outcome / impact",
     "archive": {
       "title": "More projects",
-      "description": "Different contexts, different stacks: from automation to R&D."
+      "description": "Client work, live products and learning projects: each project shows its status."
     },
     "count": "{count, plural, =1 {# project} other {# projects}}",
     "showMore": "{count, plural, =1 {Show # more project} other {Show # more projects}}",
@@ -320,7 +320,9 @@
       "client": "Client",
       "wip": "In progress",
       "hackathonWinner": "2025 AI Hackathon winner",
-      "demo": "Video demo"
+      "demo": "Video demo",
+      "live": "Live",
+      "learning": "Learning project"
     },
     "cta": {
       "viewProject": "View project",
@@ -379,10 +381,6 @@
           {
             "value": "0",
             "label": "install needed via WhatsApp"
-          },
-          {
-            "value": "AI",
-            "label": "personalized recommendations"
           }
         ],
         "caseStudy": {
@@ -404,10 +402,6 @@
           {
             "value": "0",
             "label": "scattered spreadsheets"
-          },
-          {
-            "value": "Live",
-            "label": "maintenance tracking"
           }
         ],
         "caseStudy": {
@@ -421,16 +415,7 @@
         "description": "Knowing what you spend is a start. Understanding why and deciding differently is where Kawari comes in - financial flow visualization and actionable AI recommendations built into one app.",
         "impact": "A clear view of spending changes behavior. AI recommendations help users spot drift, identify priority expense areas, and make better financial decisions day to day.",
         "role": "Design & development",
-        "metrics": [
-          {
-            "value": "AI",
-            "label": "actionable recommendations"
-          },
-          {
-            "value": "Live",
-            "label": "cash-flow visualization"
-          }
-        ],
+        "metrics": [],
         "caseStudy": {
           "challenge": "Users had no visibility into their real cash flows and made spending decisions without reliable data.",
           "approach": "A React interface built for readability, with an AI layer that analyzes spending trends and generates personalized recommendations.",
@@ -471,10 +456,6 @@
           {
             "value": "3",
             "label": "roles: patient, doctor, admin"
-          },
-          {
-            "value": "Live",
-            "label": "real-time availability"
           }
         ],
         "caseStudy": {
@@ -533,12 +514,7 @@
         "description": "A RAG assistant trained on real institutional documents to answer admin questions in seconds. Built for a local context where procedures change often and staff spend too much time searching for answers.",
         "impact": "Agents find answers in seconds instead of digging through PDFs. Accurate, grounded in the institution's real documentation - operational from day one.",
         "role": "Design & development",
-        "metrics": [
-          {
-            "value": "RAG",
-            "label": "answers grounded in real documents"
-          }
-        ]
+        "metrics": []
       },
       "sud-develop-website": {
         "title": "SUD Develop - Multilingual Corporate Website",
@@ -565,10 +541,6 @@
           {
             "value": "48h",
             "label": "from idea to prototype"
-          },
-          {
-            "value": "ANAM",
-            "label": "delivered to the agency"
           }
         ],
         "caseStudy": {
@@ -582,24 +554,14 @@
         "description": "Building a standout resume shouldn't take a full day. CV Studio walks users through a step-by-step flow to produce a polished, modern document - no design skills or Word gymnastics required.",
         "impact": "Modern CVs in minutes, no design background needed. Users leave with a structured, readable document ready to send - removing what was previously a real barrier to job applications.",
         "role": "Design & development",
-        "metrics": [
-          {
-            "value": "Minutes",
-            "label": "to produce a modern CV"
-          }
-        ]
+        "metrics": []
       },
       "gestion-bibliotheque": {
         "title": "Library Management - Loans, Returns & Alerts",
         "description": "A well-run library means books that actually circulate. This Laravel/MySQL system handles loans, returns, and users - with automated alerts to prevent losses before they happen.",
         "impact": "Automated loan tracking, overdue alerts, per-user history. A tool that makes the library easier to manage and books more accessible to readers.",
         "role": "Design & development",
-        "metrics": [
-          {
-            "value": "Auto",
-            "label": "overdue loan alerts"
-          }
-        ]
+        "metrics": []
       },
       "bytemarket": {
         "title": "ByteMarket - Vanilla JS E-commerce",
@@ -718,7 +680,7 @@
         "summary": "Architecture of an AI agent using n8n: YouTube link detection, transcript extraction, LLM summary, and Telegram response in a single pipeline.",
         "tag": "AI & n8n",
         "date": "2025",
-        "url": "https://www.linkedin.com/in/ibrahimdayende"
+        "url": "#project-telegram-youtube-summarizer"
       },
       "a4": {
         "title": "This website taught me what never to do in UX/UI",
@@ -734,7 +696,8 @@
         "date": "2025",
         "url": "https://www.linkedin.com/posts/ibrahimdayende_growthmarketing-conversion-cpa-activity-7416425237803704321-9WF9?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADsMhz4BriTcUi_0p5123bek2prR43tuDlU"
       }
-    }
+    },
+    "viewProject": "View the project"
   },
   "contact": {
     "eyebrow": "Contact",

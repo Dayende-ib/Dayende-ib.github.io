@@ -19,6 +19,7 @@ import {
 import { useTheme } from "next-themes";
 import { useLocale, useTranslations } from "next-intl";
 
+import { trackEvent } from "@/components/Analytics";
 import { easeOutExpo } from "@/components/motion/easing";
 import { useProjectModal } from "@/components/projects/ProjectProvider";
 import { buildLocalePath, rememberLocale } from "@/components/LanguageSwitcher";
@@ -151,6 +152,7 @@ export default function CommandPalette() {
           try {
             await navigator.clipboard.writeText(site.email);
             toast(common("emailCopied"));
+            trackEvent("contact-email-copy");
           } catch {
             window.location.href = `mailto:${site.email}`;
           }

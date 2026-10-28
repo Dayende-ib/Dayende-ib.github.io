@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, type ReactNode } from "react";
-import { LazyMotion, MotionConfig, domMax } from "framer-motion";
+import { LazyMotion, MotionConfig } from "framer-motion";
+
+const loadFeatures = () => import("@/components/motion/features").then((module) => module.default);
 
 /**
  * Charge framer-motion une seule fois pour toute la page, respecte
@@ -24,7 +26,7 @@ export default function MotionProvider({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <LazyMotion features={domMax} strict>
+    <LazyMotion features={loadFeatures} strict>
       <MotionConfig reducedMotion="user">{children}</MotionConfig>
     </LazyMotion>
   );

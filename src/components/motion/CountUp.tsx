@@ -57,7 +57,8 @@ export default function CountUp({ value, className }: { value: string; className
   }, [isInView, reduceMotion, value, locale]);
 
   return (
-    <span ref={ref} className={className} aria-label={value}>
+    <span ref={ref} className={className}>
+      <span className="sr-only">{value}</span>
       <span aria-hidden className="tabular-nums">
         {display}
       </span>

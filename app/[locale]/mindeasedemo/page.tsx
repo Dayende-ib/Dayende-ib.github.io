@@ -73,7 +73,7 @@ export default async function MindeaseDemoPage({ params }: MindeaseDemoPageProps
             className="flex items-center gap-2 text-sm font-semibold"
           >
             <Image
-              src="/logo.png"
+              src="/logo-96.webp"
               alt="Logo Ibrahim Dayende"
               width={28}
               height={28}

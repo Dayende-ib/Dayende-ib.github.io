@@ -45,6 +45,17 @@ Intégration Web3Forms côté client.
 Variable d'environnement nécessaire :
 - `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`
 
+## Mesure d'audience (Umami)
+Umami Cloud, sans cookies (pas de bandeau de consentement), compatible GitHub Pages.
+- Variable : `NEXT_PUBLIC_UMAMI_WEBSITE_ID` (dans `.env.local`, et en *variable* de dépôt GitHub pour le déploiement).
+- Sans cette variable, aucun script n'est chargé.
+- Événements suivis : `cta-hero-contact`, `cta-nav-contact`, `contact-whatsapp`, `contact-linkedin`, `contact-github`, `contact-email-copy`, `contact-form-sent`, `project-open`.
+
+## Performance
+- Le premier écran (Hero, barre de navigation) s'anime en CSS pur (`.enter`, `.enter-word`, `.enter-reveal` dans `app/globals.css`) pour s'afficher sans attendre le JavaScript. Les fondus partent de 0.01 et non 0 : sinon Chrome ignore ces éléments pour le LCP.
+- framer-motion est chargé après l'affichage (`src/components/motion/features.ts`).
+- Seules les traductions utilisées par des composants client sont envoyées au navigateur (`src/components/LocaleProviders.tsx`) : ajouter tout nouveau namespace client à `pickClientMessages`.
+
 ## Personnalisation rapide
 - Ajouter un projet : une entrée dans `src/data/projects.ts` + ses textes dans `messages/*.json` (`projects.items.<id>`, avec `metrics` et éventuellement `caseStudy`).
 - Mettre un projet en étude de cas : ajouter son id à `caseStudyIds`.

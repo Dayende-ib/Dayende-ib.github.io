@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Inter, JetBrains_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
 
 import { defaultLocale } from "../i18n";
+import Analytics from "@/components/Analytics";
 import ThemeProvider from "@/components/ThemeProvider";
 import "./globals.css";
 
@@ -106,11 +106,11 @@ export default async function RootLayout({
           content={[
             "default-src 'self'",
             /* unsafe-eval: React dev mode; unsafe-inline: Next.js hydration scripts */
-            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com",
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cloud.umami.is",
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
             "font-src 'self' data: https://fonts.gstatic.com",
             "img-src 'self' data: blob: https:",
-            "connect-src 'self' https://api.web3forms.com https://vitals.vercel-insights.com https://va.vercel-scripts.com",
+            "connect-src 'self' https://api.web3forms.com https://cloud.umami.is https://gateway.umami.is https://api-gateway.umami.dev",
             "frame-src 'none'",
             "object-src 'none'",
             "base-uri 'self'",

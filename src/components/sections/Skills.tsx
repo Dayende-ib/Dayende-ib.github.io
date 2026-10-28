@@ -188,7 +188,9 @@ function DomainCard({
                                 <span className="block truncate text-xs text-muted-foreground">
                                   <span className="font-semibold text-signal">{metric.value}</span> {metric.label}
                                 </span>
-                              ) : null}
+                              ) : (
+                                <span className="block truncate text-xs text-muted-foreground">{content.role}</span>
+                              )}
                             </span>
                             <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-300 group-hover/row:rotate-45 group-hover/row:text-foreground" />
                           </button>

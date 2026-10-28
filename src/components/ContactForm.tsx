@@ -6,6 +6,7 @@ import { AnimatePresence, m } from "framer-motion";
 import { ArrowUpRight, Check, Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
+import { trackEvent } from "@/components/Analytics";
 import { easeOutExpo } from "@/components/motion/easing";
 import { CONTACT_PREFILL_EVENT } from "@/components/projects/ProjectProvider";
 import { Button } from "@/components/ui/button";
@@ -101,6 +102,7 @@ export default function ContactForm() {
       const result = (await response.json()) as { success?: boolean };
       if (!response.ok || !result.success) throw new Error("Submission failed");
       setStatus("success");
+      trackEvent("contact-form-sent", { types: types.join(",") || "none" });
       setForm(initialState);
       setTypes([]);
     } catch {

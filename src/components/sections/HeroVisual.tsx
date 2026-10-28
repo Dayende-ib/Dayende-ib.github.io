@@ -1,6 +1,6 @@
 "use client";
 
-import type { PointerEvent, ReactNode } from "react";
+import type { CSSProperties, PointerEvent, ReactNode } from "react";
 import Image from "next/image";
 import { m, useMotionValue, useReducedMotion, useSpring, useTransform, type MotionValue } from "framer-motion";
 import { ArrowUpRight, Layers, MessageCircle, Trophy } from "lucide-react";
@@ -82,27 +82,27 @@ export default function HeroVisual({ name, role, ringText, chips }: HeroVisualPr
       onPointerMove={onPointerMove}
       onPointerLeave={reset}
     >
-      <m.div
-        className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-border bg-muted shadow-2xl shadow-primary/10"
-        style={{ rotateX, rotateY }}
-        initial={{ opacity: 0, y: 40, clipPath: "inset(12% 12% 12% 12% round 2rem)" }}
-        animate={{ opacity: 1, y: 0, clipPath: "inset(0% 0% 0% 0% round 2rem)" }}
-        transition={{ duration: 1.2, delay: 0.3, ease: easeOutExpo }}
-      >
-        <Image
-          src="/profile-portrait.webp"
-          alt={`${name} — ${role}`}
-          fill
-          priority
-          sizes="(max-width: 1024px) 360px, 420px"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/5 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-          <p className="font-display text-xl font-semibold tracking-tight">{name}</p>
-          <p className="mt-0.5 font-mono text-[11px] uppercase tracking-[0.18em] text-white/70">{role}</p>
-        </div>
-      </m.div>
+      {/* Entrée en CSS (visible sans attendre le JS) ; l'inclinaison à la souris reste pilotée par framer-motion */}
+      <div className="enter-reveal" style={{ "--enter-delay": "0.15s" } as CSSProperties}>
+        <m.div
+          className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-border bg-muted shadow-2xl shadow-primary/10"
+          style={{ rotateX, rotateY }}
+        >
+          <Image
+            src="/profile-portrait.webp"
+            alt={`${name} — ${role}`}
+            fill
+            priority
+            sizes="(max-width: 1024px) 360px, 420px"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/5 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+            <p className="font-display text-xl font-semibold tracking-tight">{name}</p>
+            <p className="mt-0.5 font-mono text-[11px] uppercase tracking-[0.18em] text-white/70">{role}</p>
+          </div>
+        </m.div>
+      </div>
 
       {/* Badge circulaire qui tourne */}
       <m.a
@@ -113,7 +113,11 @@ export default function HeroVisual({ name, role, ringText, chips }: HeroVisualPr
         animate={{ opacity: 1, scale: 1, rotate: 0 }}
         transition={{ duration: 1, delay: 0.9, ease: easeOutExpo }}
       >
-        <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full animate-[spin_18s_linear_infinite]" aria-hidden>
+        <svg
+          viewBox="0 0 100 100"
+          className="absolute inset-0 h-full w-full animate-[spin_18s_linear_infinite]"
+          aria-hidden
+        >
           <defs>
             <path id="hero-ring" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" />
           </defs>
@@ -125,7 +129,13 @@ export default function HeroVisual({ name, role, ringText, chips }: HeroVisualPr
         <ArrowUpRight className="relative h-6 w-6 text-signal-foreground transition-transform duration-300 group-hover:rotate-45" />
       </m.a>
 
-      <FloatingChip className="-left-3 top-[14%] sm:-left-10" depth={1.1} pointerX={pointerX} pointerY={pointerY} delay={1.05}>
+      <FloatingChip
+        className="-left-3 top-[14%] sm:-left-10"
+        depth={1.1}
+        pointerX={pointerX}
+        pointerY={pointerY}
+        delay={1.05}
+      >
         <div className="flex items-center gap-3">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-signal text-signal-foreground">
             <Trophy className="h-4 w-4" />
@@ -137,7 +147,13 @@ export default function HeroVisual({ name, role, ringText, chips }: HeroVisualPr
         </div>
       </FloatingChip>
 
-      <FloatingChip className="-right-2 top-[52%] sm:-right-10" depth={-0.9} pointerX={pointerX} pointerY={pointerY} delay={1.2}>
+      <FloatingChip
+        className="-right-2 top-[52%] sm:-right-10"
+        depth={-0.9}
+        pointerX={pointerX}
+        pointerY={pointerY}
+        delay={1.2}
+      >
         <div className="flex items-center gap-3">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15 text-primary">
             <MessageCircle className="h-4 w-4" />
@@ -149,7 +165,13 @@ export default function HeroVisual({ name, role, ringText, chips }: HeroVisualPr
         </div>
       </FloatingChip>
 
-      <FloatingChip className="-left-2 bottom-[26%] sm:-left-6" depth={1.4} pointerX={pointerX} pointerY={pointerY} delay={1.35}>
+      <FloatingChip
+        className="-left-2 bottom-[26%] sm:-left-6"
+        depth={1.4}
+        pointerX={pointerX}
+        pointerY={pointerY}
+        delay={1.35}
+      >
         <div className="flex items-center gap-3">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15 text-primary">
             <Layers className="h-4 w-4" />

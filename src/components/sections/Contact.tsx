@@ -27,6 +27,7 @@ export default async function Contact({ locale }: { locale: string }) {
           <AnimatedSection direction="left" className="flex flex-col gap-4">
             <a
               href={site.whatsapp}
+              data-umami-event="contact-whatsapp"
               target="_blank"
               rel="noreferrer"
               className="group relative overflow-hidden rounded-3xl bg-signal p-5 text-signal-foreground transition-transform duration-300 hover:-translate-y-1 sm:p-6"
@@ -58,6 +59,7 @@ export default async function Contact({ locale }: { locale: string }) {
                 <a
                   key={label}
                   href={href}
+                  data-umami-event={`contact-${label.toLowerCase()}`}
                   target="_blank"
                   rel="noreferrer"
                   className="group rounded-3xl border border-border bg-card p-4 transition-colors hover:border-foreground/20"

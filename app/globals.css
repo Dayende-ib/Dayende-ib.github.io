@@ -17,7 +17,7 @@
   --popover-foreground: 228 30% 10%;
   --primary: 220 80% 44%;
   --primary-foreground: 0 0% 100%;
-  --signal: 96 65% 30%;
+  --signal: 96 70% 24%;
   --signal-foreground: 0 0% 100%;
   --secondary: 40 14% 92%;
   --secondary-foreground: 228 30% 10%;
@@ -155,6 +155,48 @@
   }
 }
 
+/*
+ * Entrées du premier écran : CSS pur pour ne pas retarder l'affichage (LCP).
+ * Opacité de départ 0.01 et non 0 : Chrome ignore les éléments à opacité 0
+ * pour le LCP et ne les découvrirait qu'au prochain repaint (plusieurs secondes).
+ */
+@keyframes enter {
+  from {
+    opacity: 0.01;
+    transform: translateY(16px);
+  }
+}
+
+@keyframes word-up {
+  from {
+    transform: translateY(35%);
+  }
+}
+
+@keyframes reveal-clip {
+  from {
+    opacity: 0.01;
+    transform: translateY(32px);
+    clip-path: inset(10% 10% 10% 10% round 2rem);
+  }
+  to {
+    clip-path: inset(0 0 0 0 round 2rem);
+  }
+}
+
+.enter {
+  animation: enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) var(--enter-delay, 0s) both;
+}
+
+.enter-word {
+  display: inline-block;
+  animation: word-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--enter-delay, 0s) both;
+}
+
+.enter-reveal {
+  animation: reveal-clip 1.1s cubic-bezier(0.16, 1, 0.3, 1) var(--enter-delay, 0s) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -165,6 +207,7 @@
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
     transition-duration: 0.01ms !important;
   }
 }

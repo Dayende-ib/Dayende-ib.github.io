@@ -4,7 +4,8 @@ import { useRef } from "react";
 import { m, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
 
 function Word({ children, progress, range }: { children: string; progress: MotionValue<number>; range: [number, number] }) {
-  const opacity = useTransform(progress, range, [0.18, 1]);
+  // 0.5 minimum : contraste ≥ 3:1 (texte large) même avant le passage du scroll
+  const opacity = useTransform(progress, range, [0.5, 1]);
   return <m.span style={{ opacity }}>{children}</m.span>;
 }
 

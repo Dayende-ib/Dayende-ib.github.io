@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, m } from "framer-motion";
+import { useAnimate, useReducedMotion } from "framer-motion";
 
 import { easeOutExpo } from "@/components/motion/easing";
 import { cn } from "@/lib/utils";
@@ -12,13 +12,33 @@ type RotatingWordsProps = {
   interval?: number;
 };
 
+/**
+ * Le mot visible reste le même élément DOM : seul son texte change.
+ * Recréer l'élément à chaque mot ferait recalculer le LCP à chaque rotation
+ * et le repousserait de plusieurs secondes.
+ */
 export default function RotatingWords({ words, className, interval = 2600 }: RotatingWordsProps) {
   const [index, setIndex] = useState(0);
+  const [scope, animate] = useAnimate<HTMLSpanElement>();
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
-    const id = window.setInterval(() => setIndex((prev) => (prev + 1) % words.length), interval);
-    return () => window.clearInterval(id);
-  }, [words.length, interval]);
+    let cancelled = false;
+    const id = window.setInterval(async () => {
+      if (!reduceMotion) {
+        await animate(scope.current, { y: "-45%", opacity: 0 }, { duration: 0.25, ease: "easeIn" });
+      }
+      if (cancelled) return;
+      setIndex((prev) => (prev + 1) % words.length);
+      if (!reduceMotion) {
+        animate(scope.current, { y: ["45%", "0%"], opacity: [0, 1] }, { duration: 0.5, ease: easeOutExpo });
+      }
+    }, interval);
+    return () => {
+      cancelled = true;
+      window.clearInterval(id);
+    };
+  }, [animate, scope, words.length, interval, reduceMotion]);
 
   return (
     <span className={cn("relative inline-grid", className)}>
@@ -29,19 +49,9 @@ export default function RotatingWords({ words, className, interval = 2600 }: Rot
           {word}
         </span>
       ))}
-      <AnimatePresence mode="wait" initial={false}>
-        <m.span
-          key={words[index]}
-          aria-hidden
-          className="col-start-1 row-start-1"
-          initial={{ y: "45%", opacity: 0, filter: "blur(10px)" }}
-          animate={{ y: "0%", opacity: 1, filter: "blur(0px)" }}
-          exit={{ y: "-45%", opacity: 0, filter: "blur(10px)" }}
-          transition={{ duration: 0.55, ease: easeOutExpo }}
-        >
-          {words[index]}
-        </m.span>
-      </AnimatePresence>
+      <span ref={scope} aria-hidden className="col-start-1 row-start-1">
+        {words[index]}
+      </span>
     </span>
   );
 }

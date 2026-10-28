@@ -52,7 +52,7 @@ export default async function About({ locale }: { locale: string }) {
               </div>
               <div className="-mt-10 space-y-5 p-5">
                 <Image
-                  src="/logo.png"
+                  src="/logo-160.webp"
                   alt=""
                   width={72}
                   height={72}

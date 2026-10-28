@@ -3,6 +3,7 @@
 import { Copy } from "lucide-react";
 import { useTranslations } from "next-intl";
 
+import { trackEvent } from "@/components/Analytics";
 import { toast } from "@/components/Toaster";
 import { site } from "@/data/site";
 
@@ -13,6 +14,7 @@ export default function CopyEmailButton() {
     try {
       await navigator.clipboard.writeText(site.email);
       toast(t("emailCopied"));
+      trackEvent("contact-email-copy");
     } catch {
       window.location.href = `mailto:${site.email}`;
     }

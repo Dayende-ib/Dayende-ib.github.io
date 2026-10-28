@@ -88,13 +88,13 @@
       },
       "shipped": {
         "value": "9+",
-        "label": "produits livrés"
+        "label": "projets en ligne ou livrés"
       }
     },
     "proofs": {
       "projects": {
         "value": "9+",
-        "label": "produits livrés"
+        "label": "projets en ligne ou livrés"
       },
       "campaigns": {
         "value": "30+",
@@ -150,8 +150,8 @@
       },
       "products": {
         "value": "9+",
-        "label": "produits livrés",
-        "detail": "Web, mobile et outils métier utilisés en conditions réelles."
+        "label": "projets en ligne ou livrés",
+        "detail": "En production : accessibles en ligne ou livrés à des clients."
       },
       "automations": {
         "value": "5+",
@@ -294,7 +294,7 @@
     "impactEyebrow": "Résultat / impact",
     "archive": {
       "title": "Autres projets",
-      "description": "D'autres contextes, d'autres stacks : de l'automatisation à la R&D."
+      "description": "Projets clients, produits en ligne et projets d'apprentissage : le statut de chaque projet est indiqué."
     },
     "count": "{count, plural, =1 {# projet} other {# projets}}",
     "showMore": "{count, plural, =1 {Afficher # projet de plus} other {Afficher # projets de plus}}",
@@ -320,7 +320,9 @@
       "client": "Client",
       "wip": "En cours",
       "hackathonWinner": "Vainqueur Hackathon IA 2025",
-      "demo": "Démo vidéo"
+      "demo": "Démo vidéo",
+      "live": "En ligne",
+      "learning": "Apprentissage"
     },
     "cta": {
       "viewProject": "Voir le projet",
@@ -379,10 +381,6 @@
           {
             "value": "0",
             "label": "installation requise via WhatsApp"
-          },
-          {
-            "value": "IA",
-            "label": "recommandations personnalisées"
           }
         ],
         "caseStudy": {
@@ -404,10 +402,6 @@
           {
             "value": "0",
             "label": "tableur dispersé"
-          },
-          {
-            "value": "Live",
-            "label": "suivi des interventions"
           }
         ],
         "caseStudy": {
@@ -421,16 +415,7 @@
         "description": "Savoir ce qu'on dépense, c'est un début. Comprendre pourquoi et décider autrement, c'est là que Kawari intervient - visualisation des flux financiers et recommandations IA actionnables.",
         "impact": "Une vue claire sur ses dépenses change les comportements. Les recommandations IA aident à repérer les dérives, identifier les postes prioritaires et prendre de meilleures décisions financières au quotidien.",
         "role": "Conception & développement",
-        "metrics": [
-          {
-            "value": "IA",
-            "label": "recommandations actionnables"
-          },
-          {
-            "value": "Live",
-            "label": "visualisation des flux financiers"
-          }
-        ],
+        "metrics": [],
         "caseStudy": {
           "challenge": "Les utilisateurs n'avaient aucune visibilité sur leurs flux financiers réels et prenaient des décisions de dépenses sans données fiables.",
           "approach": "Interface React centrée sur la lisibilité, avec une couche IA qui analyse les tendances de dépenses et génère des recommandations personnalisées.",
@@ -471,10 +456,6 @@
           {
             "value": "3",
             "label": "rôles : patient, médecin, admin"
-          },
-          {
-            "value": "Live",
-            "label": "disponibilités en temps réel"
           }
         ],
         "caseStudy": {
@@ -533,12 +514,7 @@
         "description": "Un assistant RAG entraîné sur de vrais documents administratifs pour répondre aux questions des agents en quelques secondes. Conçu pour un contexte institutionnel local où les procédures changent souvent.",
         "impact": "Les agents trouvent l'information en secondes au lieu de chercher dans des PDF. Un assistant précis, ancré dans la documentation réelle de l'institution - opérationnel dès le premier jour.",
         "role": "Conception & développement",
-        "metrics": [
-          {
-            "value": "RAG",
-            "label": "réponses ancrées dans les vrais documents"
-          }
-        ]
+        "metrics": []
       },
       "sud-develop-website": {
         "title": "SUD Develop - Site Corporate Multilingue",
@@ -565,10 +541,6 @@
           {
             "value": "48h",
             "label": "de l'idée au prototype"
-          },
-          {
-            "value": "ANAM",
-            "label": "solution livrée à l'agence"
           }
         ],
         "caseStudy": {
@@ -582,24 +554,14 @@
         "description": "Construire un CV qui se démarque ne devrait pas prendre une journée entière. CV Studio guide l'utilisateur étape par étape pour produire un document moderne et personnalisé - sans Word, sans galère.",
         "impact": "Des CVs modernes en quelques minutes, sans compétences en design. Les utilisateurs repartent avec un document structuré, lisible et prêt à envoyer - ce qui était auparavant un vrai frein.",
         "role": "Conception & développement",
-        "metrics": [
-          {
-            "value": "Minutes",
-            "label": "pour produire un CV moderne"
-          }
-        ]
+        "metrics": []
       },
       "gestion-bibliotheque": {
         "title": "Gestion de Bibliothèque - Suivi des Emprunts & Alertes",
         "description": "Une bibliothèque bien gérée, ce sont des livres qui circulent vraiment. Ce système Laravel/MySQL suit les emprunts, les retours et les utilisateurs - avec des alertes automatiques pour éviter les pertes.",
         "impact": "Suivi des emprunts automatisé, alertes de retard, historique par utilisateur. Un outil qui rend la bibliothèque plus facile à gérer et les livres plus accessibles pour les lecteurs.",
         "role": "Conception & développement",
-        "metrics": [
-          {
-            "value": "Auto",
-            "label": "alertes de retard d'emprunt"
-          }
-        ]
+        "metrics": []
       },
       "bytemarket": {
         "title": "ByteMarket - E-commerce Vanilla JS",
@@ -718,7 +680,7 @@
         "summary": "Architecture d'un agent IA avec n8n : détection de liens YouTube, extraction de transcription, résumé LLM et réponse Telegram en pipeline.",
         "tag": "IA & n8n",
         "date": "2025",
-        "url": "https://www.linkedin.com/in/ibrahimdayende"
+        "url": "#project-telegram-youtube-summarizer"
       },
       "a4": {
         "title": "Ce site m'a appris ce qu'il ne faut jamais faire en UX/UI",
@@ -734,7 +696,8 @@
         "date": "2025",
         "url": "https://www.linkedin.com/posts/ibrahimdayende_growthmarketing-conversion-cpa-activity-7416425237803704321-9WF9?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADsMhz4BriTcUi_0p5123bek2prR43tuDlU"
       }
-    }
+    },
+    "viewProject": "Voir le projet"
   },
   "contact": {
     "eyebrow": "Contact",

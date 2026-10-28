@@ -19,6 +19,8 @@ export type Project = {
   clientProject?: boolean;
   codePrivate?: boolean;
   award?: boolean;
+  /** Projet d'apprentissage (exercice, projet d'études) */
+  learning?: boolean;
   status?: "wip";
 };
 
@@ -152,7 +154,8 @@ export const projects: Project[] = [
     id: "bytemarket",
     category: "web",
     tags: ["HTML5", "CSS3", "JavaScript"],
-    image: "/projects/ByteMarket.webp"
+    image: "/projects/ByteMarket.webp",
+    learning: true
   }
 ];
 

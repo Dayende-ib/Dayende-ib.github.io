@@ -28,8 +28,8 @@ export default function AnimatedSection({
   return (
     <m.div
       className={className}
-      initial={{ opacity: 0, filter: "blur(6px)", ...offsets[direction] }}
-      whileInView={{ opacity: 1, filter: "blur(0px)", x: 0, y: 0 }}
+      initial={{ opacity: 0, ...offsets[direction] }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.8, delay, ease: easeOutExpo }}
     >

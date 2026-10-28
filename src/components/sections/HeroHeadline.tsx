@@ -2,9 +2,9 @@
 
 import { m } from "framer-motion";
 
+import Enter, { EnterWords } from "@/components/motion/Enter";
 import { easeOutExpo } from "@/components/motion/easing";
 import RotatingWords from "@/components/motion/RotatingWords";
-import SplitText from "@/components/motion/SplitText";
 
 type HeroHeadlineProps = {
   before: string;
@@ -18,20 +18,15 @@ export default function HeroHeadline({ before, words, lead, highlight, tail }: H
   return (
     <h1 className="font-display text-[2.55rem] font-semibold leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-[4.4rem]">
       <span className="block">
-        <SplitText text={before} immediate delay={0.25} />{" "}
-        <m.span
-          className="inline-block text-primary"
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.45, ease: easeOutExpo }}
-        >
+        <EnterWords text={before} delay={0.05} />{" "}
+        <Enter as="span" delay={0.2} className="inline-block text-primary">
           <RotatingWords words={words} />
-        </m.span>
+        </Enter>
       </span>
       <span className="block text-foreground/90">
-        <SplitText text={lead} immediate delay={0.55} />{" "}
+        <EnterWords text={lead} delay={0.25} />{" "}
         <span className="relative inline-block">
-          <SplitText text={highlight} immediate delay={0.7} />
+          <EnterWords text={highlight} delay={0.35} />
           <svg
             aria-hidden
             viewBox="0 0 300 20"
@@ -46,14 +41,14 @@ export default function HeroHeadline({ before, words, lead, highlight, tail }: H
               strokeLinecap="round"
               initial={{ pathLength: 0 }}
               animate={{ pathLength: 1 }}
-              transition={{ duration: 1.1, delay: 1.2, ease: easeOutExpo }}
+              transition={{ duration: 1.1, delay: 0.6, ease: easeOutExpo }}
             />
           </svg>
         </span>
         {tail ? (
           <>
             {" "}
-            <SplitText text={tail} immediate delay={0.8} />
+            <EnterWords text={tail} delay={0.4} />
           </>
         ) : null}
       </span>

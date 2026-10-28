@@ -23,7 +23,7 @@ export default async function Footer({ locale }: { locale: string }) {
         <div className="grid gap-8 md:grid-cols-[1.4fr_1fr_1fr]">
           <div className="space-y-4">
             <a href="#accueil" className="inline-flex items-center gap-3">
-              <Image src="/logo.png" alt="" width={40} height={40} className="h-10 w-10" />
+              <Image src="/logo-96.webp" alt="" width={40} height={40} className="h-10 w-10" />
               <span className="font-display text-lg font-semibold tracking-tight">{site.name}</span>
             </a>
             <p className="max-w-sm text-sm leading-6 text-muted-foreground">{t("tagline")}</p>

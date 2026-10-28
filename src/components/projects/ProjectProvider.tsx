@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
+import { trackEvent } from "@/components/Analytics";
 import { easeOutExpo } from "@/components/motion/easing";
 import ProjectBadges from "@/components/projects/ProjectBadges";
 import { useProjectContent } from "@/components/projects/useProjectContent";
@@ -69,6 +70,7 @@ export default function ProjectProvider({ children }: { children: ReactNode }) {
     triggerRef.current = document.activeElement as HTMLElement | null;
     setDirection(0);
     setActiveId(id);
+    trackEvent("project-open", { id });
     window.history.replaceState(null, "", `${HASH_PREFIX}${id}`);
   }, []);
 
