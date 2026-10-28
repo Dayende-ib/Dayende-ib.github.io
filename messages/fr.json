@@ -178,12 +178,18 @@
   "skills": {
     "eyebrow": "Compétences",
     "title": "Des compétences prouvées par des projets",
-    "description": "Choisissez un domaine puis une technologie : vous voyez immédiatement où je l'ai utilisée et ce que cela a produit.",
-    "pickSkill": "Filtrer par technologie",
-    "allInDomain": "Tout le domaine",
-    "projectsTitle": "Projets qui le prouvent",
+    "description": "Toutes mes compétences en un coup d'œil. Cliquez sur une technologie pour voir les projets qui la prouvent et ce qu'ils ont produit.",
     "provenBy": "Prouvé par · {skill}",
-    "skillCount": "{count} compétences",
+    "techLabel": "Technologies",
+    "skillAria": "{skill} : {count, plural, =1 {# projet} other {# projets}}, afficher les preuves",
+    "proofLabel": "{count, plural, =1 {Prouvé par # projet} other {Prouvé par # projets}}",
+    "moreProjects": "{count, plural, =1 {# autre projet} other {# autres projets}}",
+    "close": "Fermer",
+    "summary": {
+      "technologies": "technologies",
+      "projects": "projets liés",
+      "domains": "domaines"
+    },
     "domains": {
       "web": {
         "label": "Web",
@@ -209,7 +215,8 @@
         "description": "Campagnes Meta & Google Ads construites pour générer des signaux business, pas des métriques flatteuses.",
         "proof": "5 000+ conversations, jusqu'à 0,18 $ l'unité."
       }
-    }
+    },
+    "legend": "= nombre de projets qui utilisent la technologie"
   },
   "services": {
     "eyebrow": "Services",
@@ -613,11 +620,16 @@
     "title": "Un profil hybride : produit, code et acquisition",
     "role": "Développeur Full-Stack Web & Mobile",
     "statement": "Je combine logique produit, exécution technique et sens business pour transformer une idée en livrable utile, sans perdre de temps dans le flou.",
-    "bio": "J'interviens sur des produits web et mobile, des automatisations IA et des sujets d'acquisition quand il faut garder une vision cohérente entre technique et performance. Basé au Burkina Faso, je collabore sur des projets locaux et internationaux.",
+    "bio": "J'interviens sur des produits web et mobile, des automatisations IA et des sujets d'acquisition quand il faut garder une vision cohérente entre technique et performance. Basé au Burkina Faso, je collabore sur des projets locaux et internationaux. Diplômé d'une licence en informatique, génie logiciel et entrepreneuriat (Burkina Institute of Technology, 2026), j'ai aussi beaucoup appris en autodidacte, en construisant : chaque projet de ce portfolio a été l'occasion de maîtriser un nouvel outil, jusqu'à remporter le Hackathon IA 2025.",
     "facts": {
       "location": {
         "label": "Base",
         "value": "Burkina Faso · remote"
+      },
+      "education": {
+        "label": "Formation",
+        "value": "Licence · BIT, 2026",
+        "detail": "Informatique, génie logiciel & entrepreneuriat"
       },
       "time": {
         "label": "Heure locale"
@@ -650,6 +662,7 @@
       "title": "Vainqueur du Hackathon IA 2025 (MTDPCE)",
       "description": "Projet ANAM Météo récompensé lors du Hackathon IA 2025 organisé par le Ministère de la Transition Digitale, des Postes et des Communications Électroniques (MTDPCE), puis livré à l'Agence Nationale de la Météo."
     },
+    "selfTaught": "Diplômé du Burkina Institute of Technology, je continue de me former en autodidacte.",
     "learning": "Formations certifiantes suivies sur"
   },
   "testimonials": {

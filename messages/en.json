@@ -178,12 +178,18 @@
   "skills": {
     "eyebrow": "Skills",
     "title": "Skills backed by real projects",
-    "description": "Pick a domain, then a technology: you instantly see where I used it and what it produced.",
-    "pickSkill": "Filter by technology",
-    "allInDomain": "Whole domain",
-    "projectsTitle": "Projects that prove it",
+    "description": "All my skills at a glance. Click a technology to see the projects that prove it and what they produced.",
     "provenBy": "Proven by · {skill}",
-    "skillCount": "{count} skills",
+    "techLabel": "Technologies",
+    "skillAria": "{skill}: {count, plural, =1 {# project} other {# projects}}, show proof",
+    "proofLabel": "{count, plural, =1 {Proven by # project} other {Proven by # projects}}",
+    "moreProjects": "{count, plural, =1 {# more project} other {# more projects}}",
+    "close": "Close",
+    "summary": {
+      "technologies": "technologies",
+      "projects": "linked projects",
+      "domains": "domains"
+    },
     "domains": {
       "web": {
         "label": "Web",
@@ -209,7 +215,8 @@
         "description": "Meta & Google Ads campaigns built to generate business signals, not vanity metrics.",
         "proof": "5,000+ conversations, as low as $0.18 each."
       }
-    }
+    },
+    "legend": "= number of projects using the technology"
   },
   "services": {
     "eyebrow": "Services",
@@ -613,11 +620,16 @@
     "title": "A hybrid profile: product, code and growth",
     "role": "Full-Stack Web & Mobile Developer",
     "statement": "I combine product thinking, technical execution and business sense to turn an idea into something useful - without wasting time in the fog.",
-    "bio": "I work on web and mobile products, AI automation and acquisition whenever a project needs one coherent view across tech and performance. Based in Burkina Faso, I collaborate on both local and international projects.",
+    "bio": "I work on web and mobile products, AI automation and acquisition whenever a project needs one coherent view across tech and performance. Based in Burkina Faso, I collaborate on both local and international projects. I hold a bachelor's degree in Computer Science, Software Engineering and Entrepreneurship (Burkina Institute of Technology, 2026), and I've also learned a lot on my own, by building: each project here was a chance to master a new tool, all the way to winning the 2025 AI Hackathon.",
     "facts": {
       "location": {
         "label": "Based in",
         "value": "Burkina Faso · remote"
+      },
+      "education": {
+        "label": "Education",
+        "value": "Bachelor's · BIT, 2026",
+        "detail": "Computer Science, Software Eng. & Entrepreneurship"
       },
       "time": {
         "label": "Local time"
@@ -650,6 +662,7 @@
       "title": "Winner of the 2025 AI Hackathon (MTDPCE)",
       "description": "ANAM Meteo project awarded at the 2025 AI Hackathon organized by the Ministry of Digital Transition, Posts and Electronic Communications (MTDPCE), then delivered to the National Meteorological Agency."
     },
+    "selfTaught": "Burkina Institute of Technology graduate, still learning on my own.",
     "learning": "Certified training on"
   },
   "testimonials": {

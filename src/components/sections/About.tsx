@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Clock, Github, Handshake, Linkedin, MapPin, Timer, Trophy } from "lucide-react";
+import { Clock, Github, GraduationCap, Handshake, Linkedin, MapPin, Timer, Trophy } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 import AnimatedSection from "@/components/AnimatedSection";
@@ -24,6 +24,16 @@ export default async function About({ locale }: { locale: string }) {
 
   const facts = [
     { icon: MapPin, label: t("facts.location.label"), value: t("facts.location.value") },
+    {
+      icon: GraduationCap,
+      label: t("facts.education.label"),
+      value: (
+        <>
+          <span className="block">{t("facts.education.value")}</span>
+          <span className="block text-xs font-normal text-muted-foreground">{t("facts.education.detail")}</span>
+        </>
+      )
+    },
     { icon: Clock, label: t("facts.time.label"), value: <LocalTime /> },
     { icon: Handshake, label: t("facts.collaboration.label"), value: t("facts.collaboration.value") },
     { icon: Timer, label: t("facts.response.label"), value: t("facts.response.value") }
@@ -116,7 +126,8 @@ export default async function About({ locale }: { locale: string }) {
             </AnimatedSection>
 
             <AnimatedSection>
-              <p className="eyebrow mb-4">{t("learning")}</p>
+              <p className="font-display text-lg font-semibold tracking-tight">{t("selfTaught")}</p>
+              <p className="eyebrow mb-4 mt-1">{t("learning")}</p>
               <ul className="flex flex-wrap items-center gap-3">
                 {learningPlatforms.map((platform) => (
                   <li key={platform.name} className="flex h-14 items-center rounded-2xl border border-border bg-white px-5 grayscale transition duration-300 hover:grayscale-0">
@@ -129,6 +140,17 @@ export default async function About({ locale }: { locale: string }) {
                     />
                   </li>
                 ))}
+                {/* Pas de fichier logo fourni : marque reconstituée (carré "in" + Learning) */}
+                <li className="flex h-14 items-center rounded-2xl border border-border bg-white px-5 grayscale transition duration-300 hover:grayscale-0">
+                  <span role="img" aria-label="LinkedIn Learning" className="flex items-center gap-1.5">
+                    <span aria-hidden className="flex h-7 w-7 items-center justify-center rounded-md bg-[#0A66C2] text-white">
+                      <Linkedin className="h-4 w-4" fill="currentColor" strokeWidth={0} />
+                    </span>
+                    <span aria-hidden className="text-[15px] font-semibold tracking-tight text-[#191919]">
+                      Learning
+                    </span>
+                  </span>
+                </li>
               </ul>
             </AnimatedSection>
           </div>

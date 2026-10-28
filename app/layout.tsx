@@ -137,6 +137,21 @@ export default async function RootLayout({
                   "https://github.com/Dayende-ib"
                 ],
                 award: "Vainqueur du Hackathon IA 2025 (MTDPCE)",
+                alumniOf: {
+                  "@type": "CollegeOrUniversity",
+                  name: "Burkina Institute of Technology"
+                },
+                hasCredential: {
+                  "@type": "EducationalOccupationalCredential",
+                  credentialCategory: "degree",
+                  educationalLevel: "Licence (Bachelor)",
+                  name: "Licence en informatique, génie logiciel et entrepreneuriat",
+                  dateCreated: "2026",
+                  recognizedBy: {
+                    "@type": "CollegeOrUniversity",
+                    name: "Burkina Institute of Technology"
+                  }
+                },
                 knowsAbout: ["Next.js","React","Flutter","Laravel","Node.js","TypeScript","PostgreSQL","Meta Ads","Google Ads","AI Automation","Make","n8n"]
               },
               {
