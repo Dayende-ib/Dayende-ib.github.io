@@ -46,7 +46,8 @@
       "linkedin": "Voir mon LinkedIn",
       "github": "Voir mon GitHub",
       "theme": "Changer de thème",
-      "language": "Switch to English"
+      "language": "Switch to English",
+      "cv": "Demander mon CV"
     },
     "hints": {
       "navigate": "naviguer",
@@ -201,7 +202,7 @@
         "label": "Mobile",
         "title": "Applications mobiles Flutter",
         "description": "Apps connectées à des APIs fiables, pensées pour un usage terrain, multi-rôles et même hors-ligne.",
-        "proof": "3 apps Flutter livrées : santé, gestion locative et bien-être."
+        "proof": "3 apps Flutter conçues : santé, gestion locative et bien-être (MindEase en ligne)."
       },
       "ai": {
         "label": "IA & Automatisation",
@@ -294,7 +295,7 @@
     "impactEyebrow": "Résultat / impact",
     "archive": {
       "title": "Autres projets",
-      "description": "Projets clients, produits en ligne et projets d'apprentissage : le statut de chaque projet est indiqué."
+      "description": "Projets clients, produits en ligne et projets d'études : le statut de chaque projet est indiqué."
     },
     "count": "{count, plural, =1 {# projet} other {# projets}}",
     "showMore": "{count, plural, =1 {Afficher # projet de plus} other {Afficher # projets de plus}}",
@@ -317,12 +318,12 @@
       "ia": "IA"
     },
     "badges": {
-      "client": "Client",
+      "client": "Projet client",
       "wip": "En cours",
       "hackathonWinner": "Vainqueur Hackathon IA 2025",
       "demo": "Démo vidéo",
       "live": "En ligne",
-      "learning": "Apprentissage"
+      "academic": "Projet d'études"
     },
     "cta": {
       "viewProject": "Voir le projet",
@@ -392,22 +393,18 @@
       "propiflow": {
         "title": "Propiflow - Gestion Locative sans Tableurs",
         "description": "Finis les tableurs épars et les appels pour rappeler les loyers. Propiflow centralise biens, locataires, contrats et maintenance dans un seul outil - avec une app mobile dédiée aux locataires.",
-        "impact": "Toutes les opérations locatives centralisées en un endroit. Les locataires ont leur propre interface mobile, les interventions sont tracées en temps réel, et les tâches administratives répétitives disparaissent.",
+        "impact": "Toutes les opérations locatives centralisées en un endroit. Les locataires ont leur propre interface mobile, les interventions sont tracées en temps réel et les tâches administratives répétitives sont automatisées.",
         "role": "Conception & développement",
         "metrics": [
           {
             "value": "2",
             "label": "apps : back-office web + mobile locataires"
-          },
-          {
-            "value": "0",
-            "label": "tableur dispersé"
           }
         ],
         "caseStudy": {
           "challenge": "La gestion locative reposait sur des tableurs épars, des appels téléphoniques et des contrats papier - aucun outil unifié pour propriétaires, gestionnaires et locataires.",
           "approach": "Plateforme full-stack avec dashboard web d'administration (biens, locataires, contrats, loyers, maintenance) et application mobile Flutter pour les locataires.",
-          "result": "Gestion locative entièrement digitalisée : tâches administratives automatisées, suivi en temps réel des interventions et communication centralisée entre toutes les parties."
+          "result": "Une plateforme complète de gestion locative : tâches administratives automatisées, suivi des interventions en temps réel et communication centralisée entre toutes les parties."
         }
       },
       "kawari-finance-app": {
@@ -450,7 +447,7 @@
       "clinic-appointment-scheduler": {
         "title": "Clinic Appointment Scheduler - Rendez-vous sans Friction",
         "description": "Gérer les rendez-vous médicaux par téléphone, c'est des oublis, des conflits de planning et du stress de part et d'autre. Cette app Flutter offre une vue commune en temps réel à patients, médecins et admins.",
-        "impact": "Fini les conflits de planning et les rendez-vous oubliés. Les patients réservent en autonomie, les médecins gèrent leurs disponibilités, et les admins ont une vue complète sur la coordination clinique.",
+        "impact": "Conçu pour en finir avec les conflits de planning et les rendez-vous oubliés : les patients réservent en autonomie, les médecins gèrent leurs disponibilités et les admins ont une vue complète sur la coordination.",
         "role": "Développement mobile & API",
         "metrics": [
           {
@@ -461,7 +458,7 @@
         "caseStudy": {
           "challenge": "La gestion des rendez-vous par téléphone et papier entraînait des oublis, des conflits de planning et une mauvaise coordination entre médecins et patients.",
           "approach": "Application Flutter multi-rôles (patient, médecin, admin) avec une API Express/MongoDB gérant notifications, historiques et disponibilités en temps réel.",
-          "result": "Parcours de prise de rendez-vous entièrement digitalisé, réduction des conflits de planning et meilleure coordination clinique."
+          "result": "Un parcours de prise de rendez-vous entièrement digitalisé, pensé pour éviter les conflits de planning et fluidifier la coordination entre patients, médecins et admins."
         }
       },
       "offline-gpt": {
@@ -775,5 +772,41 @@
         "description": "Retrouvez Pauline là où vous échangez déjà. Conseils et orientation, sans quitter WhatsApp. Aucune application à télécharger."
       }
     }
+  },
+  "cv": {
+    "button": "Demander mon CV",
+    "title": "Recevoir mon CV",
+    "description": "J'envoie mon CV sur demande, pour savoir à qui il est transmis. Présentez-vous en quelques mots : je vous l'envoie par email sous 24 à 48 h.",
+    "nameLabel": "Nom complet",
+    "emailLabel": "Email professionnel",
+    "companyLabel": "Entreprise ou organisation",
+    "purposeLabel": "Motif de la demande",
+    "purposes": {
+      "recruitment": "Recrutement",
+      "freelance": "Mission freelance",
+      "partnership": "Partenariat",
+      "other": "Autre"
+    },
+    "messageLabel": "Précisions (optionnel)",
+    "placeholders": {
+      "name": "Votre nom",
+      "email": "vous@entreprise.com",
+      "company": "Nom de l'entreprise",
+      "message": "Poste visé, lien vers l'offre, contexte de la mission…"
+    },
+    "errors": {
+      "name": "Le nom est requis.",
+      "email": "Email invalide.",
+      "company": "Indiquez votre entreprise ou organisation.",
+      "purpose": "Choisissez un motif.",
+      "submit": "L'envoi a échoué. Réessayez ou écrivez-moi sur WhatsApp."
+    },
+    "privacy": "Ces informations servent uniquement à vous envoyer mon CV.",
+    "submit": "Envoyer la demande",
+    "sending": "Envoi…",
+    "successTitle": "Demande envoyée !",
+    "success": "Je vous envoie mon CV à {email} sous 24 à 48 h.",
+    "urgent": "Pressé ? WhatsApp",
+    "close": "Fermer"
   }
 }

@@ -45,11 +45,18 @@ Intégration Web3Forms côté client.
 Variable d'environnement nécessaire :
 - `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`
 
+## CV sur demande
+Le CV n'est **jamais publié** : le dépôt est public et le site statique, donc tout fichier en ligne serait téléchargeable par n'importe qui.
+- Le visiteur remplit « Demander mon CV » (nom, email pro, entreprise, motif) : la demande arrive par email via Web3Forms, et le CV est envoyé à la main.
+- Accès : bouton dans la section À propos, lien du pied de page, palette `Ctrl/⌘ K`, ou lien direct `https://ibrahimdayende.me/#cv` (pratique à envoyer à un recruteur).
+- Garder le PDF hors du dépôt : `.gitignore` bloque `src/assets/*.pdf` et tout PDF dont le nom contient « CV ».
+- Code : `src/components/CvRequest.tsx`.
+
 ## Mesure d'audience (Umami)
 Umami Cloud, sans cookies (pas de bandeau de consentement), compatible GitHub Pages.
 - Variable : `NEXT_PUBLIC_UMAMI_WEBSITE_ID` (dans `.env.local`, et en *variable* de dépôt GitHub pour le déploiement).
 - Sans cette variable, aucun script n'est chargé.
-- Événements suivis : `cta-hero-contact`, `cta-nav-contact`, `contact-whatsapp`, `contact-linkedin`, `contact-github`, `contact-email-copy`, `contact-form-sent`, `project-open`.
+- Événements suivis : `cta-hero-contact`, `cta-nav-contact`, `contact-whatsapp`, `contact-linkedin`, `contact-github`, `contact-email-copy`, `contact-form-sent`, `cv-request-sent`, `project-open`.
 
 ## Performance
 - Le premier écran (Hero, barre de navigation) s'anime en CSS pur (`.enter`, `.enter-word`, `.enter-reveal` dans `app/globals.css`) pour s'afficher sans attendre le JavaScript. Les fondus partent de 0.01 et non 0 : sinon Chrome ignore ces éléments pour le LCP.

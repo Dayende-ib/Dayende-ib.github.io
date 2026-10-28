@@ -19,8 +19,8 @@ export type Project = {
   clientProject?: boolean;
   codePrivate?: boolean;
   award?: boolean;
-  /** Projet d'apprentissage (exercice, projet d'études) */
-  learning?: boolean;
+  /** Projet réalisé dans le cadre des études */
+  academic?: boolean;
   status?: "wip";
 };
 
@@ -75,6 +75,7 @@ export const projects: Project[] = [
     category: "web",
     tags: ["Node.js", "Flutter", "PostgreSQL", "React.js"],
     image: "/projects/propiflow.webp",
+    academic: true,
     codeUrl: "https://github.com/Dayende-ib/rental-management",
     liveUrl: "https://propiflow.vercel.app/",
     featured: true
@@ -93,6 +94,7 @@ export const projects: Project[] = [
     category: "mobile",
     tags: ["Flutter", "Express", "MongoDB", "Santé"],
     image: "/projects/caretime_clinic_appointment.png",
+    academic: true,
     codeUrl: "https://github.com/Dayende-ib/clinic-appointment-scheduler",
     featured: true
   },
@@ -148,6 +150,7 @@ export const projects: Project[] = [
     category: "web",
     tags: ["Laravel", "MySQL", "Bootstrap", "Education"],
     image: "/projects/library_management.webp",
+    academic: true,
     codeUrl: "https://github.com/Dayende-ib/gestion-bibliotheque"
   },
   {
@@ -155,7 +158,7 @@ export const projects: Project[] = [
     category: "web",
     tags: ["HTML5", "CSS3", "JavaScript"],
     image: "/projects/ByteMarket.webp",
-    learning: true
+    academic: true
   }
 ];
 

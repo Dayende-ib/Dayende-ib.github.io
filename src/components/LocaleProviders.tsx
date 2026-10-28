@@ -22,6 +22,7 @@ const pickClientMessages = (messages: Messages): AbstractIntlMessages => ({
   skills: messages.skills,
   projects: messages.projects,
   testimonials: messages.testimonials,
+  cv: messages.cv,
   services: { process: messages.services.process },
   contact: { form: messages.contact.form }
 });

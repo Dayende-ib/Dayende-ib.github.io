@@ -3,6 +3,7 @@ import { ArrowUp, Github, Linkedin, MessageCircle } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 import Container from "@/components/Container";
+import { CvRequestLink } from "@/components/CvRequest";
 import LocalTime from "@/components/LocalTime";
 import { site } from "@/data/site";
 
@@ -61,6 +62,9 @@ export default async function Footer({ locale }: { locale: string }) {
                   </a>
                 </li>
               ))}
+              <li>
+                <CvRequestLink className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground" />
+              </li>
             </ul>
             <p className="mt-6 text-xs text-muted-foreground">
               {t.rich("paletteHint", {

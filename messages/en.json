@@ -46,7 +46,8 @@
       "linkedin": "Open my LinkedIn",
       "github": "Open my GitHub",
       "theme": "Toggle theme",
-      "language": "Passer en français"
+      "language": "Passer en français",
+      "cv": "Request my CV"
     },
     "hints": {
       "navigate": "navigate",
@@ -201,7 +202,7 @@
         "label": "Mobile",
         "title": "Flutter mobile apps",
         "description": "Apps connected to reliable APIs, built for real-world use, multi-role and even offline.",
-        "proof": "3 Flutter apps shipped: healthcare, rental management and well-being."
+        "proof": "3 Flutter apps built: healthcare, rental management and well-being (MindEase live)."
       },
       "ai": {
         "label": "AI & Automation",
@@ -294,7 +295,7 @@
     "impactEyebrow": "Outcome / impact",
     "archive": {
       "title": "More projects",
-      "description": "Client work, live products and learning projects: each project shows its status."
+      "description": "Client work, live products and academic projects: each project shows its status."
     },
     "count": "{count, plural, =1 {# project} other {# projects}}",
     "showMore": "{count, plural, =1 {Show # more project} other {Show # more projects}}",
@@ -322,7 +323,7 @@
       "hackathonWinner": "2025 AI Hackathon winner",
       "demo": "Video demo",
       "live": "Live",
-      "learning": "Learning project"
+      "academic": "Academic project"
     },
     "cta": {
       "viewProject": "View project",
@@ -392,22 +393,18 @@
       "propiflow": {
         "title": "Propiflow - Rental Management Without the Spreadsheets",
         "description": "Rental management shouldn't live in scattered spreadsheets and phone calls. Propiflow brings properties, tenants, contracts, and maintenance into one place - with a dedicated mobile app for tenants.",
-        "impact": "All rental operations centralized in one place. Tenants have their own mobile interface, maintenance requests are tracked in real time, and repetitive admin tasks are gone.",
+        "impact": "All rental operations centralized in one place. Tenants have their own mobile interface, maintenance requests are tracked in real time and repetitive admin tasks are automated.",
         "role": "Design & development",
         "metrics": [
           {
             "value": "2",
             "label": "apps: web back-office + tenant mobile"
-          },
-          {
-            "value": "0",
-            "label": "scattered spreadsheets"
           }
         ],
         "caseStudy": {
           "challenge": "Rental management relied on scattered spreadsheets, phone calls and paper contracts - no unified tool for owners, managers and tenants.",
           "approach": "Full-stack platform with a web admin dashboard (properties, tenants, contracts, rent, maintenance) and a Flutter mobile app for tenants.",
-          "result": "Fully digital rental management: automated admin tasks, real-time maintenance tracking and centralized communication between all parties."
+          "result": "A complete rental management platform: automated admin tasks, real-time maintenance tracking and centralized communication between all parties."
         }
       },
       "kawari-finance-app": {
@@ -450,7 +447,7 @@
       "clinic-appointment-scheduler": {
         "title": "Clinic Appointment Scheduler - No More Scheduling Chaos",
         "description": "Phone-based appointment booking means missed slots, scheduling conflicts, and frustrated patients. This Flutter app gives patients, doctors, and admins a shared real-time view to coordinate without friction.",
-        "impact": "Scheduling conflicts and forgotten appointments are gone. Patients book autonomously, doctors manage their availability, and admins have full visibility across all clinic coordination.",
+        "impact": "Designed to end scheduling conflicts and forgotten appointments: patients book on their own, doctors manage their availability and admins get a full view of coordination.",
         "role": "Mobile & API development",
         "metrics": [
           {
@@ -461,7 +458,7 @@
         "caseStudy": {
           "challenge": "Phone and paper-based booking caused missed appointments, scheduling conflicts and poor coordination between doctors and patients.",
           "approach": "Multi-role Flutter app (patient, doctor, admin) backed by an Express/MongoDB API handling notifications, history and real-time availability.",
-          "result": "A fully digital booking journey, fewer scheduling conflicts and better clinic coordination."
+          "result": "A fully digital booking journey, designed to prevent scheduling conflicts and smooth coordination between patients, doctors and admins."
         }
       },
       "offline-gpt": {
@@ -775,5 +772,41 @@
         "description": "Find Pauline right where you already chat. Advice and guidance, without leaving WhatsApp. No app to download."
       }
     }
+  },
+  "cv": {
+    "button": "Request my CV",
+    "title": "Get my CV",
+    "description": "I share my CV on request, so I know who receives it. Briefly introduce yourself and I'll email it to you within 24 to 48 hours.",
+    "nameLabel": "Full name",
+    "emailLabel": "Work email",
+    "companyLabel": "Company or organization",
+    "purposeLabel": "Reason for the request",
+    "purposes": {
+      "recruitment": "Hiring",
+      "freelance": "Freelance project",
+      "partnership": "Partnership",
+      "other": "Other"
+    },
+    "messageLabel": "Details (optional)",
+    "placeholders": {
+      "name": "Your name",
+      "email": "you@company.com",
+      "company": "Company name",
+      "message": "Role, job posting link, project context…"
+    },
+    "errors": {
+      "name": "Name is required.",
+      "email": "Invalid email.",
+      "company": "Please enter your company or organization.",
+      "purpose": "Please choose a reason.",
+      "submit": "Sending failed. Try again or message me on WhatsApp."
+    },
+    "privacy": "This information is only used to send you my CV.",
+    "submit": "Send request",
+    "sending": "Sending…",
+    "successTitle": "Request sent!",
+    "success": "I'll send my CV to {email} within 24 to 48 hours.",
+    "urgent": "In a hurry? WhatsApp",
+    "close": "Close"
   }
 }

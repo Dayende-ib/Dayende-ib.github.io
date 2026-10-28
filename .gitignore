@@ -140,3 +140,7 @@ dist
 !README.md
 
 .vscode/
+
+# CV : jamais dans le dépôt (public), envoyé manuellement sur demande
+src/assets/*.pdf
+*[Cc][Vv]*.pdf

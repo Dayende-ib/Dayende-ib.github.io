@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 
 import CommandPalette from "@/components/CommandPalette";
+import CvRequestDialog from "@/components/CvRequest";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ProjectProvider from "@/components/projects/ProjectProvider";
@@ -27,6 +28,7 @@ export default async function HomePage({
       <div className="min-h-screen bg-background text-foreground">
         <Navbar />
         <CommandPalette />
+        <CvRequestDialog />
         <main id="main">
           <Hero locale={locale} />
           <Impact />

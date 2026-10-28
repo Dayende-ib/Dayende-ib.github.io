@@ -3,6 +3,7 @@ import { Clock, Github, GraduationCap, Handshake, Linkedin, MapPin, Timer, Troph
 import { getTranslations } from "next-intl/server";
 
 import AnimatedSection from "@/components/AnimatedSection";
+import { CvRequestButton } from "@/components/CvRequest";
 import Container from "@/components/Container";
 import LocalTime from "@/components/LocalTime";
 import ScrollRevealText from "@/components/motion/ScrollRevealText";
@@ -71,6 +72,7 @@ export default async function About({ locale }: { locale: string }) {
                     </div>
                   ))}
                 </dl>
+                <CvRequestButton className="w-full" />
                 <div className="flex gap-2">
                   <Button asChild variant="outline" size="sm" className="flex-1">
                     <a href={site.linkedin} target="_blank" rel="noreferrer">

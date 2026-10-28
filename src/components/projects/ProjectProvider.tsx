@@ -32,6 +32,7 @@ import { toast } from "@/components/Toaster";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { projects, projectsById } from "@/data/projects";
+import { useModal } from "@/lib/useModal";
 import { cn } from "@/lib/utils";
 
 type ProjectContextValue = {
@@ -56,9 +57,6 @@ const metricColumns: Record<number, string> = {
   3: "sm:grid-cols-3",
   4: "sm:grid-cols-4"
 };
-
-const FOCUSABLE =
-  'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
 
 export default function ProjectProvider({ children }: { children: ReactNode }) {
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -150,50 +148,22 @@ function ProjectDialog({
   const content = getContent(id);
   const position = projects.findIndex((item) => item.id === id) + 1;
 
-  useEffect(() => {
-    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    document.body.style.overflow = "hidden";
-    document.body.style.paddingRight = `${scrollbarWidth}px`;
-    closeRef.current?.focus({ preventScroll: true });
-    return () => {
-      document.body.style.overflow = "";
-      document.body.style.paddingRight = "";
-    };
-  }, []);
+  useModal(dialogRef, closeRef, onClose);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: 0 });
   }, [id]);
 
+  // Flèches ← → : projet précédent / suivant
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        onClose();
-        return;
-      }
-      const target = event.target as HTMLElement;
-      const isTyping = target.closest("input, textarea");
-      if (!isTyping && event.key === "ArrowRight") onStep(1);
-      if (!isTyping && event.key === "ArrowLeft") onStep(-1);
-
-      // Garde le focus dans la fenêtre
-      if (event.key === "Tab" && dialogRef.current) {
-        const focusable = Array.from(dialogRef.current.querySelectorAll<HTMLElement>(FOCUSABLE));
-        if (!focusable.length) return;
-        const first = focusable[0];
-        const last = focusable[focusable.length - 1];
-        if (event.shiftKey && document.activeElement === first) {
-          event.preventDefault();
-          last.focus();
-        } else if (!event.shiftKey && document.activeElement === last) {
-          event.preventDefault();
-          first.focus();
-        }
-      }
+      if ((event.target as HTMLElement).closest("input, textarea")) return;
+      if (event.key === "ArrowRight") onStep(1);
+      if (event.key === "ArrowLeft") onStep(-1);
     };
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
-  }, [onClose, onStep]);
+  }, [onStep]);
 
   const goToContact = () => {
     window.dispatchEvent(

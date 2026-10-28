@@ -6,6 +6,7 @@ import {
   ArrowRight,
   AtSign,
   Code2,
+  FileText,
   CornerDownLeft,
   FolderOpen,
   Github,
@@ -22,6 +23,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { trackEvent } from "@/components/Analytics";
 import { easeOutExpo } from "@/components/motion/easing";
 import { useProjectModal } from "@/components/projects/ProjectProvider";
+import { openCvRequest } from "@/components/CvRequest";
 import { buildLocalePath, rememberLocale } from "@/components/LanguageSwitcher";
 import { toast } from "@/components/Toaster";
 import { projects } from "@/data/projects";
@@ -141,6 +143,14 @@ export default function CommandPalette() {
           );
         }
       })),
+      {
+        id: "action-cv",
+        group: "actions",
+        label: t("actions.cv"),
+        keywords: "cv resume curriculum recrutement recruitment",
+        icon: FileText,
+        run: openCvRequest
+      },
       {
         id: "action-email",
         group: "actions",

@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import type { ProjectCategory } from "@/data/projects";
 import { cn } from "@/lib/utils";
+import { submitWeb3Forms } from "@/lib/web3forms";
 
 type FormState = {
   name: string;
@@ -42,7 +43,6 @@ export default function ContactForm() {
   const [types, setTypes] = useState<InquiryType[]>([]);
   const [errors, setErrors] = useState<FormErrors>(noErrors);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
   // Pré-remplissage depuis une fiche projet ("Discuter d'un projet similaire")
   useEffect(() => {
@@ -79,28 +79,16 @@ export default function ContactForm() {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!validate()) return;
-    if (!accessKey) {
-      setStatus("error");
-      return;
-    }
     setStatus("sending");
-    const botcheck = new FormData(event.currentTarget).get("botcheck");
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: accessKey,
-          subject: `Portfolio — ${form.name}`,
-          name: form.name,
-          email: form.email,
-          project_type: types.map((type) => t(`types.${type}`)).join(", ") || "—",
-          message: form.message,
-          botcheck
-        })
+      await submitWeb3Forms({
+        subject: `Portfolio — ${form.name}`,
+        name: form.name,
+        email: form.email,
+        project_type: types.map((type) => t(`types.${type}`)).join(", ") || "—",
+        message: form.message,
+        botcheck: new FormData(event.currentTarget).get("botcheck")
       });
-      const result = (await response.json()) as { success?: boolean };
-      if (!response.ok || !result.success) throw new Error("Submission failed");
       setStatus("success");
       trackEvent("contact-form-sent", { types: types.join(",") || "none" });
       setForm(initialState);

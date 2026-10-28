@@ -43,10 +43,10 @@ export default function ProjectBadges({
           {t("badges.live")}
         </Badge>
       ) : null}
-      {project.learning ? (
+      {project.academic ? (
         <Badge variant="outline" className="bg-background/90 text-[10px]">
           <GraduationCap className="h-3 w-3" />
-          {t("badges.learning")}
+          {t("badges.academic")}
         </Badge>
       ) : null}
       {project.status === "wip" ? (
